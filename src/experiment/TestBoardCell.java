@@ -9,7 +9,7 @@ public class TestBoardCell {
     private boolean isOccupied;
     private boolean isRoom;
 
-    private Set<TestBoardCell> adjList; // List of adjacent cells
+    private Set<TestBoardCell> adjList = new HashSet<>(); // List of adjacent cells
 
     /** Constructor for testing board cell
      * @param row cell row position
@@ -25,14 +25,16 @@ public class TestBoardCell {
     /**
      * @param cell Add cell to the adjacency list
      */
-    public void addAjacency(TestBoardCell cell) {}
+    public void addAdjacency(TestBoardCell cell) {
+        adjList.add(cell);
+    }
 
 
     /**
      * @return Get list of adjacent cells to the current cell
      */
     public Set<TestBoardCell> getAdjList() {
-        return new HashSet<TestBoardCell>();
+        return adjList;
     }
 
     // Check if a cell is a room or is occupied

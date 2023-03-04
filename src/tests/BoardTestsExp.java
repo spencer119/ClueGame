@@ -21,6 +21,13 @@ public class BoardTestsExp {
         board = new TestBoard();
     }
 
+    @Test
+    public void test() {
+        TestBoardCell cell = board.getCell(0, 0);
+        Set<TestBoardCell> testList = cell.getAdjList();
+
+    }
+
     /**
      * Test that the adjacency list for each cell is correct
      */
@@ -28,7 +35,6 @@ public class BoardTestsExp {
     public void testAdjacency() {
         TestBoardCell cell = board.getCell(0, 0);
         Set<TestBoardCell> testList = cell.getAdjList();
-
         // Check for cell [0,0]
         assertTrue(testList.contains(board.getCell(1, 0)));
         assertTrue(testList.contains(board.getCell(0, 1)));
