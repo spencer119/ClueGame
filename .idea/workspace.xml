@@ -4,29 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5140ffcb-d3d1-4d69-a4a2-c250c33cb4fe" name="Changes" comment="added gitlog for 14a-1">
-      <change afterPath="$PROJECT_DIR$/data/ClueLayout.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/ClueLayout.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/ClueLayout306.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/ClueLayout306.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/ClueLayoutBadColumns306.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/ClueLayoutBadRoom306.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/ClueSetup.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/ClueSetup306.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/ClueSetupBadFormat306.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/clueGame/BadConfigFormatException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/clueGame/Board.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/clueGame/BoardCell.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/clueGame/DoorDirection.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/clueGame/Room.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests/ExceptionTests306.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests/FileInitTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests/FileInitTests306.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.classpath" beforeDir="false" afterPath="$PROJECT_DIR$/.classpath" afterDir="false" />
+    <list default="true" id="5140ffcb-d3d1-4d69-a4a2-c250c33cb4fe" name="Changes" comment="FileInitTests failing tests done">
+      <change afterPath="$PROJECT_DIR$/Tests.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/classpath.index" beforeDir="false" afterPath="$PROJECT_DIR$/bin/classpath.index" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/experiment/TestBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/experiment/TestBoard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tests/BoardTestsExp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/BoardTestsExp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/clueGame/BadConfigFormatException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clueGame/BadConfigFormatException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/clueGame/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clueGame/Board.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/clueGame/BoardCell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clueGame/BoardCell.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/clueGame/DoorDirection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clueGame/DoorDirection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/clueGame/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clueGame/Room.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -215,7 +200,7 @@
       <workItem from="1677898340535" duration="227000" />
       <workItem from="1677898683042" duration="4183000" />
       <workItem from="1677903832559" duration="2321000" />
-      <workItem from="1677906193361" duration="348000" />
+      <workItem from="1677906193361" duration="848000" />
     </task>
     <task id="LOCAL-00001" summary="starting 14a-1">
       <created>1677898751164</created>
@@ -245,7 +230,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677902313396</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="FileInitTests failing tests done">
+      <created>1677906801720</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1677906801720</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -257,7 +249,8 @@
     <MESSAGE value="adj tests passed" />
     <MESSAGE value="all BoardTestExp tests pass" />
     <MESSAGE value="added gitlog for 14a-1" />
-    <option name="LAST_COMMIT_MESSAGE" value="added gitlog for 14a-1" />
+    <MESSAGE value="FileInitTests failing tests done" />
+    <option name="LAST_COMMIT_MESSAGE" value="FileInitTests failing tests done" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

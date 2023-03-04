@@ -2,6 +2,11 @@ package clueGame;
 
 import java.util.Map;
 
+/**
+ * Board class
+ *
+ * @author Spencer Hamilton
+ */
 public class Board {
     private BoardCell grid[][];
     private int numRows;
@@ -15,25 +20,41 @@ public class Board {
         super();
     }
 
+    /**
+     * Initializes the board
+     */
     public void initialize() {
     }
 
-    public static Board getInstance() {
-        return theInstance;
-    }
 
+    /**
+     * Load ClueSetup.txt
+     */
     public void loadSetupConfig() {
 
     }
 
+    /**
+     * Load ClueLayout.csv
+     */
     public void loadLayoutConfig() {
 
     }
 
 
+    /**
+     * Set config file paths
+     *
+     * @param csvPath   path to the csv file
+     * @param setupPath path to the setup file
+     */
     public void setConfigFiles(String csvPath, String setupPath) {
         this.layoutConfigFile = csvPath;
         this.setupConfigFile = setupPath;
+    }
+
+    public static Board getInstance() {
+        return theInstance;
     }
 
     public Room getRoom(char c) {

@@ -2,6 +2,11 @@ package clueGame;
 
 import java.util.Set;
 
+/**
+ * BoardCell class
+ *
+ * @author spencer
+ */
 public class BoardCell {
     private int row;
     private int col;
@@ -16,6 +21,9 @@ public class BoardCell {
     private char secretPassage;
     private Set<BoardCell> adjList;
 
+    /**
+     * @param adj the adj to add to adjList
+     */
     public void addAdj(BoardCell adj) {
 
     }

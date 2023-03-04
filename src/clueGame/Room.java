@@ -1,5 +1,10 @@
 package clueGame;
 
+/**
+ * Room class
+ *
+ * @author spencer
+ */
 public class Room {
 
     private String name;
@@ -13,6 +18,7 @@ public class Room {
     public BoardCell getCenterCell() {
         return centerCell;
     }
+
     public BoardCell getLabelCell() {
         return labelCell;
     }
