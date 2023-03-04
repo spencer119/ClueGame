@@ -1,0 +1,23 @@
+W,W,W,W,W,W,W,W,W,W,X,X,X,X,B,B,B,B,B#,B,B,B,B
+W,A,A,A#,A,AP,W,W,W,W,W,W,W,W,B,B,B,B,B,B,B,B,B
+W>,A,A,A,A,A,W,W,W,W,W,W,W,W,B,B,B,B,B*,B,B,B,B
+V,A,A,A*,A,A,W,W,W,W,W,W,W,W,B,B,B,B,B,B,B,B,B
+V,A,A,A,A,A,W,W,W,W,W,W,W,W,B,B,B,B,B,B,B,B,BL
+V,A,A,A,A,A,W,W,W,W,W,W,W,W,W,W,W,^W,W,W,W,W,W
+W,W,W,W,W,W,W,W,W,W,W,W,W,W,W,W,W,W,W,W,W,v W,W
+W,W,W,W,W,W,W,W,G,G,G#,G,G,W,W,W,W,W,W,W,O,O#,O
+W,T,T,T#,T,T,W,W,G,G,G,G,G,W,W,W,W,W,W,W,O,O,O
+W,T,T*,T,T,T,W,W>,G,G,G*,G,G,W,W,W,W,W,W,W,O,O*,O
+W,T,T,T,T,T,W,W,G,G,G,G,G,W,W,W,W,W,W,W,O,O,O
+W,^W,W,W,W,W,W,W,G,G,G,G,G,W,W,W,W,W,W,W,W,W,X
+W,W,W,W,W,W,W,W,W,W,W,W,W,W,W,W,W,W,W,W,W,W,X
+W,W,W,W,W,W,W,W,W,W,W,W,W,S,S,S,S,W,W,L,L,L,L
+W,W,W,W,W,W,W,W,W,W,W,W,W,S,S#,S,S,W,W,L,L#,L,L
+P,P,P,P,P,P,W,W,W,W,W,W,W,S,S,S,S,W,W,L,L,L,L
+P,P,P,P,P,P,W,W,C,C#,C,W,W,S,S,S,S,W,W,L,L,L,L
+P,P,W,^W,P,P,W,W,C,C,C,<W,W,S,S,S*,S,<W,W>,L,L,L,L
+P,P,W,P,P,P,W,W,C,C*,C,W,W,S,S,S,S,W,W,L,L,L,L
+P,P,W,P,P,P,W,W,C,C,C,W,W,S,S,S,S,W,W,L,L*,L,L
+P,P,W,W,W,P,W,W,W,W,W,W,W,S,S,S,S,W,W,L,L,L,L
+P,P,W,PA,W,W,W,W,W,W,W,W,W,S,S,S,S,W,W,L,L,L,L
+P,P,P,P,P,P,P,W,W,X,X,W,W,S,S,S,S,X,X,L,LB,L,L

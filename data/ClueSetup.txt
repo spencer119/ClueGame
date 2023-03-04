@@ -1,0 +1,13 @@
+// Rooms and room cards
+Room, Storage, S
+Room, Underground Passage, P
+Room, Basement, B
+Room, Observatory, O
+Room, Attic, A
+Room, Theater, T
+Room, Cellar, C
+Room, Game Room, G
+Room, Library, L
+// other spaces
+Space, Unused, X
+Space, Walkway, W

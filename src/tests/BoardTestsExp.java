@@ -3,10 +3,10 @@ package tests;
 import experiment.TestBoard;
 import experiment.TestBoardCell;
 import org.junit.jupiter.api.*;
-
+import static org.junit.jupiter.api.Assertions.*;
 import java.util.Set;
 
-import static org.junit.jupiter.api.Assertions.*;
+
 
 /**
  * Tests for the Board class movement and adjacency
