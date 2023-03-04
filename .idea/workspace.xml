@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5140ffcb-d3d1-4d69-a4a2-c250c33cb4fe" name="Changes" comment="starting 14a-1">
+    <list default="true" id="5140ffcb-d3d1-4d69-a4a2-c250c33cb4fe" name="Changes" comment="adj tests passed">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/experiment/TestBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/experiment/TestBoard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/experiment/TestBoardCell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/experiment/TestBoardCell.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/tests/BoardTestsExp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/BoardTestsExp.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -51,7 +50,17 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="JUnit.BoardTestsExp.testAdjacency">
+  <component name="RunManager" selected="JUnit.BoardTestExp">
+    <configuration name="BoardTestExp" type="JUnit" factoryName="JUnit">
+      <module name="ClueGame" />
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.BoardTestsExp" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="BoardTestsExp.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ClueGame" />
       <extension name="coverage">
@@ -84,10 +93,51 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="BoardTestsExp.testTargetsNormal" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ClueGame" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.BoardTestsExp" />
+      <option name="METHOD_NAME" value="testTargetsNormal" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BoardTestsExp.testTargetsOccupied" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ClueGame" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.BoardTestsExp" />
+      <option name="METHOD_NAME" value="testTargetsOccupied" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="JUnit.BoardTestExp" />
+      <item itemvalue="JUnit.BoardTestsExp.testTargetsNormal" />
+      <item itemvalue="JUnit.BoardTestsExp.testTargetsOccupied" />
+      <item itemvalue="JUnit.BoardTestsExp.test" />
+      <item itemvalue="JUnit.BoardTestsExp.testAdjacency" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.BoardTestsExp.testAdjacency" />
+        <item itemvalue="JUnit.BoardTestsExp.testTargetsNormal" />
+        <item itemvalue="JUnit.BoardTestsExp.testTargetsOccupied" />
         <item itemvalue="JUnit.BoardTestsExp.test" />
+        <item itemvalue="JUnit.BoardTestsExp.testAdjacency" />
       </list>
     </recent_temporary>
   </component>
@@ -100,7 +150,7 @@
       <option name="presentableId" value="Default" />
       <updated>1677898339447</updated>
       <workItem from="1677898340535" duration="227000" />
-      <workItem from="1677898683042" duration="1695000" />
+      <workItem from="1677898683042" duration="3219000" />
     </task>
     <task id="LOCAL-00001" summary="starting 14a-1">
       <created>1677898751164</created>
@@ -109,7 +159,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677898751164</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="adj tests passed">
+      <created>1677900434129</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1677900434129</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -117,7 +174,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="starting 14a-1" />
-    <option name="LAST_COMMIT_MESSAGE" value="starting 14a-1" />
+    <MESSAGE value="adj tests passed" />
+    <option name="LAST_COMMIT_MESSAGE" value="adj tests passed" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

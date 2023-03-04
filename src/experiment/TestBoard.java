@@ -10,8 +10,9 @@ public class TestBoard {
     final static int ROWS = 4;
     final static int COLS = 4;
     private TestBoardCell[][] grid;
-    private Set<TestBoardCell> targets;
-    private Set<TestBoardCell> visited;
+    private Set<TestBoardCell> targets = new HashSet<TestBoardCell>();
+    private Set<TestBoardCell> visited = new HashSet<TestBoardCell>();
+    private Set<TestBoardCell> calcVisited = new HashSet<TestBoardCell>(); // Temporary visited list for calculating targets
 
     public TestBoard() {
         grid = new TestBoardCell[ROWS][COLS];
@@ -47,7 +48,22 @@ public class TestBoard {
      * @param startCell Cell to start movement from
      * @param pathLength number of cells to move
      */
-    public void calcTargets(TestBoardCell startCell, int pathLength) {}
+    public void calcTargets(TestBoardCell startCell, int pathLength) {
+        if (pathLength == 0 || startCell.isRoom()) {
+            if (!startCell.getOccupied())
+            {
+                targets.add(startCell);
+            }
+            return;
+        }
+        calcVisited.add(startCell);
+        for (TestBoardCell adj : startCell.getAdjList()) {
+            if (!visited.contains(adj) && !calcVisited.contains(adj)&& !adj.getOccupied()) {
+                calcTargets(adj, pathLength - 1);
+                calcVisited.remove(adj);
+            }
+        }
+    }
 
     /**
      * @param row row position of cell
