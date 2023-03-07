@@ -33,6 +33,7 @@ public class BoardCell {
         if (charLabel.length() == 1) {
             initial = charLabel.charAt(0);
         } else {
+            initial = charLabel.charAt(0);
             switch (charLabel.charAt(1)) {
                 case '>':
                     doorDirection = DoorDirection.RIGHT;

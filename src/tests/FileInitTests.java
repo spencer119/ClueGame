@@ -18,7 +18,7 @@ public class FileInitTests {
     public static void setUp() {
         board = Board.getInstance();
         // set the file names to use my config files
-        board.setConfigFiles("ClueLayout306.csv", "ClueSetup306.txt");
+        board.setConfigFiles("ClueLayout.csv", "ClueSetup.txt");
         // Initialize will load BOTH config files
         board.initialize();
     }
@@ -92,7 +92,6 @@ public class FileInitTests {
         assertEquals("Game Room", board.getRoom('G').getName());
         assertEquals("Library", board.getRoom('L').getName());
         assertEquals("Unused", board.getRoom('X').getName());
-        assertEquals("Attic", board.getRoom('W').getName());
         assertEquals("Walkway", board.getRoom('W').getName());
 
     }
