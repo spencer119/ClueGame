@@ -5,12 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5140ffcb-d3d1-4d69-a4a2-c250c33cb4fe" name="Changes" comment="FileInitTests failing tests done">
-      <change afterPath="$PROJECT_DIR$/Tests.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/clueGame/BadConfigFormatException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clueGame/BadConfigFormatException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/clueGame/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clueGame/Board.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/clueGame/BoardCell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clueGame/BoardCell.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/clueGame/DoorDirection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clueGame/DoorDirection.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/clueGame/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clueGame/Room.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -200,6 +198,8 @@
       <workItem from="1677898683042" duration="4183000" />
       <workItem from="1677903832559" duration="2321000" />
       <workItem from="1677906193361" duration="848000" />
+      <workItem from="1678175229320" duration="181000" />
+      <workItem from="1678222900757" duration="4565000" />
     </task>
     <task id="LOCAL-00001" summary="starting 14a-1">
       <created>1677898751164</created>

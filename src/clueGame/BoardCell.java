@@ -21,6 +21,45 @@ public class BoardCell {
     private char secretPassage;
     private Set<BoardCell> adjList;
 
+    public BoardCell(String charLabel, int row, int col) {
+        this.row = row;
+        this.col = col;
+
+        roomLabel = false;
+        roomCenter = false;
+        doorDirection = DoorDirection.NONE;
+        secretPassage = ' ';
+
+        if (charLabel.length() == 1) {
+            initial = charLabel.charAt(0);
+        } else {
+            switch (charLabel.charAt(1)) {
+                case '>':
+                    doorDirection = DoorDirection.RIGHT;
+                    break;
+                case '<':
+                    doorDirection = DoorDirection.LEFT;
+                    break;
+                case '^':
+                    doorDirection = DoorDirection.UP;
+                    break;
+                case 'v':
+                    doorDirection = DoorDirection.DOWN;
+                    break;
+                case '#':
+                    roomLabel = true;
+                    break;
+                case '*':
+                    roomCenter = true;
+                    break;
+                default:
+                    secretPassage = charLabel.charAt(1);
+                    break;
+            }
+        }
+    }
+
+
     /**
      * @param adj the adj to add to adjList
      */
@@ -29,22 +68,26 @@ public class BoardCell {
     }
 
     public boolean isDoorway() {
-        return false;
+        return (doorDirection != DoorDirection.NONE);
     }
 
-    public Object getDoorDirection() {
-        return null;
+    public DoorDirection getDoorDirection() {
+        return doorDirection;
     }
 
     public boolean isLabel() {
-        return false;
+        return roomLabel;
     }
 
     public boolean isRoomCenter() {
-        return false;
+        return roomCenter;
     }
 
     public char getSecretPassage() {
-        return 0;
+        return secretPassage;
+    }
+
+    public char getChar() {
+        return initial;
     }
 }
