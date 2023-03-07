@@ -1,10 +1,8 @@
 package clueGame;
 
-import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.lang.reflect.Array;
 import java.util.*;
 
 /**
@@ -61,8 +59,6 @@ public class Board {
         } catch (IOException e) {
             System.out.println(e);
             throw new BadConfigFormatException();
-        } catch (BadConfigFormatException e) {
-            System.out.println(e);
         }
 
     }
@@ -82,24 +78,31 @@ public class Board {
                     if (s.length() == 0 || s.length() > 2) throw new BadConfigFormatException();
                 rows.add(new ArrayList<String>(Arrays.asList(line.split(","))));
             }
+
             numColumns = rows.get(0).size();
             numRows = rows.size();
-//            for (ArrayList<String> row : rows)
-//                if (row.size() != numColumns) throw new BadConfigFormatException();
-
             setupBoard(rows);
+
             // check that all rooms have a label and center cell
             for (Room room : roomMap.values()) {
                 if (room.getLabelCell() == null || room.getCenterCell() == null)
                     throw new BadConfigFormatException();
             }
+            file.close();
         } catch (FileNotFoundException | ArrayIndexOutOfBoundsException e) {
-            System.out.println(e);
             throw new BadConfigFormatException();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
 
     }
 
+    /**
+     * Helper function for constructor to create the board
+     *
+     * @param rows the rows of the board
+     * @throws BadConfigFormatException bad config format
+     */
     private void setupBoard(ArrayList<ArrayList<String>> rows) throws BadConfigFormatException {
         try {
             grid = new BoardCell[numRows][numColumns];

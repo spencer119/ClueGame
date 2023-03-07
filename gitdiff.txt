@@ -1,0 +1,155 @@
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+index 9930522..d108104 100644
+--- a/.idea/workspace.xml
++++ b/.idea/workspace.xml
+@@ -5,11 +5,9 @@
+   </component>
+   <component name="ChangeListManager">
+     <list default="true" id="5140ffcb-d3d1-4d69-a4a2-c250c33cb4fe" name="Changes" comment="initilize tests pass">
+-      <change afterPath="$PROJECT_DIR$/log.txt" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/data/ClueLayout.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/ClueLayout.csv" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/clueGame/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clueGame/Board.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/tests/FileInitTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/FileInitTests.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/clueGame/BoardCell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clueGame/BoardCell.java" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -80,7 +78,7 @@
+     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+   }
+ }</component>
+-  <component name="RunManager" selected="JUnit.ExceptionTests306">
++  <component name="RunManager" selected="JUnit.FileInitTests">
+     <configuration name="BoardTestExp" type="JUnit" factoryName="JUnit">
+       <module name="ClueGame" />
+       <option name="PACKAGE_NAME" value="tests" />
+@@ -178,9 +176,9 @@
+     </list>
+     <recent_temporary>
+       <list>
+-        <item itemvalue="JUnit.ExceptionTests306" />
+         <item itemvalue="JUnit.FileInitTests" />
+         <item itemvalue="JUnit.FileInitTests306" />
++        <item itemvalue="JUnit.ExceptionTests306" />
+         <item itemvalue="JUnit.FileInitTests.testRooms" />
+         <item itemvalue="JUnit.FileInitTests.testRoomLabels" />
+       </list>
+@@ -199,7 +197,7 @@
+       <workItem from="1677903832559" duration="2321000" />
+       <workItem from="1677906193361" duration="848000" />
+       <workItem from="1678175229320" duration="181000" />
+-      <workItem from="1678222900757" duration="8788000" />
++      <workItem from="1678222900757" duration="9294000" />
+     </task>
+     <task id="LOCAL-00001" summary="starting 14a-1">
+       <created>1677898751164</created>
+@@ -250,7 +248,14 @@
+       <option name="project" value="LOCAL" />
+       <updated>1678229365312</updated>
+     </task>
+-    <option name="localTasksCounter" value="8" />
++    <task id="LOCAL-00008" summary="initilize tests pass">
++      <created>1678232980877</created>
++      <option name="number" value="00008" />
++      <option name="presentableId" value="LOCAL-00008" />
++      <option name="project" value="LOCAL" />
++      <updated>1678232980877</updated>
++    </task>
++    <option name="localTasksCounter" value="9" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+@@ -264,6 +269,7 @@
+     <MESSAGE value="added gitlog for 14a-1" />
+     <MESSAGE value="FileInitTests failing tests done" />
+     <MESSAGE value="initilize written" />
++    <MESSAGE value="all tests pass" />
+     <MESSAGE value="initilize tests pass" />
+     <option name="LAST_COMMIT_MESSAGE" value="initilize tests pass" />
+   </component>
+diff --git a/src/clueGame/Board.java b/src/clueGame/Board.java
+index 4fe1904..424dcd9 100644
+--- a/src/clueGame/Board.java
++++ b/src/clueGame/Board.java
+@@ -1,10 +1,8 @@
+ package clueGame;
+ 
+-import java.io.File;
+ import java.io.FileNotFoundException;
+ import java.io.FileReader;
+ import java.io.IOException;
+-import java.lang.reflect.Array;
+ import java.util.*;
+ 
+ /**
+@@ -61,8 +59,6 @@ public class Board {
+         } catch (IOException e) {
+             System.out.println(e);
+             throw new BadConfigFormatException();
+-        } catch (BadConfigFormatException e) {
+-            System.out.println(e);
+         }
+ 
+     }
+@@ -82,24 +78,31 @@ public class Board {
+                     if (s.length() == 0 || s.length() > 2) throw new BadConfigFormatException();
+                 rows.add(new ArrayList<String>(Arrays.asList(line.split(","))));
+             }
++
+             numColumns = rows.get(0).size();
+             numRows = rows.size();
+-//            for (ArrayList<String> row : rows)
+-//                if (row.size() != numColumns) throw new BadConfigFormatException();
+-
+             setupBoard(rows);
++
+             // check that all rooms have a label and center cell
+             for (Room room : roomMap.values()) {
+                 if (room.getLabelCell() == null || room.getCenterCell() == null)
+                     throw new BadConfigFormatException();
+             }
++            file.close();
+         } catch (FileNotFoundException | ArrayIndexOutOfBoundsException e) {
+-            System.out.println(e);
+             throw new BadConfigFormatException();
++        } catch (IOException e) {
++            throw new RuntimeException(e);
+         }
+ 
+     }
+ 
++    /**
++     * Helper function for constructor to create the board
++     *
++     * @param rows the rows of the board
++     * @throws BadConfigFormatException bad config format
++     */
+     private void setupBoard(ArrayList<ArrayList<String>> rows) throws BadConfigFormatException {
+         try {
+             grid = new BoardCell[numRows][numColumns];
+diff --git a/src/clueGame/BoardCell.java b/src/clueGame/BoardCell.java
+index 0d9e25c..333e4d6 100644
+--- a/src/clueGame/BoardCell.java
++++ b/src/clueGame/BoardCell.java
+@@ -21,6 +21,11 @@ public class BoardCell {
+     private char secretPassage;
+     private Set<BoardCell> adjList;
+ 
++    /**
++     * @param charLabel the label of the cell
++     * @param row       the row of the cell
++     * @param col       the column of the cell
++     */
+     public BoardCell(String charLabel, int row, int col) {
+         this.row = row;
+         this.col = col;
+@@ -65,7 +70,7 @@ public class BoardCell {
+      * @param adj the adj to add to adjList
+      */
+     public void addAdj(BoardCell adj) {
+-
++        adjList.add(adj);
+     }
+ 
+     public boolean isDoorway() {

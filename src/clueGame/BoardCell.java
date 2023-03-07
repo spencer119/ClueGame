@@ -21,6 +21,11 @@ public class BoardCell {
     private char secretPassage;
     private Set<BoardCell> adjList;
 
+    /**
+     * @param charLabel the label of the cell
+     * @param row       the row of the cell
+     * @param col       the column of the cell
+     */
     public BoardCell(String charLabel, int row, int col) {
         this.row = row;
         this.col = col;
@@ -65,7 +70,7 @@ public class BoardCell {
      * @param adj the adj to add to adjList
      */
     public void addAdj(BoardCell adj) {
-
+        adjList.add(adj);
     }
 
     public boolean isDoorway() {
