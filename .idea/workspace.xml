@@ -4,12 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5140ffcb-d3d1-4d69-a4a2-c250c33cb4fe" name="Changes" comment="FileInitTests failing tests done">
+    <list default="true" id="5140ffcb-d3d1-4d69-a4a2-c250c33cb4fe" name="Changes" comment="initilize written">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/clueGame/BadConfigFormatException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clueGame/BadConfigFormatException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/clueGame/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clueGame/Board.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/clueGame/BoardCell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clueGame/BoardCell.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/clueGame/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clueGame/Room.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -199,7 +197,7 @@
       <workItem from="1677903832559" duration="2321000" />
       <workItem from="1677906193361" duration="848000" />
       <workItem from="1678175229320" duration="181000" />
-      <workItem from="1678222900757" duration="4565000" />
+      <workItem from="1678222900757" duration="5417000" />
     </task>
     <task id="LOCAL-00001" summary="starting 14a-1">
       <created>1677898751164</created>
@@ -236,7 +234,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677906801720</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="initilize written">
+      <created>1678228525123</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1678228525123</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -249,7 +254,15 @@
     <MESSAGE value="all BoardTestExp tests pass" />
     <MESSAGE value="added gitlog for 14a-1" />
     <MESSAGE value="FileInitTests failing tests done" />
-    <option name="LAST_COMMIT_MESSAGE" value="FileInitTests failing tests done" />
+    <MESSAGE value="initilize written" />
+    <option name="LAST_COMMIT_MESSAGE" value="initilize written" />
+  </component>
+  <component name="XDebuggerManager">
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="clueGame.Board" memberName="roomMap" />
+      </pinned-members>
+    </pin-to-top-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -3,6 +3,7 @@ package clueGame;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.IOException;
 import java.lang.reflect.Array;
 import java.util.*;
 
@@ -50,10 +51,13 @@ public class Board {
                     continue;
                 } else {
                     String[] split = line.split(", ");
+                    System.out.println(split.length);
+                    System.out.println(split[0] + " " + split[1] + " " + split[2]);
                     roomMap.put(split[2].charAt(0), new Room(split[1]));
                 }
             }
-        } catch (FileNotFoundException e) {
+            file.close();
+        } catch (IOException e) {
             throw new BadConfigFormatException();
         }
 
