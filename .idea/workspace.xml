@@ -82,29 +82,13 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.FileInitTests306">
     <configuration name="BoardTestExp" type="JUnit" factoryName="JUnit">
       <module name="ClueGame" />
       <option name="PACKAGE_NAME" value="tests" />
       <option name="MAIN_CLASS_NAME" value="tests.BoardTestsExp" />
       <option name="METHOD_NAME" value="" />
       <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="BoardTestsExp.testTargetsNormal" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ClueGame" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.BoardTestsExp" />
-      <option name="METHOD_NAME" value="testTargetsNormal" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -134,6 +118,21 @@
       </extension>
       <option name="PACKAGE_NAME" value="tests" />
       <option name="MAIN_CLASS_NAME" value="tests.FileInitTests" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FileInitTests306" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ClueGame" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.FileInitTests306" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -173,19 +172,19 @@
     </configuration>
     <list>
       <item itemvalue="JUnit.BoardTestExp" />
+      <item itemvalue="JUnit.FileInitTests306" />
       <item itemvalue="JUnit.ExceptionTests306" />
       <item itemvalue="JUnit.FileInitTests" />
       <item itemvalue="JUnit.FileInitTests.testRoomLabels" />
       <item itemvalue="JUnit.FileInitTests.testRooms" />
-      <item itemvalue="JUnit.BoardTestsExp.testTargetsNormal" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.FileInitTests306" />
         <item itemvalue="JUnit.FileInitTests" />
         <item itemvalue="JUnit.FileInitTests.testRooms" />
         <item itemvalue="JUnit.FileInitTests.testRoomLabels" />
         <item itemvalue="JUnit.ExceptionTests306" />
-        <item itemvalue="JUnit.BoardTestsExp.testTargetsNormal" />
       </list>
     </recent_temporary>
   </component>
