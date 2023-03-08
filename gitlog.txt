@@ -1,3 +1,15 @@
+commit 62722f526c0ae9ef76c91e860728c712a1f41095
+Author: Spencer Hamilton <shamilton@mines.edu>
+Date:   Tue Mar 7 17:57:10 2023 -0700
+
+    fixed a null return
+
+commit f1baaad5e24d72e0b993351f273c108db7c452f7
+Author: Spencer Hamilton <shamilton@mines.edu>
+Date:   Tue Mar 7 17:55:43 2023 -0700
+
+    adj and target tests done
+
 commit ebbaca4b47931c0e677ed9b24bcad92bcd0f2283
 Author: Spencer Hamilton <shamilton@mines.edu>
 Date:   Tue Mar 7 16:55:43 2023 -0700
