@@ -1,5 +1,6 @@
 package clueGame;
 
+import java.util.HashSet;
 import java.util.Set;
 
 /**
@@ -20,7 +21,7 @@ public class BoardCell {
     private Boolean roomCenter;
 
     private char secretPassage;
-    private Set<BoardCell> adjList;
+    private Set<BoardCell> adjList = new HashSet<>(); // List of adjacent cells
 
     /**
      * @param charLabel the label of the cell
