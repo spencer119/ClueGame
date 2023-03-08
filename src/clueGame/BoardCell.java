@@ -10,7 +10,8 @@ import java.util.Set;
 public class BoardCell {
     private int row;
     private int col;
-
+    private boolean isOccupied;
+    private boolean isRoom;
     private char initial;
 
     private DoorDirection doorDirection;
@@ -95,5 +96,26 @@ public class BoardCell {
 
     public char getChar() {
         return initial;
+    }
+
+    public Set<BoardCell> getAdjList() {
+        return adjList;
+    }
+
+    // Check if a cell is a room or is occupied
+    public boolean isRoom() {
+        return isRoom;
+    }
+
+    public boolean getOccupied() {
+        return isOccupied;
+    }
+
+    public void setOccupied(boolean isOccupied) {
+        this.isOccupied = isOccupied;
+    }
+
+    public void setRoom(boolean isRoom) {
+        this.isRoom = isRoom;
     }
 }

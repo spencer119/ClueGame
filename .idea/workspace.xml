@@ -5,7 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5140ffcb-d3d1-4d69-a4a2-c250c33cb4fe" name="Changes" comment="initilize tests pass">
+      <change afterPath="$PROJECT_DIR$/src/tests/BoardAdjTargetTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tests/BoardAdjTargetTest306.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/classpath.index" beforeDir="false" afterPath="$PROJECT_DIR$/bin/classpath.index" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/ClueLayout.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/ClueLayout.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitlog.txt" beforeDir="false" afterPath="$PROJECT_DIR$/gitlog.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/clueGame/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clueGame/Board.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/clueGame/BoardCell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clueGame/BoardCell.java" afterDir="false" />
     </list>
@@ -54,31 +59,52 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/spencer/fuckeclipse/ClueGame/.project&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;actions.on.save&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "dart.analysis.tool.window.visible": "false",
+    "last_opened_file_path": "C:/Users/spencer/fuckeclipse/ClueGame/src/tests",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "actions.on.save",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
-  <component name="RunManager" selected="JUnit.FileInitTests">
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\spencer\fuckeclipse\ClueGame\src\tests" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="BoardAdjTargetTest.testAdjacencyWalkway" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ClueGame" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.BoardAdjTargetTest" />
+      <option name="METHOD_NAME" value="testAdjacencyWalkway" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="BoardTestExp" type="JUnit" factoryName="JUnit">
       <module name="ClueGame" />
       <option name="PACKAGE_NAME" value="tests" />
@@ -134,22 +160,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FileInitTests.testRoomLabels" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ClueGame" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.FileInitTests" />
-      <option name="METHOD_NAME" value="testRoomLabels" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="FileInitTests.testRooms" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ClueGame" />
       <extension name="coverage">
@@ -168,19 +178,19 @@
     </configuration>
     <list>
       <item itemvalue="JUnit.BoardTestExp" />
+      <item itemvalue="JUnit.BoardAdjTargetTest.testAdjacencyWalkway" />
       <item itemvalue="JUnit.FileInitTests306" />
       <item itemvalue="JUnit.ExceptionTests306" />
       <item itemvalue="JUnit.FileInitTests" />
-      <item itemvalue="JUnit.FileInitTests.testRoomLabels" />
       <item itemvalue="JUnit.FileInitTests.testRooms" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.BoardAdjTargetTest.testAdjacencyWalkway" />
         <item itemvalue="JUnit.FileInitTests" />
         <item itemvalue="JUnit.FileInitTests306" />
         <item itemvalue="JUnit.ExceptionTests306" />
         <item itemvalue="JUnit.FileInitTests.testRooms" />
-        <item itemvalue="JUnit.FileInitTests.testRoomLabels" />
       </list>
     </recent_temporary>
   </component>
@@ -197,7 +207,7 @@
       <workItem from="1677903832559" duration="2321000" />
       <workItem from="1677906193361" duration="848000" />
       <workItem from="1678175229320" duration="181000" />
-      <workItem from="1678222900757" duration="9294000" />
+      <workItem from="1678222900757" duration="12802000" />
     </task>
     <task id="LOCAL-00001" summary="starting 14a-1">
       <created>1677898751164</created>
@@ -271,7 +281,7 @@
     <MESSAGE value="initilize written" />
     <MESSAGE value="all tests pass" />
     <MESSAGE value="initilize tests pass" />
-    <option name="LAST_COMMIT_MESSAGE" value="initilize tests pass" />
+    <option name="LAST_COMMIT_MESSAGE" value="" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>

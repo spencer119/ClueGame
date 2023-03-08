@@ -13,11 +13,11 @@ W,W^,W,W,W,W,W,W,G,G,G,G,G,W,W,W,W,W,W,W,W,W,X
 W,W,W,W,W,W,W,W,W,W,W,W,W,W,W,W,W,W,W,W,W,W,X
 W,W,W,W,W,W,W,W,W,W,W,W,W,S,S,S,S,W,W,L,L,L,L
 W,W,W,W,W,W,W,W,W,W,W,W,W,S,S#,S,S,W,W,L,L#,L,L
-P,P,P,P,P,P,W,W,W,W,W,W,W,S,S,S,S,W,W,L,L,L,L
+P,P,P,P#,P,P,W,W,W,W,W,W,W,S,S,S,S,W,W,L,L,L,L
 P,P,P,P,P,P,W,W,C,C#,C,W,W,S,S,S,S,W,W,L,L,L,L
 P,P,W,W^,P,P,W,W,C,C,C,W<,W,S,S,S*,S,W<,W>,L,L,L,L
 P,P,W,P,P,P,W,W,C,C*,C,W,W,S,S,S,S,W,W,L,L,L,L
-P,P,W,P,P,P,W,W,C,C,C,W,W,S,S,S,S,W,W,L,L*,L,L
+P,P*,W,P,P,P,W,W,C,C,C,W,W,S,S,S,S,W,W,L,L*,L,L
 P,P,W,W,W,P,W,W,W,W,W,W,W,S,S,S,S,W,W,L,L,L,L
 P,P,W,PA,W,W,W,W,W,W,W,W,W,S,S,S,S,W,W,L,L,L,L
 P,P,P,P,P,P,P,W,W,X,X,W,W,S,S,S,S,X,X,L,LB,L,L

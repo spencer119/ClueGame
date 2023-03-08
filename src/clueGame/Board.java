@@ -1,5 +1,7 @@
 package clueGame;
 
+import experiment.TestBoardCell;
+
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
@@ -18,6 +20,9 @@ public class Board {
     private String setupConfigFile;
     private Map<Character, Room> roomMap = new HashMap<>();
     private static Board theInstance = new Board();
+    private Set<BoardCell> targets = new HashSet<BoardCell>();
+    private Set<BoardCell> visited = new HashSet<BoardCell>();
+    private Set<BoardCell> calcVisited = new HashSet<BoardCell>(); // Temporary visited list for calculating targets
 
     private Board() {
         super();
@@ -165,4 +170,19 @@ public class Board {
 
         return roomMap.get(cell.getChar());
     }
+
+    public Set<BoardCell> getAdjList(int i, int j) {
+        return grid[i][j].getAdjList();
+    }
+
+    public void calcTargets(BoardCell startCell, int pathLength) {
+    }
+
+    /**
+     * @return Set of cells calculated from calcTargets()
+     */
+    public Set<BoardCell> getTargets() {
+        return targets;
+    }
 }
+
