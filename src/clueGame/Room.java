@@ -14,9 +14,18 @@ public class Room {
     private BoardCell centerCell;
     private BoardCell labelCell;
     private Set<BoardCell> exitCells = new HashSet<>();
+    private char secretPassage = ' ';
 
     public Room(String name) {
         this.name = name;
+    }
+
+    public char getSecretPassage() {
+        return secretPassage;
+    }
+
+    public void setSecretPassage(char secretPassage) {
+        this.secretPassage = secretPassage;
     }
 
     public void setCenterCell(BoardCell centerCell) {
@@ -25,10 +34,6 @@ public class Room {
 
     public void setLabelCell(BoardCell labelCell) {
         this.labelCell = labelCell;
-    }
-
-    public void addExitCell(BoardCell exitCell) {
-        exitCells.add(exitCell);
     }
 
     public String getName() {

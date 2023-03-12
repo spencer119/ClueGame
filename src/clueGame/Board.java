@@ -51,27 +51,31 @@ public class Board {
                 BoardCell cell = grid[i][j];
                 if (cell.isRoom() && !cell.isRoomCenter()) continue;
                 // Room center adjacencies
-                if (cell.isRoomCenter()) {
 
-                }
                 // Doorway adjacencies
                 if (cell.isDoorway()) {
                     switch (cell.getDoorDirection()) {
                         case UP:
-                            cell.addAdj(grid[i - 1][j]);
+                            cell.addAdj(roomMap.get(grid[i - 1][j].getChar()).getCenterCell());
+                            roomMap.get(grid[i - 1][j].getChar()).getCenterCell().addAdj(cell);
                             break;
                         case DOWN:
-                            cell.addAdj(grid[i + 1][j]);
+                            cell.addAdj(roomMap.get(grid[i + 1][j].getChar()).getCenterCell());
+                            roomMap.get(grid[i + 1][j].getChar()).getCenterCell().addAdj(cell);
                             break;
                         case LEFT:
-                            cell.addAdj(grid[i][j - 1]);
+                            cell.addAdj(roomMap.get(grid[i][j - 1].getChar()).getCenterCell());
+                            roomMap.get(grid[i][j - 1].getChar()).getCenterCell().addAdj(cell);
                             break;
                         case RIGHT:
-                            cell.addAdj(grid[i][j + 1]);
+                            cell.addAdj(roomMap.get(grid[i][j + 1].getChar()).getCenterCell());
+                            roomMap.get(grid[i][j + 1].getChar()).getCenterCell().addAdj(cell);
                             break;
 
                     }
                 }
+                if (cell.getSecretPassage() != ' ')
+                    roomMap.get(cell.getChar()).setSecretPassage(cell.getSecretPassage());
                 if (i > 0 && grid[i - 1][j].isWalkway()) {
                     cell.addAdj(grid[i - 1][j]);
                 }
@@ -85,6 +89,11 @@ public class Board {
                     cell.addAdj(grid[i][j + 1]);
                 }
             }
+        }
+        for (Room r : roomMap.values()) {
+            if (r.getName() == "Walkway") continue;
+            if (r.getSecretPassage() != ' ')
+                r.getCenterCell().addAdj(roomMap.get(r.getSecretPassage()).getCenterCell());
         }
     }
 
@@ -170,6 +179,9 @@ public class Board {
                     }
                     if (cell.isRoomCenter()) {
                         room.setCenterCell(cell);
+                    }
+                    if (cell.getSecretPassage() != ' ') {
+                        roomMap.get(cell.getSecretPassage()).setSecretPassage(cell.getChar());
                     }
                 }
             }

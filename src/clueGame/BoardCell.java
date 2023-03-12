@@ -103,6 +103,7 @@ public class BoardCell {
         return initial;
     }
 
+
     public Set<BoardCell> getAdjList() {
         return adjList;
     }

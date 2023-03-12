@@ -65,16 +65,16 @@ public class BoardAdjTargetTest {
         Set<BoardCell> testList = board.getAdjList(2, 0);
         assertEquals(2, testList.size());
         assertTrue(testList.contains(board.getCell(1, 0)));
-        assertTrue(testList.contains(board.getCell(2, 1)));
+        assertTrue(testList.contains(board.getCell(3, 3)));
 
         testList = board.getAdjList(17, 3);
         assertEquals(2, testList.size());
-        assertTrue(testList.contains(board.getCell(16, 3)));
+        assertTrue(testList.contains(board.getCell(19, 1)));
         assertTrue(testList.contains(board.getCell(17, 2)));
 
         testList = board.getAdjList(9, 7);
         assertEquals(4, testList.size());
-        assertTrue(testList.contains(board.getCell(9, 8)));
+        assertTrue(testList.contains(board.getCell(9, 10)));
         assertTrue(testList.contains(board.getCell(9, 6)));
         assertTrue(testList.contains(board.getCell(8, 7)));
         assertTrue(testList.contains(board.getCell(10, 7)));
@@ -82,7 +82,8 @@ public class BoardAdjTargetTest {
 
     @Test
     public void testAdjSecret() {
-        Set<BoardCell> testList = board.getAdjList(1, 5);
+        BoardCell testing = board.getCell(3, 3);
+        Set<BoardCell> testList = board.getAdjList(3, 3);
         assertTrue(testList.contains(board.getCell(21, 3)));
     }
 

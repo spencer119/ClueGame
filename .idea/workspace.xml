@@ -4,12 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5140ffcb-d3d1-4d69-a4a2-c250c33cb4fe" name="Changes" comment="">
+    <list default="true" id="5140ffcb-d3d1-4d69-a4a2-c250c33cb4fe" name="Changes" comment="walkway and doorways finished">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/classpath.index" beforeDir="false" afterPath="$PROJECT_DIR$/bin/classpath.index" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/clueGame/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clueGame/Board.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/clueGame/BoardCell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clueGame/BoardCell.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/clueGame/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clueGame/Room.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tests/BoardAdjTargetTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/BoardAdjTargetTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,7 +86,7 @@
       <recent name="C:\Users\spencer\fuckeclipse\ClueGame\src\tests" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.BoardAdjTargetTest">
+  <component name="RunManager" selected="JUnit.BoardAdjTargetTest.testAdjSecret">
     <configuration name="BoardAdjTargetTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ClueGame" />
       <extension name="coverage">
@@ -102,56 +102,59 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="BoardAdjTargetTest.testAdjDoorway" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ClueGame" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.BoardAdjTargetTest" />
+      <option name="METHOD_NAME" value="testAdjDoorway" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BoardAdjTargetTest.testAdjSecret" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ClueGame" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.BoardAdjTargetTest" />
+      <option name="METHOD_NAME" value="testAdjSecret" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BoardAdjTargetTest.testTargetsRoomNoSecret" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ClueGame" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.BoardAdjTargetTest" />
+      <option name="METHOD_NAME" value="testTargetsRoomNoSecret" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="BoardTestExp" type="JUnit" factoryName="JUnit">
       <module name="ClueGame" />
       <option name="PACKAGE_NAME" value="tests" />
       <option name="MAIN_CLASS_NAME" value="tests.BoardTestsExp" />
       <option name="METHOD_NAME" value="" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ExceptionTests306" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ClueGame" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.ExceptionTests306" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="FileInitTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ClueGame" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.FileInitTests" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="FileInitTests306" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ClueGame" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.FileInitTests306" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -175,19 +178,19 @@
     </configuration>
     <list>
       <item itemvalue="JUnit.BoardTestExp" />
+      <item itemvalue="JUnit.BoardAdjTargetTest.testAdjDoorway" />
+      <item itemvalue="JUnit.BoardAdjTargetTest.testAdjSecret" />
+      <item itemvalue="JUnit.BoardAdjTargetTest.testTargetsRoomNoSecret" />
       <item itemvalue="JUnit.BoardAdjTargetTest" />
-      <item itemvalue="JUnit.FileInitTests306" />
-      <item itemvalue="JUnit.ExceptionTests306" />
-      <item itemvalue="JUnit.FileInitTests" />
       <item itemvalue="JUnit.FileInitTests.testRooms" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.BoardAdjTargetTest.testAdjSecret" />
         <item itemvalue="JUnit.BoardAdjTargetTest" />
+        <item itemvalue="JUnit.BoardAdjTargetTest.testTargetsRoomNoSecret" />
+        <item itemvalue="JUnit.BoardAdjTargetTest.testAdjDoorway" />
         <item itemvalue="JUnit.FileInitTests.testRooms" />
-        <item itemvalue="JUnit.FileInitTests" />
-        <item itemvalue="JUnit.FileInitTests306" />
-        <item itemvalue="JUnit.ExceptionTests306" />
       </list>
     </recent_temporary>
   </component>
@@ -265,7 +268,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678232980877</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="walkway and doorways finished">
+      <created>1678584373760</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1678584373760</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -281,15 +291,21 @@
     <MESSAGE value="initilize written" />
     <MESSAGE value="all tests pass" />
     <MESSAGE value="initilize tests pass" />
-    <option name="LAST_COMMIT_MESSAGE" value="" />
+    <MESSAGE value="walkway and doorways finished" />
+    <option name="LAST_COMMIT_MESSAGE" value="walkway and doorways finished" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/clueGame/Board.java</url>
-          <line>38</line>
-          <option name="timeStamp" value="13" />
+          <url>file://$PROJECT_DIR$/src/tests/BoardAdjTargetTest.java</url>
+          <line>72</line>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/tests/BoardAdjTargetTest.java</url>
+          <line>85</line>
+          <option name="timeStamp" value="16" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
