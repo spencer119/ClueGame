@@ -77,7 +77,7 @@ public class FileInitTests {
     @Test
     public void testBoardDimensions() {
         assertEquals(NUM_ROWS, board.getNumRows());
-        assertEquals(NUM_COLUMNS, board.getNumColumns());
+        assertEquals(NUM_COLUMNS, board.getNumCols());
     }
 
     @Test
@@ -100,7 +100,7 @@ public class FileInitTests {
     public void testNumberOfDoorways() {
         int numDoors = 0;
         for (int row = 0; row < board.getNumRows(); row++)
-            for (int col = 0; col < board.getNumColumns(); col++) {
+            for (int col = 0; col < board.getNumCols(); col++) {
                 BoardCell cell = board.getCell(row, col);
                 if (cell.isDoorway())
                     numDoors++;

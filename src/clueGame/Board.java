@@ -15,7 +15,7 @@ import java.util.*;
 public class Board {
     private BoardCell grid[][];
     private int numRows;
-    private int numColumns;
+    private int numCols;
     private String layoutConfigFile;
     private String setupConfigFile;
     private Map<Character, Room> roomMap = new HashMap<>();
@@ -26,6 +26,7 @@ public class Board {
 
     private Board() {
         super();
+
     }
 
     /**
@@ -35,8 +36,31 @@ public class Board {
         try {
             loadSetupConfig();
             loadLayoutConfig();
+            setupAdj();
         } catch (BadConfigFormatException e) {
             System.out.println(e);
+        }
+    }
+
+    private void setupAdj() {
+        targets = new HashSet<BoardCell>();
+        visited = new HashSet<BoardCell>();
+
+        for (int i = 0; i < numRows; i++) {
+            for (int j = 0; j < numCols; j++) {
+                if (i > 0) {
+                    grid[i][j].addAdj(grid[i - 1][j]);
+                }
+                if (i < numRows - 1) {
+                    grid[i][j].addAdj(grid[i + 1][j]);
+                }
+                if (j > 0) {
+                    grid[i][j].addAdj(grid[i][j - 1]);
+                }
+                if (j < numCols - 1) {
+                    grid[i][j].addAdj(grid[i][j + 1]);
+                }
+            }
         }
     }
 
@@ -84,15 +108,15 @@ public class Board {
                 rows.add(new ArrayList<String>(Arrays.asList(line.split(","))));
             }
 
-            numColumns = rows.get(0).size();
+            numCols = rows.get(0).size();
             numRows = rows.size();
             setupBoard(rows);
 
             // check that all rooms have a label and center cell
-            for (Room room : roomMap.values()) {
-                if (room.getLabelCell() == null || room.getCenterCell() == null)
-                    throw new BadConfigFormatException();
-            }
+//            for (Room room : roomMap.values()) {
+//                if (room.getLabelCell() == null || room.getCenterCell() == null)
+//                    throw new BadConfigFormatException();
+//            }
             file.close();
         } catch (FileNotFoundException | ArrayIndexOutOfBoundsException e) {
             throw new BadConfigFormatException();
@@ -110,9 +134,9 @@ public class Board {
      */
     private void setupBoard(ArrayList<ArrayList<String>> rows) throws BadConfigFormatException {
         try {
-            grid = new BoardCell[numRows][numColumns];
+            grid = new BoardCell[numRows][numCols];
             for (int i = 0; i < numRows; i++) {
-                for (int j = 0; j < numColumns; j++) {
+                for (int j = 0; j < numCols; j++) {
                     String cellStr = rows.get(i).get(j);
                     BoardCell cell = new BoardCell(cellStr, i, j);
                     grid[i][j] = cell;
@@ -156,9 +180,9 @@ public class Board {
         return numRows;
     }
 
-    public int getNumColumns() {
+    public int getNumCols() {
 
-        return numColumns;
+        return numCols;
     }
 
     public BoardCell getCell(int i, int j) {
@@ -176,6 +200,19 @@ public class Board {
     }
 
     public void calcTargets(BoardCell startCell, int pathLength) {
+        if (pathLength == 0 || startCell.isRoom()) {
+            if (!startCell.getOccupied()) {
+                targets.add(startCell);
+            }
+            return;
+        }
+        calcVisited.add(startCell);
+        for (BoardCell adj : startCell.getAdjList()) {
+            if (!visited.contains(adj) && !calcVisited.contains(adj) && !adj.getOccupied()) {
+                calcTargets(adj, pathLength - 1);
+                calcVisited.remove(adj);
+            }
+        }
     }
 
     /**
