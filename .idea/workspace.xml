@@ -6,9 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="5140ffcb-d3d1-4d69-a4a2-c250c33cb4fe" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/classpath.index" beforeDir="false" afterPath="$PROJECT_DIR$/bin/classpath.index" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/clueGame/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clueGame/Board.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tests/FileInitTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/FileInitTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tests/FileInitTests306.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/FileInitTests306.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/clueGame/BoardCell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clueGame/BoardCell.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/clueGame/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clueGame/Room.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,7 +76,7 @@
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "settings.editor.selected.configurable": "actions.on.save",
     "show.migrate.to.gradle.popup": "false",
     "vue.rearranger.settings.migration": "true"
   }
@@ -287,38 +288,8 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/clueGame/Board.java</url>
-          <line>37</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/clueGame/Board.java</url>
-          <line>151</line>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/clueGame/Board.java</url>
-          <line>121</line>
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/clueGame/Board.java</url>
-          <line>89</line>
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/clueGame/Board.java</url>
-          <line>40</line>
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/clueGame/Board.java</url>
-          <line>117</line>
-          <option name="timeStamp" value="11" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/clueGame/Board.java</url>
-          <line>152</line>
-          <option name="timeStamp" value="12" />
+          <line>38</line>
+          <option name="timeStamp" value="13" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

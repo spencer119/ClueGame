@@ -16,6 +16,7 @@ public class BoardCell {
     private char initial;
 
     private DoorDirection doorDirection;
+    private char doorRoom;
 
     private Boolean roomLabel;
     private Boolean roomCenter;
@@ -67,6 +68,9 @@ public class BoardCell {
         }
     }
 
+    public boolean isWalkway() {
+        return (initial == 'W');
+    }
 
     /**
      * @param adj the adj to add to adjList

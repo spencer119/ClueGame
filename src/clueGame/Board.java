@@ -48,17 +48,41 @@ public class Board {
 
         for (int i = 0; i < numRows; i++) {
             for (int j = 0; j < numCols; j++) {
-                if (i > 0) {
-                    grid[i][j].addAdj(grid[i - 1][j]);
+                BoardCell cell = grid[i][j];
+                if (cell.isRoom() && !cell.isRoomCenter()) continue;
+                // Room center adjacencies
+                if (cell.isRoomCenter()) {
+
                 }
-                if (i < numRows - 1) {
-                    grid[i][j].addAdj(grid[i + 1][j]);
+                // Doorway adjacencies
+                if (cell.isDoorway()) {
+                    switch (cell.getDoorDirection()) {
+                        case UP:
+                            cell.addAdj(grid[i - 1][j]);
+                            break;
+                        case DOWN:
+                            cell.addAdj(grid[i + 1][j]);
+                            break;
+                        case LEFT:
+                            cell.addAdj(grid[i][j - 1]);
+                            break;
+                        case RIGHT:
+                            cell.addAdj(grid[i][j + 1]);
+                            break;
+
+                    }
                 }
-                if (j > 0) {
-                    grid[i][j].addAdj(grid[i][j - 1]);
+                if (i > 0 && grid[i - 1][j].isWalkway()) {
+                    cell.addAdj(grid[i - 1][j]);
                 }
-                if (j < numCols - 1) {
-                    grid[i][j].addAdj(grid[i][j + 1]);
+                if (i < numRows - 1 && grid[i + 1][j].isWalkway()) {
+                    cell.addAdj(grid[i + 1][j]);
+                }
+                if (j > 0 && grid[i][j - 1].isWalkway()) {
+                    cell.addAdj(grid[i][j - 1]);
+                }
+                if (j < numCols - 1 && grid[i][j + 1].isWalkway()) {
+                    cell.addAdj(grid[i][j + 1]);
                 }
             }
         }

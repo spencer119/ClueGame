@@ -1,5 +1,8 @@
 package clueGame;
 
+import java.util.HashSet;
+import java.util.Set;
+
 /**
  * Room class
  *
@@ -10,6 +13,7 @@ public class Room {
     private String name;
     private BoardCell centerCell;
     private BoardCell labelCell;
+    private Set<BoardCell> exitCells = new HashSet<>();
 
     public Room(String name) {
         this.name = name;
@@ -23,6 +27,9 @@ public class Room {
         this.labelCell = labelCell;
     }
 
+    public void addExitCell(BoardCell exitCell) {
+        exitCells.add(exitCell);
+    }
 
     public String getName() {
         return name;
