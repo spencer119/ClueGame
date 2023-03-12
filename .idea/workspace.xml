@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5140ffcb-d3d1-4d69-a4a2-c250c33cb4fe" name="Changes" comment="walkway and doorways finished">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/clueGame/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clueGame/Board.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/clueGame/BoardCell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clueGame/BoardCell.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/clueGame/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clueGame/Room.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tests/BoardAdjTargetTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/BoardAdjTargetTest.java" afterDir="false" />
-    </list>
+    <list default="true" id="5140ffcb-d3d1-4d69-a4a2-c250c33cb4fe" name="Changes" comment="all walkway tests completed" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -86,7 +80,7 @@
       <recent name="C:\Users\spencer\fuckeclipse\ClueGame\src\tests" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.BoardAdjTargetTest.testAdjSecret">
+  <component name="RunManager" selected="JUnit.BoardAdjTargetTest">
     <configuration name="BoardAdjTargetTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ClueGame" />
       <extension name="coverage">
@@ -186,8 +180,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.BoardAdjTargetTest.testAdjSecret" />
         <item itemvalue="JUnit.BoardAdjTargetTest" />
+        <item itemvalue="JUnit.BoardAdjTargetTest.testAdjSecret" />
         <item itemvalue="JUnit.BoardAdjTargetTest.testTargetsRoomNoSecret" />
         <item itemvalue="JUnit.BoardAdjTargetTest.testAdjDoorway" />
         <item itemvalue="JUnit.FileInitTests.testRooms" />
@@ -275,7 +269,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678584373760</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="all walkway tests completed">
+      <created>1678595816658</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1678595816658</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -292,7 +293,8 @@
     <MESSAGE value="all tests pass" />
     <MESSAGE value="initilize tests pass" />
     <MESSAGE value="walkway and doorways finished" />
-    <option name="LAST_COMMIT_MESSAGE" value="walkway and doorways finished" />
+    <MESSAGE value="all walkway tests completed" />
+    <option name="LAST_COMMIT_MESSAGE" value="all walkway tests completed" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
