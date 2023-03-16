@@ -4,82 +4,35 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5140ffcb-d3d1-4d69-a4a2-c250c33cb4fe" name="Changes" comment="all walkway tests completed" />
+    <list default="true" id="eab8da27-7ab5-4896-a4cc-6cac7e9ed2dd" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/ClueLayout.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/ClueLayout.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tests/BoardAdjTargetTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/BoardAdjTargetTest.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Class" />
-      </list>
-    </option>
-  </component>
-  <component name="FormatOnSaveOptions">
-    <option name="myRunOnSave" value="true" />
-  </component>
-  <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="GitHubPullRequestSearchHistory">{
-  &quot;lastFilter&quot;: {
-    &quot;state&quot;: &quot;OPEN&quot;
-  }
-}</component>
-  <component name="GithubPullRequestsUISettings">
-    <option name="selectedUrlAndAccountId">
-      <UrlAndAccount>
-        <option name="accountId" value="3aad76eb-9239-456e-b515-f6a8ad014a2f" />
-        <option name="url" value="https://github.com/spencer119/ClueGame.git" />
-      </UrlAndAccount>
-    </option>
-  </component>
   <component name="MacroExpansionManager">
-    <option name="directoryName" value="j1cf5hx8" />
+    <option name="directoryName" value="j3odnhcr" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectId" id="2MWzsiCG7HfRzeB53jL9NDL2mjn" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
-  </component>
-  <component name="ProjectViewState">
-    <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Downloaded.Files.Path.Enabled": "false",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
     "dart.analysis.tool.window.visible": "false",
-    "last_opened_file_path": "C:/Users/spencer/fuckeclipse/ClueGame/src/tests",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "actions.on.save",
-    "show.migrate.to.gradle.popup": "false",
-    "vue.rearranger.settings.migration": "true"
+    "node.js.selected.package.tslint": "(autodetect)"
   }
 }]]></component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\spencer\fuckeclipse\ClueGame\src\tests" />
-    </key>
-  </component>
   <component name="RunManager" selected="JUnit.BoardAdjTargetTest">
     <configuration name="BoardAdjTargetTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ClueGame" />
@@ -92,22 +45,6 @@
       <option name="PACKAGE_NAME" value="tests" />
       <option name="MAIN_CLASS_NAME" value="tests.BoardAdjTargetTest" />
       <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="BoardAdjTargetTest.testAdjDoorway" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ClueGame" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.BoardAdjTargetTest" />
-      <option name="METHOD_NAME" value="testAdjDoorway" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -128,7 +65,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BoardAdjTargetTest.testTargetsRoomNoSecret" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="BoardAdjTargetTest.testTargetsAtDoor" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ClueGame" />
       <extension name="coverage">
         <pattern>
@@ -138,23 +75,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="tests" />
       <option name="MAIN_CLASS_NAME" value="tests.BoardAdjTargetTest" />
-      <option name="METHOD_NAME" value="testTargetsRoomNoSecret" />
+      <option name="METHOD_NAME" value="testTargetsAtDoor" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BoardTestExp" type="JUnit" factoryName="JUnit">
-      <module name="ClueGame" />
-      <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.BoardTestsExp" />
-      <option name="METHOD_NAME" value="" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="FileInitTests.testRooms" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="BoardAdjTargetTest.testTargetsRoomSecret" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ClueGame" />
       <extension name="coverage">
         <pattern>
@@ -163,151 +90,48 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.FileInitTests" />
-      <option name="METHOD_NAME" value="testRooms" />
+      <option name="MAIN_CLASS_NAME" value="tests.BoardAdjTargetTest" />
+      <option name="METHOD_NAME" value="testTargetsRoomSecret" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.BoardTestExp" />
-      <item itemvalue="JUnit.BoardAdjTargetTest.testAdjDoorway" />
       <item itemvalue="JUnit.BoardAdjTargetTest.testAdjSecret" />
-      <item itemvalue="JUnit.BoardAdjTargetTest.testTargetsRoomNoSecret" />
+      <item itemvalue="JUnit.BoardAdjTargetTest.testTargetsAtDoor" />
+      <item itemvalue="JUnit.BoardAdjTargetTest.testTargetsRoomSecret" />
       <item itemvalue="JUnit.BoardAdjTargetTest" />
-      <item itemvalue="JUnit.FileInitTests.testRooms" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.BoardAdjTargetTest" />
+        <item itemvalue="JUnit.BoardAdjTargetTest.testTargetsAtDoor" />
+        <item itemvalue="JUnit.BoardAdjTargetTest.testTargetsRoomSecret" />
         <item itemvalue="JUnit.BoardAdjTargetTest.testAdjSecret" />
-        <item itemvalue="JUnit.BoardAdjTargetTest.testTargetsRoomNoSecret" />
-        <item itemvalue="JUnit.BoardAdjTargetTest.testAdjDoorway" />
-        <item itemvalue="JUnit.FileInitTests.testRooms" />
       </list>
     </recent_temporary>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
-    <task active="true" id="Default" summary="Default task">
-      <changelist id="5140ffcb-d3d1-4d69-a4a2-c250c33cb4fe" name="Changes" comment="" />
-      <created>1677898339447</created>
-      <option name="number" value="Default" />
-      <option name="presentableId" value="Default" />
-      <updated>1677898339447</updated>
-      <workItem from="1677898340535" duration="227000" />
-      <workItem from="1677898683042" duration="4183000" />
-      <workItem from="1677903832559" duration="2321000" />
-      <workItem from="1677906193361" duration="848000" />
-      <workItem from="1678175229320" duration="181000" />
-      <workItem from="1678222900757" duration="13802000" />
-      <workItem from="1678565397630" duration="619000" />
-      <workItem from="1678573201057" duration="1248000" />
-      <workItem from="1678578798813" duration="1406000" />
-    </task>
-    <task id="LOCAL-00001" summary="starting 14a-1">
-      <created>1677898751164</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1677898751164</updated>
-    </task>
-    <task id="LOCAL-00002" summary="adj tests passed">
-      <created>1677900434129</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1677900434129</updated>
-    </task>
-    <task id="LOCAL-00003" summary="all BoardTestExp tests pass">
-      <created>1677901974544</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1677901974544</updated>
-    </task>
-    <task id="LOCAL-00004" summary="added gitlog for 14a-1">
-      <created>1677902313396</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1677902313396</updated>
-    </task>
-    <task id="LOCAL-00005" summary="FileInitTests failing tests done">
-      <created>1677906801720</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1677906801720</updated>
-    </task>
-    <task id="LOCAL-00006" summary="initilize written">
-      <created>1678228525123</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1678228525123</updated>
-    </task>
-    <task id="LOCAL-00007" summary="initilize tests pass">
-      <created>1678229365312</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1678229365312</updated>
-    </task>
-    <task id="LOCAL-00008" summary="initilize tests pass">
-      <created>1678232980877</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1678232980877</updated>
-    </task>
-    <task id="LOCAL-00009" summary="walkway and doorways finished">
-      <created>1678584373760</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1678584373760</updated>
-    </task>
-    <task id="LOCAL-00010" summary="all walkway tests completed">
-      <created>1678595816658</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1678595816658</updated>
-    </task>
-    <option name="localTasksCounter" value="11" />
     <servers />
-  </component>
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
-  </component>
-  <component name="VcsManagerConfiguration">
-    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="starting 14a-1" />
-    <MESSAGE value="adj tests passed" />
-    <MESSAGE value="all BoardTestExp tests pass" />
-    <MESSAGE value="added gitlog for 14a-1" />
-    <MESSAGE value="FileInitTests failing tests done" />
-    <MESSAGE value="initilize written" />
-    <MESSAGE value="all tests pass" />
-    <MESSAGE value="initilize tests pass" />
-    <MESSAGE value="walkway and doorways finished" />
-    <MESSAGE value="all walkway tests completed" />
-    <option name="LAST_COMMIT_MESSAGE" value="all walkway tests completed" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/tests/BoardAdjTargetTest.java</url>
-          <line>72</line>
-          <option name="timeStamp" value="14" />
+          <line>85</line>
+          <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/tests/BoardAdjTargetTest.java</url>
-          <line>85</line>
-          <option name="timeStamp" value="16" />
+          <line>125</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/tests/BoardAdjTargetTest.java</url>
+          <line>115</line>
+          <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -316,10 +140,6 @@
         <PinnedItemInfo parentTag="clueGame.Board" memberName="roomMap" />
       </pinned-members>
     </pin-to-top-manager>
-  </component>
-  <component name="XSLT-Support.FileAssociations.UIState">
-    <expand />
-    <select />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/ClueGame$FileInitTests.ic" NAME="FileInitTests Coverage Results" MODIFIED="1678232119883" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

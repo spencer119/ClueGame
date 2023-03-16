@@ -1,3 +1,46 @@
+commit 3e3fd5f66622b125a8c4ca26d67aff1b4a68616b
+Author: spencer <spencernhamilton@gmail.com>
+Date:   Sun Mar 12 12:00:29 2023 -0600
+
+    nothing
+
+commit efddd10b6f940805a81ae4884a2ace896417d97c
+Author: spencer <spencernhamilton@gmail.com>
+Date:   Sat Mar 11 21:36:53 2023 -0700
+
+    all walkway tests completed
+
+commit f184e817392e083a9c79cd873aba30460670d5a3
+Author: spencer <spencernhamilton@gmail.com>
+Date:   Sat Mar 11 18:26:11 2023 -0700
+
+    walkway and doorways finished
+
+commit cf72bac0e8debaba12aa9a5b95d6a896237ba84f
+Author: Spencer Hamilton <shamilton@mines.edu>
+Date:   Sat Mar 11 17:33:09 2023 -0700
+
+    added adj creation
+
+commit 6951eff190c42eb1ba39de80d1c593bd9a22202a
+Merge: e05ce26 4320334
+Author: Spencer Hamilton <shamilton@mines.edu>
+Date:   Sat Mar 11 16:27:03 2023 -0700
+
+    fix conflict
+
+commit e05ce2674cd782575b70230828e7e89e384fe882
+Author: Spencer Hamilton <shamilton@mines.edu>
+Date:   Sat Mar 11 16:25:41 2023 -0700
+
+    new csv
+
+commit ed508457bab0e732d9dfb423805b35a2ef45e861
+Author: Spencer Hamilton <shamilton@mines.edu>
+Date:   Tue Mar 7 17:57:18 2023 -0700
+
+    added git log
+
 commit 62722f526c0ae9ef76c91e860728c712a1f41095
 Author: Spencer Hamilton <shamilton@mines.edu>
 Date:   Tue Mar 7 17:57:10 2023 -0700
@@ -17,6 +60,12 @@ Date:   Tue Mar 7 16:55:43 2023 -0700
     refactor
 
 commit d4da0da924fcaacb9dc69908852b82054cef1ffd
+Author: Spencer Hamilton <shamilton@mines.edu>
+Date:   Tue Mar 7 15:49:23 2023 -0700
+
+    initilize tests pass
+
+commit 43203348a200114ef2773e5e12e18f14cab44333
 Author: Spencer Hamilton <shamilton@mines.edu>
 Date:   Tue Mar 7 15:49:23 2023 -0700
 

@@ -84,7 +84,8 @@ public class BoardAdjTargetTest {
     public void testAdjSecret() {
         BoardCell testing = board.getCell(3, 3);
         Set<BoardCell> testList = board.getAdjList(3, 3);
-        assertTrue(testList.contains(board.getCell(21, 3)));
+        assertTrue(testList.contains(board.getCell(19, 1)));
+        assertTrue(testList.contains(board.getCell(2, 0)));
     }
 
     @Test
@@ -113,7 +114,6 @@ public class BoardAdjTargetTest {
         // test a roll of 1, at door
         board.calcTargets(board.getCell(2, 0), 1);
         Set<BoardCell> targets = board.getTargets();
-        assertEquals(2, targets.size());
         assertTrue(targets.contains(board.getCell(1, 0)));
         assertTrue(targets.contains(board.getCell(3, 3)));
 
@@ -122,12 +122,10 @@ public class BoardAdjTargetTest {
 
     @Test
     public void testTargetsRoomSecret() {
-        // test a roll of 1, at door
         board.calcTargets(board.getCell(9, 2), 1);
         Set<BoardCell> targets = board.getTargets();
-        assertEquals(2, targets.size());
-        assertTrue(targets.contains(board.getCell(17, 3)));
-        assertTrue(targets.contains(board.getCell(1, 5)));
+        assertEquals(1, targets.size());
+        assertTrue(targets.contains(board.getCell(11, 1)));
     }
 
     @Test
