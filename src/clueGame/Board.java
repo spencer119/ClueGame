@@ -22,7 +22,7 @@ public class Board {
     private static Board theInstance = new Board();
     private Set<BoardCell> targets = new HashSet<BoardCell>();
     private Set<BoardCell> visited = new HashSet<BoardCell>();
-    private Set<BoardCell> calcVisited = new HashSet<BoardCell>(); // Temporary visited list for calculating targets
+
 
     private Board() {
         super();
@@ -55,23 +55,22 @@ public class Board {
                 // Doorway adjacencies
                 if (cell.isDoorway()) {
                     switch (cell.getDoorDirection()) {
-                        case UP:
+                        case UP -> {
                             cell.addAdj(roomMap.get(grid[i - 1][j].getChar()).getCenterCell());
                             roomMap.get(grid[i - 1][j].getChar()).getCenterCell().addAdj(cell);
-                            break;
-                        case DOWN:
+                        }
+                        case DOWN -> {
                             cell.addAdj(roomMap.get(grid[i + 1][j].getChar()).getCenterCell());
                             roomMap.get(grid[i + 1][j].getChar()).getCenterCell().addAdj(cell);
-                            break;
-                        case LEFT:
+                        }
+                        case LEFT -> {
                             cell.addAdj(roomMap.get(grid[i][j - 1].getChar()).getCenterCell());
                             roomMap.get(grid[i][j - 1].getChar()).getCenterCell().addAdj(cell);
-                            break;
-                        case RIGHT:
+                        }
+                        case RIGHT -> {
                             cell.addAdj(roomMap.get(grid[i][j + 1].getChar()).getCenterCell());
                             roomMap.get(grid[i][j + 1].getChar()).getCenterCell().addAdj(cell);
-                            break;
-
+                        }
                     }
                 }
                 if (cell.getSecretPassage() != ' ')

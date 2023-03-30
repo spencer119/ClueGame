@@ -43,27 +43,13 @@ public class BoardCell {
         } else {
             initial = charLabel.charAt(0);
             switch (charLabel.charAt(1)) {
-                case '>':
-                    doorDirection = DoorDirection.RIGHT;
-                    break;
-                case '<':
-                    doorDirection = DoorDirection.LEFT;
-                    break;
-                case '^':
-                    doorDirection = DoorDirection.UP;
-                    break;
-                case 'v':
-                    doorDirection = DoorDirection.DOWN;
-                    break;
-                case '#':
-                    roomLabel = true;
-                    break;
-                case '*':
-                    roomCenter = true;
-                    break;
-                default:
-                    secretPassage = charLabel.charAt(1);
-                    break;
+                case '>' -> doorDirection = DoorDirection.RIGHT;
+                case '<' -> doorDirection = DoorDirection.LEFT;
+                case '^' -> doorDirection = DoorDirection.UP;
+                case 'v' -> doorDirection = DoorDirection.DOWN;
+                case '#' -> roomLabel = true;
+                case '*' -> roomCenter = true;
+                default -> secretPassage = charLabel.charAt(1);
             }
         }
     }
