@@ -18,7 +18,7 @@ public class Board {
     private int numCols;
     private String layoutConfigFile;
     private String setupConfigFile;
-    private Map<Character, Room> roomMap = new HashMap<>();
+    private final Map<Character, Room> roomMap = new HashMap<>();
     private static Board theInstance = new Board();
     private Set<BoardCell> targets = new HashSet<BoardCell>();
     private Set<BoardCell> visited = new HashSet<BoardCell>();

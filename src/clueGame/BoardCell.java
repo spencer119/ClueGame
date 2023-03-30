@@ -9,11 +9,11 @@ import java.util.Set;
  * @author spencer
  */
 public class BoardCell {
-    private int row;
-    private int col;
+    private final int row;
+    private final int col;
     private boolean isOccupied;
     private boolean isRoom;
-    private char initial;
+    private final char initial;
 
     private DoorDirection doorDirection;
     private char doorRoom;
@@ -22,7 +22,7 @@ public class BoardCell {
     private Boolean roomCenter;
 
     private char secretPassage;
-    private Set<BoardCell> adjList = new HashSet<>(); // List of adjacent cells
+    private final Set<BoardCell> adjList = new HashSet<>(); // List of adjacent cells
 
     /**
      * @param charLabel the label of the cell
