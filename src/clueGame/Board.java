@@ -42,6 +42,9 @@ public class Board {
         }
     }
 
+    /**
+     * Create the adjacency list for each cell
+     */
     private void setupAdj() {
         targets = new HashSet<BoardCell>();
         visited = new HashSet<BoardCell>();
@@ -49,13 +52,11 @@ public class Board {
         for (int i = 0; i < numRows; i++) {
             for (int j = 0; j < numCols; j++) {
                 BoardCell cell = grid[i][j];
-                if (cell.isRoom() && !cell.isRoomCenter()) continue;
-                // Room center adjacencies
-
+                if (cell.isRoom() && !cell.isRoomCenter()) continue; // Ignore all room spots that aren't the center
                 // Doorway adjacencies
                 if (cell.isDoorway()) {
-                    switch (cell.getDoorDirection()) {
-                        case UP -> {
+                    switch (cell.getDoorDirection()) { // Map each doorway to the center of the room
+                        case UP -> { // Use the direction to find the room cell adjacent to the door
                             cell.addAdj(roomMap.get(grid[i - 1][j].getChar()).getCenterCell());
                             roomMap.get(grid[i - 1][j].getChar()).getCenterCell().addAdj(cell);
                         }
@@ -73,7 +74,7 @@ public class Board {
                         }
                     }
                 }
-                if (cell.getSecretPassage() != ' ')
+                if (cell.getSecretPassage() != ' ') // Map secret passages to the center of the room
                     roomMap.get(cell.getChar()).setSecretPassage(cell.getSecretPassage());
                 if (i > 0 && grid[i - 1][j].isWalkway()) {
                     cell.addAdj(grid[i - 1][j]);
@@ -89,10 +90,10 @@ public class Board {
                 }
             }
         }
-        for (Room r : roomMap.values()) {
+        for (Room r : roomMap.values()) { // Map secret passages if it exists
             if (r.getName() == "Walkway") continue;
             if (r.getSecretPassage() != ' ')
-                r.getCenterCell().addAdj(roomMap.get(r.getSecretPassage()).getCenterCell());
+                r.getCenterCell().addAdj(roomMap.get(r.getSecretPassage()).getCenterCell()); // Add the ends of SP to adjList
         }
     }
 
@@ -106,10 +107,11 @@ public class Board {
             Scanner scan = new Scanner(file);
             while (scan.hasNextLine()) {
                 String line = scan.nextLine();
-                if (line.startsWith("//")) {
+                if (line.startsWith("//")) { // Ignore comments
                     continue;
                 } else {
                     String[] split = line.split(", ");
+                    // Check for bad config format
                     if (split.length != 3 || split[2].length() != 1) throw new BadConfigFormatException();
                     else if (!split[0].equals("Room") && !split[0].equals("Space"))
                         throw new BadConfigFormatException();
@@ -118,7 +120,6 @@ public class Board {
             }
             file.close();
         } catch (IOException e) {
-            System.out.println(e);
             throw new BadConfigFormatException();
         }
 
@@ -135,20 +136,13 @@ public class Board {
             ArrayList<ArrayList<String>> rows = new ArrayList<>();
             while (scan.hasNextLine()) {
                 String line = scan.nextLine();
-                for (String s : line.split(","))
+                for (String s : line.split(",")) // Check for bad config format
                     if (s.length() == 0 || s.length() > 2) throw new BadConfigFormatException();
-                rows.add(new ArrayList<String>(Arrays.asList(line.split(","))));
+                rows.add(new ArrayList<String>(Arrays.asList(line.split(",")))); // Add each line, split by commas, as an array
             }
-
             numCols = rows.get(0).size();
             numRows = rows.size();
-            setupBoard(rows);
-
-            // check that all rooms have a label and center cell
-//            for (Room room : roomMap.values()) {
-//                if (room.getLabelCell() == null || room.getCenterCell() == null)
-//                    throw new BadConfigFormatException();
-//            }
+            setupBoard(rows); // continue board setup
             file.close();
         } catch (FileNotFoundException | ArrayIndexOutOfBoundsException e) {
             throw new BadConfigFormatException();
@@ -172,6 +166,7 @@ public class Board {
                     String cellStr = rows.get(i).get(j);
                     BoardCell cell = new BoardCell(cellStr, i, j);
                     grid[i][j] = cell;
+                    // Assign room labels, centers, and secret passages
                     Room room = roomMap.get(cell.getChar());
                     if (cell.isLabel()) {
                         room.setLabelCell(cell);
@@ -189,6 +184,40 @@ public class Board {
         }
     }
 
+    /**
+     * Calculate a set of possible targets
+     *
+     * @param startCell  starting cell
+     * @param pathLength number of steps
+     */
+    public void calcTargets(BoardCell startCell, int pathLength) {
+        visited.clear(); // Clear previous visited or target lists
+        targets.clear();
+        calcTargetsHelper(startCell, pathLength); // Call recursive function
+    }
+
+    /**
+     * Recursive function to calculate targets
+     *
+     * @param cell       current cell of the recursion
+     * @param pathLength number of steps left
+     */
+    public void calcTargetsHelper(BoardCell cell, int pathLength) {
+        if ((pathLength == 0 || cell.isRoom()) && !visited.isEmpty()) {
+            if (!cell.getOccupied()) {
+                targets.add(cell);
+                visited.remove(cell);
+            }
+            return;
+        }
+        visited.add(cell);
+        for (BoardCell adj : cell.getAdjList()) {
+            if (!visited.contains(adj) && !adj.getOccupied()) {
+                calcTargetsHelper(adj, pathLength - 1);
+                visited.remove(adj);
+            }
+        }
+    }
 
     /**
      * Set config file paths
@@ -204,6 +233,8 @@ public class Board {
     public static Board getInstance() {
         return theInstance;
     }
+
+    // Getters
 
     public Room getRoom(char c) {
 
@@ -234,34 +265,7 @@ public class Board {
         return grid[i][j].getAdjList();
     }
 
-    public void calcTargets(BoardCell startCell, int pathLength) {
-        visited.clear();
-        targets.clear();
-        calcTargetsHelper(startCell, pathLength);
-    }
-
-    public void calcTargetsHelper(BoardCell startCell, int pathLength) {
-        if ((pathLength == 0 || startCell.isRoom()) && !visited.isEmpty()) {
-            if (!startCell.getOccupied()) {
-                targets.add(startCell);
-                visited.remove(startCell);
-            }
-            return;
-        }
-        visited.add(startCell);
-        for (BoardCell adj : startCell.getAdjList()) {
-            if (!visited.contains(adj) && !adj.getOccupied()) {
-                calcTargetsHelper(adj, pathLength - 1);
-                visited.remove(adj);
-            }
-        }
-    }
-
-    /**
-     * @return Set of cells calculated from calcTargets()
-     */
     public Set<BoardCell> getTargets() {
-
         return targets;
     }
 }
