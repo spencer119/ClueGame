@@ -238,7 +238,6 @@ public class Board {
     public void calcTargets(BoardCell startCell, int pathLength) {
         visited.clear();
         targets.clear();
-        calcVisited.clear();
         calcTargetsHelper(startCell, pathLength);
     }
 
@@ -247,16 +246,13 @@ public class Board {
             if (!startCell.getOccupied()) {
                 targets.add(startCell);
                 visited.remove(startCell);
-                calcVisited.remove(startCell);
             }
             return;
         }
         visited.add(startCell);
-        calcVisited.add(startCell);
         for (BoardCell adj : startCell.getAdjList()) {
             if (!visited.contains(adj) && !adj.getOccupied()) {
                 calcTargetsHelper(adj, pathLength - 1);
-                calcVisited.remove(adj);
                 visited.remove(adj);
             }
         }
