@@ -13,7 +13,7 @@ import java.util.*;
  * @author Spencer Hamilton
  */
 public class Board {
-    private BoardCell grid[][];
+    private BoardCell[][] grid;
     private int numRows;
     private int numCols;
     private String layoutConfigFile;
@@ -38,7 +38,7 @@ public class Board {
             loadLayoutConfig();
             setupAdj();
         } catch (BadConfigFormatException e) {
-            System.out.println(e);
+            System.out.println("Bad config file format.");
         }
     }
 
@@ -53,7 +53,7 @@ public class Board {
             for (int j = 0; j < numCols; j++) {
                 BoardCell cell = grid[i][j];
                 if (cell.isRoom() && !cell.isRoomCenter()) continue; // Ignore all room spots that aren't the center
-                // Doorway adjacencies
+                // Doorway adjacency
                 if (cell.isDoorway()) {
                     switch (cell.getDoorDirection()) { // Map each doorway to the center of the room
                         case UP -> { // Use the direction to find the room cell adjacent to the door
@@ -91,7 +91,7 @@ public class Board {
             }
         }
         for (Room r : roomMap.values()) { // Map secret passages if it exists
-            if (r.getName() == "Walkway") continue;
+            if (r.getName().equals("Walkway")) continue;
             if (r.getSecretPassage() != ' ')
                 r.getCenterCell().addAdj(roomMap.get(r.getSecretPassage()).getCenterCell()); // Add the ends of SP to adjList
         }
@@ -140,11 +140,12 @@ public class Board {
                     if (s.length() == 0 || s.length() > 2) throw new BadConfigFormatException();
                 rows.add(new ArrayList<String>(Arrays.asList(line.split(",")))); // Add each line, split by commas, as an array
             }
+            // Set board dimensions
             numCols = rows.get(0).size();
             numRows = rows.size();
             setupBoard(rows); // continue board setup
             file.close();
-        } catch (FileNotFoundException | ArrayIndexOutOfBoundsException e) {
+        } catch (FileNotFoundException | ArrayIndexOutOfBoundsException e) { // Bad config
             throw new BadConfigFormatException();
         } catch (IOException e) {
             throw new RuntimeException(e);
@@ -203,18 +204,18 @@ public class Board {
      * @param pathLength number of steps left
      */
     public void calcTargetsHelper(BoardCell cell, int pathLength) {
-        if ((pathLength == 0 || cell.isRoom()) && !visited.isEmpty()) {
+        if ((pathLength == 0 || cell.isRoom())) {
             if (!cell.getOccupied()) {
                 targets.add(cell);
-                visited.remove(cell);
+                visited.remove(cell); // Remove cell from visited so it can be visited again
             }
             return;
         }
-        visited.add(cell);
+        visited.add(cell); // Add to visited so you cannot backtrack in this move
         for (BoardCell adj : cell.getAdjList()) {
             if (!visited.contains(adj) && !adj.getOccupied()) {
                 calcTargetsHelper(adj, pathLength - 1);
-                visited.remove(adj);
+                visited.remove(adj); // Remove after recursion is finished
             }
         }
     }
@@ -235,7 +236,7 @@ public class Board {
     }
 
     // Getters
-
+    // Get a room by its char representation
     public Room getRoom(char c) {
 
         return roomMap.get(c);
@@ -261,10 +262,16 @@ public class Board {
         return roomMap.get(cell.getChar());
     }
 
+    /**
+     * @param i row position
+     * @param j column position
+     * @return adjacency of the cell (i,j)
+     */
     public Set<BoardCell> getAdjList(int i, int j) {
         return grid[i][j].getAdjList();
     }
 
+    // Get targets calculated by calcTargets()
     public Set<BoardCell> getTargets() {
         return targets;
     }
