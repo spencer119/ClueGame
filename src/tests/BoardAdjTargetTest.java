@@ -22,6 +22,14 @@ public class BoardAdjTargetTest {
     }
 
     @Test
+    public void testTest() {
+        BoardCell cell = board.getCell(9, 2);
+        Set<BoardCell> adj = cell.getAdjList();
+        board.calcTargets(cell, 1);
+        Set<BoardCell> targets = board.getTargets();
+    }
+
+    @Test
     public void testAdjacencyWalkway() {
         Set<BoardCell> test = board.getAdjList(2, 7);
 
@@ -131,7 +139,9 @@ public class BoardAdjTargetTest {
     @Test
     public void testTargetsRoomNoSecret() {
         // test a roll of 1, at door
+        Set<BoardCell> adj = board.getCell(9, 1).getAdjList();
         board.calcTargets(board.getCell(9, 2), 1);
+        adj = board.getCell(9, 1).getAdjList();
         Set<BoardCell> targets = board.getTargets();
         assertEquals(1, targets.size());
         assertTrue(targets.contains(board.getCell(11, 1)));
@@ -139,9 +149,10 @@ public class BoardAdjTargetTest {
 
     @Test
     public void testTargetsWalkwayBlocked() {
-
-        board.calcTargets(board.getCell(13, 0), 1);
         board.getCell(13, 1).setOccupied(true);
+        board.calcTargets(board.getCell(13, 0), 1);
+
+        BoardCell cell = board.getCell(13, 1);
         Set<BoardCell> targets = board.getTargets();
 
         assertEquals(2, targets.size());

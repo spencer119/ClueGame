@@ -236,17 +236,28 @@ public class Board {
     }
 
     public void calcTargets(BoardCell startCell, int pathLength) {
-        if (pathLength == 0 || startCell.isRoom()) {
+        visited.clear();
+        targets.clear();
+        calcVisited.clear();
+        calcTargetsHelper(startCell, pathLength);
+    }
+
+    public void calcTargetsHelper(BoardCell startCell, int pathLength) {
+        if ((pathLength == 0 || startCell.isRoom()) && !visited.isEmpty()) {
             if (!startCell.getOccupied()) {
                 targets.add(startCell);
+                visited.remove(startCell);
+                calcVisited.remove(startCell);
             }
             return;
         }
+        visited.add(startCell);
         calcVisited.add(startCell);
         for (BoardCell adj : startCell.getAdjList()) {
-            if (!visited.contains(adj) && !calcVisited.contains(adj) && !adj.getOccupied()) {
-                calcTargets(adj, pathLength - 1);
+            if (!visited.contains(adj) && !adj.getOccupied()) {
+                calcTargetsHelper(adj, pathLength - 1);
                 calcVisited.remove(adj);
+                visited.remove(adj);
             }
         }
     }
@@ -255,6 +266,7 @@ public class Board {
      * @return Set of cells calculated from calcTargets()
      */
     public Set<BoardCell> getTargets() {
+
         return targets;
     }
 }

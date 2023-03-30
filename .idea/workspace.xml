@@ -5,8 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="eab8da27-7ab5-4896-a4cc-6cac7e9ed2dd" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_12_2023_12_02_PM_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_12_2023_12_02_PM__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/ClueLayout.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/ClueLayout.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/clueGame/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clueGame/Board.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/tests/BoardAdjTargetTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/BoardAdjTargetTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -14,26 +16,40 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FormatOnSaveOptions">
+    <option name="myRunOnSave" value="true" />
+  </component>
   <component name="MacroExpansionManager">
     <option name="directoryName" value="j3odnhcr" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProjectId" id="2NkBjaCuL1oNsrdn5yM0dtUk2kt" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
     "dart.analysis.tool.window.visible": "false",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)"
+    "node.js.selected.package.tslint": "(autodetect)",
+    "settings.editor.selected.configurable": "actions.on.save",
+    "show.migrate.to.gradle.popup": "false",
+    "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="JUnit.BoardAdjTargetTest">
+  <component name="RunManager" selected="JUnit.BoardAdjTargetTest.testTargetsWalkwayBlocked">
     <configuration name="BoardAdjTargetTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ClueGame" />
       <extension name="coverage">
@@ -49,7 +65,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BoardAdjTargetTest.testAdjSecret" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="BoardAdjTargetTest.testTargetsRoomNoSecret" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ClueGame" />
       <extension name="coverage">
         <pattern>
@@ -59,13 +75,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="tests" />
       <option name="MAIN_CLASS_NAME" value="tests.BoardAdjTargetTest" />
-      <option name="METHOD_NAME" value="testAdjSecret" />
+      <option name="METHOD_NAME" value="testTargetsRoomNoSecret" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BoardAdjTargetTest.testTargetsAtDoor" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="BoardAdjTargetTest.testTargetsWalkwayBlocked" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ClueGame" />
       <extension name="coverage">
         <pattern>
@@ -75,13 +91,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="tests" />
       <option name="MAIN_CLASS_NAME" value="tests.BoardAdjTargetTest" />
-      <option name="METHOD_NAME" value="testTargetsAtDoor" />
+      <option name="METHOD_NAME" value="testTargetsWalkwayBlocked" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BoardAdjTargetTest.testTargetsRoomSecret" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="BoardAdjTargetTest.testTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ClueGame" />
       <extension name="coverage">
         <pattern>
@@ -91,55 +107,98 @@
       </extension>
       <option name="PACKAGE_NAME" value="tests" />
       <option name="MAIN_CLASS_NAME" value="tests.BoardAdjTargetTest" />
-      <option name="METHOD_NAME" value="testTargetsRoomSecret" />
+      <option name="METHOD_NAME" value="testTest" />
       <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FileInitTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ClueGame" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.FileInitTests" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.BoardAdjTargetTest.testAdjSecret" />
-      <item itemvalue="JUnit.BoardAdjTargetTest.testTargetsAtDoor" />
-      <item itemvalue="JUnit.BoardAdjTargetTest.testTargetsRoomSecret" />
+      <item itemvalue="JUnit.BoardAdjTargetTest.testTargetsWalkwayBlocked" />
+      <item itemvalue="JUnit.BoardAdjTargetTest.testTest" />
+      <item itemvalue="JUnit.BoardAdjTargetTest.testTargetsRoomNoSecret" />
+      <item itemvalue="JUnit.FileInitTests" />
       <item itemvalue="JUnit.BoardAdjTargetTest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.BoardAdjTargetTest.testTargetsWalkwayBlocked" />
         <item itemvalue="JUnit.BoardAdjTargetTest" />
-        <item itemvalue="JUnit.BoardAdjTargetTest.testTargetsAtDoor" />
-        <item itemvalue="JUnit.BoardAdjTargetTest.testTargetsRoomSecret" />
-        <item itemvalue="JUnit.BoardAdjTargetTest.testAdjSecret" />
+        <item itemvalue="JUnit.BoardAdjTargetTest.testTargetsRoomNoSecret" />
+        <item itemvalue="JUnit.BoardAdjTargetTest.testTest" />
+        <item itemvalue="JUnit.FileInitTests" />
       </list>
     </recent_temporary>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="eab8da27-7ab5-4896-a4cc-6cac7e9ed2dd" name="Changes" comment="" />
+      <created>1680198338536</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1680198338536</updated>
+      <workItem from="1680198339562" duration="2339000" />
+      <workItem from="1680206029170" duration="56000" />
+      <workItem from="1680206097032" duration="251000" />
+      <workItem from="1680206367920" duration="2699000" />
+      <workItem from="1680209338962" duration="700000" />
+    </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/tests/BoardAdjTargetTest.java</url>
-          <line>85</line>
-          <option name="timeStamp" value="1" />
+          <line>142</line>
+          <option name="timeStamp" value="15" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/tests/BoardAdjTargetTest.java</url>
-          <line>125</line>
-          <option name="timeStamp" value="2" />
+          <line>132</line>
+          <option name="timeStamp" value="16" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/tests/BoardAdjTargetTest.java</url>
-          <line>115</line>
-          <option name="timeStamp" value="3" />
+          <line>154</line>
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/clueGame/Board.java</url>
+          <line>245</line>
+          <option name="timeStamp" value="19" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="clueGame.Board" memberName="roomMap" />
+        <PinnedItemInfo parentTag="clueGame.BoardCell" memberName="adjList" />
       </pinned-members>
     </pin-to-top-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/ClueGame$FileInitTests.ic" NAME="FileInitTests Coverage Results" MODIFIED="1678232119883" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
