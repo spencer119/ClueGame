@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eab8da27-7ab5-4896-a4cc-6cac7e9ed2dd" name="Changes" comment="added comments and removed old code meant for testing in Board class">
+    <list default="true" id="eab8da27-7ab5-4896-a4cc-6cac7e9ed2dd" name="Changes" comment="Added final to variables where it was appropriate">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/clueGame/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clueGame/Board.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/clueGame/BoardCell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clueGame/BoardCell.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/clueGame/BadConfigFormatException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clueGame/BadConfigFormatException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/clueGame/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clueGame/Room.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,6 +31,7 @@
         </map>
       </branch-storage>
     </excluded-from-favorite>
+    <branch-grouping />
     <option name="PREVIEW_PUSH_ON_COMMIT_AND_PUSH" value="false" />
   </component>
   <component name="MacroExpansionManager">
@@ -54,6 +55,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "dart.analysis.tool.window.visible": "false",
+    "deletionFromPopupRequiresConfirmation": "false",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -61,6 +63,7 @@
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
+    "run.code.analysis.last.selected.profile": "pProject Default",
     "settings.editor.selected.configurable": "preferences.keymap",
     "show.migrate.to.gradle.popup": "false",
     "vue.rearranger.settings.migration": "true"
@@ -162,7 +165,7 @@
       <workItem from="1680206097032" duration="251000" />
       <workItem from="1680206367920" duration="2699000" />
       <workItem from="1680209338962" duration="848000" />
-      <workItem from="1680215906229" duration="3398000" />
+      <workItem from="1680215906229" duration="3870000" />
     </task>
     <task id="LOCAL-00001" summary="All tests pass now">
       <created>1680210066007</created>
@@ -192,7 +195,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680217733668</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Added final to variables where it was appropriate">
+      <created>1680219429489</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1680219429489</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -260,7 +270,8 @@
     <MESSAGE value="Removed redundant calcVisited variable now it only uses visited" />
     <MESSAGE value="Cleaned up switch statements to be much more readable" />
     <MESSAGE value="added comments and removed old code meant for testing in Board class" />
-    <option name="LAST_COMMIT_MESSAGE" value="added comments and removed old code meant for testing in Board class" />
+    <MESSAGE value="Added final to variables where it was appropriate" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added final to variables where it was appropriate" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">

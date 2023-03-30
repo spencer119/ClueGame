@@ -9,17 +9,16 @@ import java.util.Set;
  * @author spencer
  */
 public class Room {
-
-    private String name;
+    private final String name;
     private BoardCell centerCell;
     private BoardCell labelCell;
-    private Set<BoardCell> exitCells = new HashSet<>();
-    private char secretPassage = ' ';
+    private char secretPassage = ' '; // Char of the room that the secret passage leads to
 
     public Room(String name) {
         this.name = name;
     }
 
+    // Setters
     public char getSecretPassage() {
         return secretPassage;
     }
@@ -36,6 +35,7 @@ public class Room {
         this.labelCell = labelCell;
     }
 
+    // Getters
     public String getName() {
         return name;
     }
