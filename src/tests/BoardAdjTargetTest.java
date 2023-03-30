@@ -128,7 +128,7 @@ public class BoardAdjTargetTest {
 
     }
 
-    @Test
+    @Test // Test targets of a room with no secret passage
     public void testTargetsRoomSecret() {
         board.calcTargets(board.getCell(9, 2), 1);
         Set<BoardCell> targets = board.getTargets();

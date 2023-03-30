@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eab8da27-7ab5-4896-a4cc-6cac7e9ed2dd" name="Changes" comment="Added comments to BadConfigFormatException and rearranged the custom constructor with log writing">
+    <list default="true" id="eab8da27-7ab5-4896-a4cc-6cac7e9ed2dd" name="Changes" comment="added more comments to multiple functions in the board class and formatted the file">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/clueGame/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clueGame/Board.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tests/BoardAdjTargetTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/BoardAdjTargetTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tests/FileInitTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/FileInitTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,7 +73,7 @@
     ]
   }
 }]]></component>
-  <component name="RunManager" selected="JUnit.BoardAdjTargetTest">
+  <component name="RunManager">
     <configuration name="BoardAdjTargetTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ClueGame" />
       <extension name="coverage">
@@ -164,7 +165,7 @@
       <workItem from="1680206097032" duration="251000" />
       <workItem from="1680206367920" duration="2699000" />
       <workItem from="1680209338962" duration="848000" />
-      <workItem from="1680215906229" duration="4377000" />
+      <workItem from="1680215906229" duration="4700000" />
     </task>
     <task id="LOCAL-00001" summary="All tests pass now">
       <created>1680210066007</created>
@@ -208,7 +209,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680219851887</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="added more comments to multiple functions in the board class and formatted the file">
+      <created>1680220362411</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1680220362411</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -239,7 +247,7 @@
             <State>
               <option name="HIGHLIGHTERS">
                 <map>
-                  <entry key="CURRENT_BRANCH" value="true" />
+                  <entry key="CURRENT_BRANCH" value="false" />
                   <entry key="MERGE_COMMITS" value="true" />
                   <entry key="MY_COMMITS" value="true" />
                 </map>
@@ -278,7 +286,8 @@
     <MESSAGE value="added comments and removed old code meant for testing in Board class" />
     <MESSAGE value="Added final to variables where it was appropriate" />
     <MESSAGE value="Added comments to BadConfigFormatException and rearranged the custom constructor with log writing" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added comments to BadConfigFormatException and rearranged the custom constructor with log writing" />
+    <MESSAGE value="added more comments to multiple functions in the board class and formatted the file" />
+    <option name="LAST_COMMIT_MESSAGE" value="added more comments to multiple functions in the board class and formatted the file" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">

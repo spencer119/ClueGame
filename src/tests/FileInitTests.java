@@ -8,6 +8,10 @@ import org.junit.jupiter.api.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * @author spencer
+ * Tests to check config files
+ */
 public class FileInitTests {
     public static final int NUM_ROWS = 23;
     public static final int NUM_COLUMNS = 23;
@@ -28,7 +32,7 @@ public class FileInitTests {
         BoardCell cell = board.getCell(0, 0);
         Room room = board.getRoom(cell);
         // Test walkway
-        assertTrue(room != null);
+        assertNotNull(room);
         assertEquals(room.getName(), "Walkway");
         assertFalse(cell.isRoomCenter());
         assertFalse(cell.isLabel());
@@ -36,7 +40,7 @@ public class FileInitTests {
         // Test normal room space
         cell = board.getCell(1, 1);
         room = board.getRoom(cell);
-        assertTrue(room != null);
+        assertNotNull(room);
         assertEquals(room.getName(), "Attic");
         assertFalse(cell.isLabel());
         assertFalse(cell.isRoomCenter());
@@ -45,43 +49,44 @@ public class FileInitTests {
         // Test room center
         cell = board.getCell(3, 3);
         room = board.getRoom(cell);
-        assertTrue(room != null);
+        assertNotNull(room);
         assertEquals(room.getName(), "Attic");
         assertTrue(cell.isRoomCenter());
-        assertTrue(room.getCenterCell() == cell);
+        assertSame(room.getCenterCell(), cell);
 
         // Test room label
         cell = board.getCell(8, 3);
         room = board.getRoom(cell);
-        assertTrue(room != null);
+        assertNotNull(room);
         assertEquals(room.getName(), "Theater");
         assertTrue(cell.isLabel());
-        assertTrue(room.getLabelCell() == cell);
+        assertSame(room.getLabelCell(), cell);
 
         // Test secret passage
         cell = board.getCell(1, 5);
         room = board.getRoom(cell);
-        assertTrue(room != null);
+        assertNotNull(room);
         assertEquals(room.getName(), "Attic");
-        assertTrue(cell.getSecretPassage() == 'P');
+        assertEquals('P', cell.getSecretPassage());
 
         // test a closet
         cell = board.getCell(0, 11);
         room = board.getRoom(cell);
-        assertTrue(room != null);
+        assertNotNull(room);
         assertEquals(room.getName(), "Unused");
         assertFalse(cell.isRoomCenter());
         assertFalse(cell.isLabel());
     }
 
-    @Test
+    @Test // Test that the board has the correct number of rows and columns
     public void testBoardDimensions() {
         assertEquals(NUM_ROWS, board.getNumRows());
         assertEquals(NUM_COLUMNS, board.getNumCols());
     }
 
-    @Test
+    @Test // Test that each room is labeled correctly
     public void testRoomLabels() {
+        // Check the names of each room based on their one-letter label
         assertEquals("Storage", board.getRoom('S').getName());
         assertEquals("Underground Passage", board.getRoom('P').getName());
         assertEquals("Basement", board.getRoom('B').getName());
@@ -96,32 +101,37 @@ public class FileInitTests {
 
     }
 
-    @Test
+    @Test // Test that the correct number of doorways are on the board
     public void testNumberOfDoorways() {
         int numDoors = 0;
+        // Iterate through board and count doors
         for (int row = 0; row < board.getNumRows(); row++)
             for (int col = 0; col < board.getNumCols(); col++) {
                 BoardCell cell = board.getCell(row, col);
                 if (cell.isDoorway())
                     numDoors++;
             }
-        assertEquals(9, numDoors);
+        assertEquals(9, numDoors); // Check there are 9
     }
 
-    @Test
+    @Test // Test that each door has the correct direction
     public void FourDoorDirections() {
+        // Right doorway
         BoardCell cell = board.getCell(2, 0);
         assertTrue(cell.isDoorway());
         assertEquals(DoorDirection.RIGHT, cell.getDoorDirection());
 
+        // Up doorway
         cell = board.getCell(11, 1);
         assertTrue(cell.isDoorway());
         assertEquals(DoorDirection.UP, cell.getDoorDirection());
 
+        // Left doorway
         cell = board.getCell(17, 11);
         assertTrue(cell.isDoorway());
         assertEquals(DoorDirection.LEFT, cell.getDoorDirection());
 
+        // Down doorway
         cell = board.getCell(6, 21);
         assertTrue(cell.isDoorway());
         assertEquals(DoorDirection.DOWN, cell.getDoorDirection());
