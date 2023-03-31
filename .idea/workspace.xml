@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eab8da27-7ab5-4896-a4cc-6cac7e9ed2dd" name="Changes" comment="added more comments to multiple functions in the board class and formatted the file">
+    <list default="true" id="eab8da27-7ab5-4896-a4cc-6cac7e9ed2dd" name="Changes" comment="Added more comments to FileInitTests and simplified some assertions to be shorter">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/tests/BoardAdjTargetTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/BoardAdjTargetTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tests/FileInitTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/FileInitTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -165,7 +164,7 @@
       <workItem from="1680206097032" duration="251000" />
       <workItem from="1680206367920" duration="2699000" />
       <workItem from="1680209338962" duration="848000" />
-      <workItem from="1680215906229" duration="4700000" />
+      <workItem from="1680215906229" duration="5611000" />
     </task>
     <task id="LOCAL-00001" summary="All tests pass now">
       <created>1680210066007</created>
@@ -216,7 +215,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680220362411</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Added more comments to FileInitTests and simplified some assertions to be shorter">
+      <created>1680220710954</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1680220710954</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -287,29 +293,11 @@
     <MESSAGE value="Added final to variables where it was appropriate" />
     <MESSAGE value="Added comments to BadConfigFormatException and rearranged the custom constructor with log writing" />
     <MESSAGE value="added more comments to multiple functions in the board class and formatted the file" />
-    <option name="LAST_COMMIT_MESSAGE" value="added more comments to multiple functions in the board class and formatted the file" />
+    <MESSAGE value="Added more comments to FileInitTests and simplified some assertions to be shorter" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added more comments to FileInitTests and simplified some assertions to be shorter" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/tests/BoardAdjTargetTest.java</url>
-          <line>142</line>
-          <option name="timeStamp" value="15" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/tests/BoardAdjTargetTest.java</url>
-          <line>132</line>
-          <option name="timeStamp" value="16" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/tests/BoardAdjTargetTest.java</url>
-          <line>154</line>
-          <option name="timeStamp" value="18" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="clueGame.Board" memberName="roomMap" />
