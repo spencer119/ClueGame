@@ -13,6 +13,8 @@ import java.util.*;
 public class Board {
     private static final Board theInstance = new Board();
     private final Map<Character, Room> roomMap = new HashMap<>();
+    private final ArrayList<Card> deck = new ArrayList<>();
+    private final ArrayList<Player> players = new ArrayList<>();
     private BoardCell[][] grid;
     private int numRows;
     private int numCols;
@@ -114,10 +116,32 @@ public class Board {
                 if (!line.startsWith("//")) { // Ignore comments
                     String[] split = line.split(", ");
                     // Check for bad config format
-                    if (split.length != 3 || split[2].length() != 1) throw new BadConfigFormatException();
-                    else if (!split[0].equals("Room") && !split[0].equals("Space")) // Check for valid cell type
-                        throw new BadConfigFormatException();
-                    roomMap.put(split[2].charAt(0), new Room(split[1])); // Add to roomMap
+                    switch (split[0]) {
+                        case "Room":
+                        case "Space":
+                            roomMap.put(split[2].charAt(0), new Room(split[1])); // Add to roomMap
+                            break;
+                        case "Player":
+                            System.out.println(split[1] + " " + split[2] + " " + split[3] + " " + split[4] + " " + split[5]);
+                            try {
+                                int row = Integer.parseInt(split[4]);
+                                int col = Integer.parseInt(split[5]);
+                                if (split[1].equals("Human")) {
+                                    players.add(new HumanPlayer(split[2], split[3], row, col));
+                                } else if (split[1].equals("Computer")) {
+                                    players.add(new ComputerPlayer(split[2], split[3], row, col));
+                                }
+                            } catch (NumberFormatException e) {
+                                throw new BadConfigFormatException();
+                            }
+                            break;
+                        case "Weapon":
+                            break;
+                        default:
+                            break;
+
+                    }
+
                 }
             }
             file.close();
@@ -134,18 +158,20 @@ public class Board {
         try {
             FileReader file = new FileReader(layoutConfigFile);
             Scanner scan = new Scanner(file);
-            ArrayList<ArrayList<String>> rows = new ArrayList<>();
+            ArrayList<ArrayList<String>> boardRows = new ArrayList<>(); // For rooms and spaces
+            // For Players, Cards, Weapons, etc...
+            ArrayList<ArrayList<String>> otherRows = new ArrayList<>();
             while (scan.hasNextLine()) {
                 String line = scan.nextLine();
                 for (String s : line.split(",")) // Check for bad config format
                     if (s.length() == 0 || s.length() > 2) throw new BadConfigFormatException();
-                rows.add(new ArrayList<>(Arrays.asList(line.split(",")))); // Add each line, split by commas, as an array
+                boardRows.add(new ArrayList<>(Arrays.asList(line.split(",")))); // Add each line, split by commas, as an array
             }
             // Set board dimensions
-            numCols = rows.get(0).size();
-            numRows = rows.size();
+            numCols = boardRows.get(0).size();
+            numRows = boardRows.size();
             file.close();
-            setupBoard(rows); // continue board setup
+            setupBoard(boardRows); // continue board setup
         } catch (FileNotFoundException | ArrayIndexOutOfBoundsException e) { // Bad config
             throw new BadConfigFormatException();
         } catch (IOException e) {
@@ -275,6 +301,10 @@ public class Board {
     // Get targets calculated by calcTargets()
     public Set<BoardCell> getTargets() {
         return targets;
+    }
+
+    public ArrayList<Player> getPlayers() {
+        return players;
     }
 }
 
