@@ -249,6 +249,15 @@ public class Board {
         }
     }
 
+    public Boolean checkAccusation() {
+        return false;
+    }
+
+    public Card handleSuggestion() {
+        return null;
+    }
+
+
     /**
      * Calculate a set of possible targets
      *

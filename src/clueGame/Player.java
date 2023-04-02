@@ -1,6 +1,7 @@
 package clueGame;
 
 import java.util.ArrayList;
+import java.util.Set;
 
 public abstract class Player {
     private final String name;
@@ -8,6 +9,7 @@ public abstract class Player {
     private final int row;
     private final int col;
     private final ArrayList<Card> hand;
+    private Set<Card> seenCards;
 
     public Player(String name, String color, int row, int col) {
         this.name = name;
@@ -20,6 +22,13 @@ public abstract class Player {
 
     public void updateHand(Card card) {
         hand.add(card);
+    }
+
+    public void updateSeen(Card seenCard) {
+    }
+
+    public Card disproveSuggestion() {
+        return null;
     }
 
     public String getName() {
