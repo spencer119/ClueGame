@@ -13,6 +13,7 @@ import java.util.*;
 public class Board {
     private static final Board theInstance = new Board();
     private final Map<Character, Room> roomMap = new HashMap<>();
+
     private final ArrayList<Card> deck = new ArrayList<>();
     private final ArrayList<Player> players = new ArrayList<>();
     private BoardCell[][] grid;
@@ -22,6 +23,7 @@ public class Board {
     private String setupConfigFile;
     private Set<BoardCell> targets = new HashSet<>();
     private Set<BoardCell> visited = new HashSet<>();
+    private Solution solution;
 
     // Default constructor
     private Board() {
@@ -120,6 +122,9 @@ public class Board {
                         case "Room":
                         case "Space":
                             roomMap.put(split[2].charAt(0), new Room(split[1])); // Add to roomMap
+                            if (!split[0].equals("Space")) // Add to deck
+                                deck.add(new Card(split[1], CardType.ROOM));
+
                             break;
                         case "Player":
                             System.out.println(split[1] + " " + split[2] + " " + split[3] + " " + split[4] + " " + split[5]);
@@ -134,8 +139,10 @@ public class Board {
                             } catch (NumberFormatException e) {
                                 throw new BadConfigFormatException();
                             }
+                            deck.add(new Card(split[2], CardType.PERSON));
                             break;
                         case "Weapon":
+                            deck.add(new Card(split[1], CardType.WEAPON));
                             break;
                         default:
                             break;
@@ -269,6 +276,10 @@ public class Board {
         return roomMap.get(c);
     }
 
+    public ArrayList<Card> getDeck() {
+        return deck;
+    }
+
     public int getNumRows() {
 
         return numRows;
@@ -278,6 +289,7 @@ public class Board {
 
         return numCols;
     }
+
 
     public BoardCell getCell(int i, int j) {
 
@@ -305,6 +317,10 @@ public class Board {
 
     public ArrayList<Player> getPlayers() {
         return players;
+    }
+
+    public Solution getSolution() {
+        return solution;
     }
 }
 

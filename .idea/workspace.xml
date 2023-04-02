@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eab8da27-7ab5-4896-a4cc-6cac7e9ed2dd" name="Changes" comment="created failing solution tests">
+    <list default="true" id="eab8da27-7ab5-4896-a4cc-6cac7e9ed2dd" name="Changes" comment="created failing deck tests">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/ClueSetup.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/ClueSetup.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/clueGame/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clueGame/Board.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/clueGame/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clueGame/Card.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/clueGame/CardType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clueGame/CardType.java" afterDir="false" />
@@ -214,7 +213,7 @@
       <workItem from="1680206367920" duration="2699000" />
       <workItem from="1680209338962" duration="848000" />
       <workItem from="1680215906229" duration="6977000" />
-      <workItem from="1680458082544" duration="7587000" />
+      <workItem from="1680458082544" duration="8060000" />
     </task>
     <task id="LOCAL-00001" summary="All tests pass now">
       <created>1680210066007</created>
@@ -314,7 +313,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680465379305</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="created failing deck tests">
+      <created>1680466076192</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1680466076192</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -392,7 +398,8 @@
     <MESSAGE value="failing tests for player class created" />
     <MESSAGE value="player tests pass" />
     <MESSAGE value="created failing solution tests" />
-    <option name="LAST_COMMIT_MESSAGE" value="created failing solution tests" />
+    <MESSAGE value="created failing deck tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="created failing deck tests" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">

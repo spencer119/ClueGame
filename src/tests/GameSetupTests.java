@@ -75,6 +75,7 @@ public class GameSetupTests {
                 rooms++;
             }
         }
+        assertEquals(20, deck.size());
         assertEquals(6, people);
         assertEquals(5, weapons);
         assertEquals(9, rooms);
