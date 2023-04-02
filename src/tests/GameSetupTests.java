@@ -1,15 +1,13 @@
 package tests;
 
-import clueGame.Board;
-import clueGame.ComputerPlayer;
-import clueGame.HumanPlayer;
-import clueGame.Player;
+import clueGame.*;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 
 /**
@@ -56,6 +54,9 @@ public class GameSetupTests {
 
     @Test
     public void testSolutions() {
+        assertEquals(board.getSolution().getPerson().getType(), CardType.PERSON);
+        assertEquals(board.getSolution().getWeapon().getType(), CardType.WEAPON);
+        assertEquals(board.getSolution().getRoom().getType(), CardType.ROOM);
     }
 
     @Test
