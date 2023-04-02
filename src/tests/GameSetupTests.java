@@ -28,7 +28,12 @@ public class GameSetupTests {
     }
 
     @Test
-    public void testInitialize() {
+    public void testDeal() {
+        ArrayList<Player> players = board.getPlayers();
+        int deckSize = board.getDeck().size();
+        for (Player p : players) {
+            assertTrue(p.getHand().size() >= 6);
+        }
     }
 
     @Test
