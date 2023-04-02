@@ -11,19 +11,23 @@ import java.util.*;
  * @author Spencer Hamilton
  */
 public class Board {
+    private static final Board theInstance = new Board();
+    private final Map<Character, Room> roomMap = new HashMap<>();
     private BoardCell[][] grid;
     private int numRows;
     private int numCols;
     private String layoutConfigFile;
     private String setupConfigFile;
-    private final Map<Character, Room> roomMap = new HashMap<>();
-    private static final Board theInstance = new Board();
     private Set<BoardCell> targets = new HashSet<>();
     private Set<BoardCell> visited = new HashSet<>();
 
     // Default constructor
     private Board() {
         super();
+    }
+
+    public static Board getInstance() {
+        return theInstance;
     }
 
     /**
@@ -34,6 +38,7 @@ public class Board {
             loadSetupConfig(); // Load ClueSetup.txt
             loadLayoutConfig(); // Load ClueLayout.csv
             setupAdj(); // Setup adjacency lists
+            deal(); // Deal cards
         } catch (BadConfigFormatException e) { // Catch any bad config file format exceptions
             System.out.println("Bad config file format.");
         }
@@ -97,7 +102,6 @@ public class Board {
         }
     }
 
-
     /**
      * Load ClueSetup.txt
      */
@@ -122,7 +126,6 @@ public class Board {
         }
 
     }
-
 
     /**
      * Load ClueLayout.csv
@@ -218,6 +221,10 @@ public class Board {
         }
     }
 
+    public void deal() {
+
+    }
+
     /**
      * Set config file paths
      *
@@ -227,10 +234,6 @@ public class Board {
     public void setConfigFiles(String csvPath, String setupPath) {
         this.layoutConfigFile = "data/" + csvPath;
         this.setupConfigFile = "data/" + setupPath;
-    }
-
-    public static Board getInstance() {
-        return theInstance;
     }
 
     // Getters

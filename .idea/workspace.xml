@@ -4,14 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eab8da27-7ab5-4896-a4cc-6cac7e9ed2dd" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/clueGame/Player.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests/GameSetupTests.java" afterDir="false" />
+    <list default="true" id="eab8da27-7ab5-4896-a4cc-6cac7e9ed2dd" name="Changes" comment="Created card types">
+      <change afterPath="$PROJECT_DIR$/src/clueGame/Solution.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gitdiff.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gitlog.txt" beforeDir="false" afterPath="$PROJECT_DIR$/gitlog.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/clueGame/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clueGame/Board.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/clueGame/BoardCell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clueGame/BoardCell.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/clueGame/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clueGame/Card.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/clueGame/CardType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clueGame/CardType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/clueGame/ComputerPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clueGame/ComputerPlayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/clueGame/HumanPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clueGame/HumanPlayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/clueGame/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clueGame/Player.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,6 +22,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Enum" />
         <option value="Class" />
       </list>
     </option>
@@ -62,32 +64,37 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
-    &quot;deletionFromPopupRequiresConfirmation&quot;: &quot;false&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
-    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "code.cleanup.on.save": "true",
+    "dart.analysis.tool.window.visible": "false",
+    "deletionFromPopupRequiresConfirmation": "false",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "rearrange.code.on.save": "true",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "actions.on.save",
+    "show.migrate.to.gradle.popup": "false",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;ChangesTree.GroupingKeys&quot;: [
+  "keyToStringList": {
+    "ChangesTree.GroupingKeys": [
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
+    <key name="ExtractSuperBase.RECENT_KEYS">
+      <recent name="clueGame" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="tests" />
     </key>
@@ -185,7 +192,7 @@
       <workItem from="1680206367920" duration="2699000" />
       <workItem from="1680209338962" duration="848000" />
       <workItem from="1680215906229" duration="6977000" />
-      <workItem from="1680458082544" duration="323000" />
+      <workItem from="1680458082544" duration="1747000" />
     </task>
     <task id="LOCAL-00001" summary="All tests pass now">
       <created>1680210066007</created>
@@ -250,7 +257,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680221599326</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Created card types">
+      <created>1680458808067</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1680458808067</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -323,7 +337,8 @@
     <MESSAGE value="added more comments to multiple functions in the board class and formatted the file" />
     <MESSAGE value="Added more comments to FileInitTests and simplified some assertions to be shorter" />
     <MESSAGE value="Commented BoardAdjTargetTest removed redundant test and renamed another. cleaned tests to be shorter" />
-    <option name="LAST_COMMIT_MESSAGE" value="Commented BoardAdjTargetTest removed redundant test and renamed another. cleaned tests to be shorter" />
+    <MESSAGE value="Created card types" />
+    <option name="LAST_COMMIT_MESSAGE" value="Created card types" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
