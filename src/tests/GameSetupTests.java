@@ -4,6 +4,7 @@ import clueGame.*;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -61,5 +62,21 @@ public class GameSetupTests {
 
     @Test
     public void testCards() {
+        int people = 0;
+        int weapons = 0;
+        int rooms = 0;
+        ArrayList<Card> deck = board.getDeck();
+        for (Card c : deck) {
+            if (c.getType() == CardType.PERSON) {
+                people++;
+            } else if (c.getType() == CardType.WEAPON) {
+                weapons++;
+            } else if (c.getType() == CardType.ROOM) {
+                rooms++;
+            }
+        }
+        assertEquals(6, people);
+        assertEquals(5, weapons);
+        assertEquals(9, rooms);
     }
 }

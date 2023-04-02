@@ -11,3 +11,16 @@ Room, Library, L
 // other spaces
 Space, Unused, X
 Space, Walkway, W
+// Players
+Player, Human, Spencer, red, 0, 0
+Player, Computer, AI 1, blue, 1, 1
+Player, Computer, AI 2, orange, 2, 2
+Player, Computer, AI 3, green, 3, 3
+Player, Computer, AI 4, yellow, 4, 4
+Player, Computer, AI 5, purple, 5, 5
+// Weapons
+Weapon, Knife
+Weapon, Revolver
+Weapon, Candlestick
+Weapon, Lead Pipe
+Weapon, Wrench
