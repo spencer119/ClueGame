@@ -33,23 +33,24 @@ public class BoardCell {
         this.row = row;
         this.col = col;
 
+        // Initialize instance vars
         roomLabel = false;
         roomCenter = false;
         doorDirection = DoorDirection.NONE;
         secretPassage = ' ';
-
-        if (charLabel.length() == 1) {
+        // Assign the cell's initial char
+        if (charLabel.length() == 1) { // Non doorway cell
             initial = charLabel.charAt(0);
-        } else {
-            initial = charLabel.charAt(0);
-            switch (charLabel.charAt(1)) {
+        } else { // Doorway cell
+            initial = charLabel.charAt(0); // Assign room char
+            switch (charLabel.charAt(1)) { // Assign door direction
                 case '>' -> doorDirection = DoorDirection.RIGHT;
                 case '<' -> doorDirection = DoorDirection.LEFT;
                 case '^' -> doorDirection = DoorDirection.UP;
                 case 'v' -> doorDirection = DoorDirection.DOWN;
                 case '#' -> roomLabel = true;
                 case '*' -> roomCenter = true;
-                default -> secretPassage = charLabel.charAt(1);
+                default -> secretPassage = charLabel.charAt(1); // Secret passage cell
             }
         }
     }

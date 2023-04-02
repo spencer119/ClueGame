@@ -1,7 +1,5 @@
 package clueGame;
 
-import experiment.TestBoardCell;
-
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
@@ -19,14 +17,13 @@ public class Board {
     private String layoutConfigFile;
     private String setupConfigFile;
     private final Map<Character, Room> roomMap = new HashMap<>();
-    private static Board theInstance = new Board();
-    private Set<BoardCell> targets = new HashSet<BoardCell>();
-    private Set<BoardCell> visited = new HashSet<BoardCell>();
+    private static final Board theInstance = new Board();
+    private Set<BoardCell> targets = new HashSet<>();
+    private Set<BoardCell> visited = new HashSet<>();
 
-
+    // Default constructor
     private Board() {
         super();
-
     }
 
     /**
@@ -34,10 +31,10 @@ public class Board {
      */
     public void initialize() {
         try {
-            loadSetupConfig();
-            loadLayoutConfig();
-            setupAdj();
-        } catch (BadConfigFormatException e) {
+            loadSetupConfig(); // Load ClueSetup.txt
+            loadLayoutConfig(); // Load ClueLayout.csv
+            setupAdj(); // Setup adjacency lists
+        } catch (BadConfigFormatException e) { // Catch any bad config file format exceptions
             System.out.println("Bad config file format.");
         }
     }
@@ -46,8 +43,8 @@ public class Board {
      * Create the adjacency list for each cell
      */
     private void setupAdj() {
-        targets = new HashSet<BoardCell>();
-        visited = new HashSet<BoardCell>();
+        targets = new HashSet<>();
+        visited = new HashSet<>();
 
         for (int i = 0; i < numRows; i++) {
             for (int j = 0; j < numCols; j++) {
@@ -74,18 +71,21 @@ public class Board {
                         }
                     }
                 }
-                if (cell.getSecretPassage() != ' ') // Map secret passages to the center of the room
+                // If the current cell has a secret passage, map it to the center of the room
+                if (cell.getSecretPassage() != ' ') {
                     roomMap.get(cell.getChar()).setSecretPassage(cell.getSecretPassage());
-                if (i > 0 && grid[i - 1][j].isWalkway()) {
+                }
+                // Add adjacent walkway cells to the current cell's adjacency list, if they exist
+                if (i > 0 && grid[i - 1][j].isWalkway()) { // check cell above
                     cell.addAdj(grid[i - 1][j]);
                 }
-                if (i < numRows - 1 && grid[i + 1][j].isWalkway()) {
+                if (i < numRows - 1 && grid[i + 1][j].isWalkway()) { // check cell below
                     cell.addAdj(grid[i + 1][j]);
                 }
-                if (j > 0 && grid[i][j - 1].isWalkway()) {
+                if (j > 0 && grid[i][j - 1].isWalkway()) { // check cell to the left
                     cell.addAdj(grid[i][j - 1]);
                 }
-                if (j < numCols - 1 && grid[i][j + 1].isWalkway()) {
+                if (j < numCols - 1 && grid[i][j + 1].isWalkway()) { // check cell to the right
                     cell.addAdj(grid[i][j + 1]);
                 }
             }
@@ -107,15 +107,13 @@ public class Board {
             Scanner scan = new Scanner(file);
             while (scan.hasNextLine()) {
                 String line = scan.nextLine();
-                if (line.startsWith("//")) { // Ignore comments
-                    continue;
-                } else {
+                if (!line.startsWith("//")) { // Ignore comments
                     String[] split = line.split(", ");
                     // Check for bad config format
                     if (split.length != 3 || split[2].length() != 1) throw new BadConfigFormatException();
-                    else if (!split[0].equals("Room") && !split[0].equals("Space"))
+                    else if (!split[0].equals("Room") && !split[0].equals("Space")) // Check for valid cell type
                         throw new BadConfigFormatException();
-                    roomMap.put(split[2].charAt(0), new Room(split[1]));
+                    roomMap.put(split[2].charAt(0), new Room(split[1])); // Add to roomMap
                 }
             }
             file.close();
@@ -138,13 +136,13 @@ public class Board {
                 String line = scan.nextLine();
                 for (String s : line.split(",")) // Check for bad config format
                     if (s.length() == 0 || s.length() > 2) throw new BadConfigFormatException();
-                rows.add(new ArrayList<String>(Arrays.asList(line.split(",")))); // Add each line, split by commas, as an array
+                rows.add(new ArrayList<>(Arrays.asList(line.split(",")))); // Add each line, split by commas, as an array
             }
             // Set board dimensions
             numCols = rows.get(0).size();
             numRows = rows.size();
-            setupBoard(rows); // continue board setup
             file.close();
+            setupBoard(rows); // continue board setup
         } catch (FileNotFoundException | ArrayIndexOutOfBoundsException e) { // Bad config
             throw new BadConfigFormatException();
         } catch (IOException e) {
@@ -175,7 +173,7 @@ public class Board {
                     if (cell.isRoomCenter()) {
                         room.setCenterCell(cell);
                     }
-                    if (cell.getSecretPassage() != ' ') {
+                    if (cell.getSecretPassage() != ' ') { // Check for secret passage
                         roomMap.get(cell.getSecretPassage()).setSecretPassage(cell.getChar());
                     }
                 }

@@ -1,3 +1,74 @@
+commit 4432d5c022682d32759bba536b2eb81fc9d14d0b
+Author: Spencer Hamilton <shamilton@mines.edu>
+Date:   Thu Mar 30 18:13:19 2023 -0600
+
+    Commented BoardAdjTargetTest removed redundant test and renamed another. cleaned tests to be shorter
+
+commit 1a28749cabbb131f139294abab080a108f23ad69
+Author: Spencer Hamilton <shamilton@mines.edu>
+Date:   Thu Mar 30 17:58:30 2023 -0600
+
+    Added more comments to FileInitTests and simplified some assertions to be shorter
+
+commit a4420c0f690526fb59f7939ad05ec4a15ce74652
+Author: Spencer Hamilton <shamilton@mines.edu>
+Date:   Thu Mar 30 17:52:42 2023 -0600
+
+    added more comments to multiple functions in the board class and formatted the file
+
+commit cf7b36f3d38baaa561b6c3a8919c1e7f36df678e
+Author: Spencer Hamilton <shamilton@mines.edu>
+Date:   Thu Mar 30 17:44:11 2023 -0600
+
+    Added comments to BadConfigFormatException and rearranged the custom constructor with log writing
+
+commit 43170eeb8f649e03acd554f7a002c24f5e92028c
+Author: Spencer Hamilton <shamilton@mines.edu>
+Date:   Thu Mar 30 17:37:09 2023 -0600
+
+    Added final to variables where it was appropriate
+
+commit adefa1ebcdfc1e7c78ed9435393773cb8c3cf2bf
+Author: Spencer Hamilton <shamilton@mines.edu>
+Date:   Thu Mar 30 17:08:53 2023 -0600
+
+    added comments and removed old code meant for testing in Board class
+
+commit 376cd57e34b334cf63d677382d9c3bd3bec23abe
+Author: Spencer Hamilton <shamilton@mines.edu>
+Date:   Thu Mar 30 16:48:19 2023 -0600
+
+    Cleaned up switch statements to be much more readable
+
+commit 408b74dc54c76349d5ba255f2199bd7a79f6f0c9
+Author: Spencer Hamilton <shamilton@mines.edu>
+Date:   Thu Mar 30 16:45:37 2023 -0600
+
+    Removed redundant calcVisited variable now it only uses visited
+
+
+
+--------------------------- END OF REFACTOR COMMITS ---------------------------
+
+
+commit 14e6b6d59db1891f76d92ddc133876951c8498e6
+Author: Spencer Hamilton <shamilton@mines.edu>
+Date:   Thu Mar 30 15:01:04 2023 -0600
+
+    All tests pass now
+
+commit 953de90eb1031025abf04ac55cac7618ff087d34
+Author: Spencer Hamilton <shamilton@mines.edu>
+Date:   Thu Mar 16 13:42:56 2023 -0600
+
+    auto commit msg
+
+commit 71dbfcd9eb5f06ef6e9d3837f84236c0ca996fb1
+Author: Spencer Hamilton <shamilton@mines.edu>
+Date:   Thu Mar 16 13:42:49 2023 -0600
+
+    auto commit msg
+
 commit 3e3fd5f66622b125a8c4ca26d67aff1b4a68616b
 Author: spencer <spencernhamilton@gmail.com>
 Date:   Sun Mar 12 12:00:29 2023 -0600
