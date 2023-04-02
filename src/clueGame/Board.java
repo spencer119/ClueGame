@@ -152,11 +152,41 @@ public class Board {
                 }
             }
             file.close();
+            scan.close();
+            createSolution();
         } catch (IOException e) {
             throw new BadConfigFormatException();
         }
 
     }
+
+    public void createSolution() {
+        Random rand = new Random();
+        int person = -1, weapon = -1, room = -1;
+        while (person == -1 || weapon == -1 || room == -1) {
+            int index = rand.nextInt(deck.size());
+            Card c = deck.get(index);
+            switch (c.getType()) {
+                case PERSON:
+                    if (person == -1) {
+                        person = index;
+                    }
+                    break;
+                case WEAPON:
+                    if (weapon == -1) {
+                        weapon = index;
+                    }
+                    break;
+                case ROOM:
+                    if (room == -1) {
+                        room = index;
+                    }
+                    break;
+            }
+        }
+        solution = new Solution(deck.get(room), deck.get(person), deck.get(weapon));
+    }
+
 
     /**
      * Load ClueLayout.csv

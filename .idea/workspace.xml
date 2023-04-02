@@ -4,14 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eab8da27-7ab5-4896-a4cc-6cac7e9ed2dd" name="Changes" comment="created failing deck tests">
+    <list default="true" id="eab8da27-7ab5-4896-a4cc-6cac7e9ed2dd" name="Changes" comment="testCards passes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/clueGame/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clueGame/Board.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/clueGame/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clueGame/Card.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/clueGame/CardType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clueGame/CardType.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/clueGame/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clueGame/Player.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/clueGame/Solution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clueGame/Solution.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tests/GameSetupTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/GameSetupTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -213,7 +210,7 @@
       <workItem from="1680206367920" duration="2699000" />
       <workItem from="1680209338962" duration="848000" />
       <workItem from="1680215906229" duration="6977000" />
-      <workItem from="1680458082544" duration="8060000" />
+      <workItem from="1680458082544" duration="8632000" />
     </task>
     <task id="LOCAL-00001" summary="All tests pass now">
       <created>1680210066007</created>
@@ -320,7 +317,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680466076192</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="testCards passes">
+      <created>1680466252901</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1680466252901</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -399,7 +403,8 @@
     <MESSAGE value="player tests pass" />
     <MESSAGE value="created failing solution tests" />
     <MESSAGE value="created failing deck tests" />
-    <option name="LAST_COMMIT_MESSAGE" value="created failing deck tests" />
+    <MESSAGE value="testCards passes" />
+    <option name="LAST_COMMIT_MESSAGE" value="testCards passes" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">

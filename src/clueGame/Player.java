@@ -1,10 +1,13 @@
 package clueGame;
 
+import java.util.ArrayList;
+
 public abstract class Player {
     private final String name;
     private final String color;
     private final int row;
     private final int col;
+    private ArrayList<Card> hand;
 
     public Player(String name, String color, int row, int col) {
         this.name = name;
@@ -15,6 +18,7 @@ public abstract class Player {
 
 
     public void updateHand(Card card) {
+        hand.add(card);
     }
 
     public String getName() {
@@ -23,6 +27,10 @@ public abstract class Player {
 
     public String getColor() {
         return color;
+    }
+
+    public ArrayList<Card> getHand() {
+        return hand;
     }
 
 }
