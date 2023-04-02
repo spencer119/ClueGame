@@ -7,13 +7,14 @@ public abstract class Player {
     private final String color;
     private final int row;
     private final int col;
-    private ArrayList<Card> hand;
+    private final ArrayList<Card> hand;
 
     public Player(String name, String color, int row, int col) {
         this.name = name;
         this.color = color;
         this.row = row;
         this.col = col;
+        hand = new ArrayList<Card>();
     }
 
 

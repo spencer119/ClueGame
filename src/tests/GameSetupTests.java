@@ -6,6 +6,8 @@ import org.junit.jupiter.api.Test;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -30,9 +32,12 @@ public class GameSetupTests {
     @Test
     public void testDeal() {
         ArrayList<Player> players = board.getPlayers();
+        ArrayList<Card> deck = board.getDeck();
         int deckSize = board.getDeck().size();
         for (Player p : players) {
-            assertTrue(p.getHand().size() >= 6);
+            assertTrue(p.getHand().size() >= deckSize / players.size());
+            Set<Card> checkUnique = new HashSet<Card>(p.getHand());
+            assertEquals(p.getHand().size(), checkUnique.size());
         }
     }
 

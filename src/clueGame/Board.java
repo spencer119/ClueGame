@@ -127,7 +127,6 @@ public class Board {
 
                             break;
                         case "Player":
-                            System.out.println(split[1] + " " + split[2] + " " + split[3] + " " + split[4] + " " + split[5]);
                             try {
                                 int row = Integer.parseInt(split[4]);
                                 int col = Integer.parseInt(split[5]);
@@ -153,6 +152,7 @@ public class Board {
             }
             file.close();
             scan.close();
+//            deal();
             createSolution();
         } catch (IOException e) {
             throw new BadConfigFormatException();
@@ -285,7 +285,16 @@ public class Board {
     }
 
     public void deal() {
-
+        // Collections.shuffle(deck);
+        int i = 0;
+        for (Card c : deck) {
+            players.get(i).updateHand(c);
+            if (i == players.size() - 1) {
+                i = 0;
+            } else {
+                i++;
+            }
+        }
     }
 
     /**
