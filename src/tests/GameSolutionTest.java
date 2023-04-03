@@ -4,8 +4,9 @@ import clueGame.*;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import java.util.ArrayList;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 
 /**
@@ -27,6 +28,13 @@ public class GameSolutionTest {
     @Test
     public void testAccusation() {
         Solution boardSolution = board.getTheAnswer();
-
+        ArrayList<Card> deck = board.getDeck();
+        assertTrue(board.checkAccusation(boardSolution));
+        Solution wrongWeapon = new Solution(boardSolution.getRoom(), boardSolution.getPerson(), new Card("Lego", CardType.WEAPON));
+        assertFalse(board.checkAccusation(wrongWeapon));
+        Solution wrongPerson = new Solution(boardSolution.getRoom(), new Card("Ted Bundy", CardType.PERSON), boardSolution.getWeapon());
+        assertFalse(board.checkAccusation(wrongPerson));
+        Solution wrongRoom = new Solution(new Card("MZ 026", CardType.ROOM), boardSolution.getPerson(), boardSolution.getWeapon());
+        assertFalse(board.checkAccusation(wrongRoom));
     }
 }
