@@ -4,7 +4,6 @@ import clueGame.*;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
@@ -41,6 +40,7 @@ public class GameSetupTests {
         }
     }
 
+
     @Test
     public void testPlayers() {
         ArrayList<Player> players = board.getPlayers();
@@ -65,9 +65,9 @@ public class GameSetupTests {
 
     @Test
     public void testSolutions() {
-        assertEquals(board.getSolution().getPerson().getType(), CardType.PERSON);
-        assertEquals(board.getSolution().getWeapon().getType(), CardType.WEAPON);
-        assertEquals(board.getSolution().getRoom().getType(), CardType.ROOM);
+        assertEquals(board.getTheAnswer().getPerson().getType(), CardType.PERSON);
+        assertEquals(board.getTheAnswer().getWeapon().getType(), CardType.WEAPON);
+        assertEquals(board.getTheAnswer().getRoom().getType(), CardType.ROOM);
     }
 
     @Test

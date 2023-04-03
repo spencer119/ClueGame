@@ -23,7 +23,7 @@ public class Board {
     private String setupConfigFile;
     private Set<BoardCell> targets = new HashSet<>();
     private Set<BoardCell> visited = new HashSet<>();
-    private Solution solution;
+    private Solution theAnswer;
 
     // Default constructor
     private Board() {
@@ -184,7 +184,7 @@ public class Board {
                     break;
             }
         }
-        solution = new Solution(deck.get(room), deck.get(person), deck.get(weapon));
+        theAnswer = new Solution(deck.get(room), deck.get(person), deck.get(weapon));
     }
 
 
@@ -294,7 +294,7 @@ public class Board {
     }
 
     public void deal() {
-        // Collections.shuffle(deck);
+        Collections.shuffle(deck);
         int i = 0;
         for (Card c : deck) {
             players.get(i).updateHand(c);
@@ -367,8 +367,8 @@ public class Board {
         return players;
     }
 
-    public Solution getSolution() {
-        return solution;
+    public Solution getTheAnswer() {
+        return theAnswer;
     }
 }
 

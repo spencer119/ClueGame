@@ -22,4 +22,17 @@ public class Solution {
     public Card getWeapon() {
         return weapon;
     }
+
+    public Card[] getSolution() {
+        return new Card[]{room, person, weapon};
+    }
+
+    @Override
+    public boolean equals(Object target) {
+        if (target instanceof Solution) {
+            return room.equals(((Solution) target).getRoom()) && person.equals(((Solution) target).getPerson()) && weapon.equals(((Solution) target).getWeapon());
+        }
+        return false;
+    }
+
 }

@@ -4,11 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eab8da27-7ab5-4896-a4cc-6cac7e9ed2dd" name="Changes" comment="updated gitlog.txt">
+    <list default="true" id="eab8da27-7ab5-4896-a4cc-6cac7e9ed2dd" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/tests/GameSolutionTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/clueGame/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clueGame/Board.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/clueGame/ComputerPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clueGame/ComputerPlayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/clueGame/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clueGame/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/clueGame/Solution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clueGame/Solution.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tests/GameSetupTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/GameSetupTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -190,8 +191,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.GameSetupTests" />
-        <item itemvalue="JUnit.GameSetupTests.testDeal" />
         <item itemvalue="JUnit.BoardAdjTargetTest" />
+        <item itemvalue="JUnit.GameSetupTests.testDeal" />
         <item itemvalue="JUnit.BoardAdjTargetTest.testTargetsWalkwayBlocked" />
         <item itemvalue="JUnit.BoardAdjTargetTest.testTargetsRoomNoSecret" />
       </list>
@@ -212,7 +213,8 @@
       <workItem from="1680209338962" duration="848000" />
       <workItem from="1680215906229" duration="6977000" />
       <workItem from="1680458082544" duration="10482000" />
-      <workItem from="1680477716600" duration="467000" />
+      <workItem from="1680477716600" duration="3885000" />
+      <workItem from="1680494862060" duration="604000" />
     </task>
     <task id="LOCAL-00001" summary="All tests pass now">
       <created>1680210066007</created>
@@ -354,7 +356,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680477874259</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="created empty functions based on UML">
+      <created>1680478202431</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1680478202431</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -438,19 +447,11 @@
     <MESSAGE value="created failing deal tests" />
     <MESSAGE value="all tests passing" />
     <MESSAGE value="updated gitlog.txt" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated gitlog.txt" />
+    <MESSAGE value="created empty functions based on UML" />
+    <option name="LAST_COMMIT_MESSAGE" value="created empty functions based on UML" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/tests/GameSetupTests.java</url>
-          <line>37</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="clueGame.Board" memberName="roomMap" />
