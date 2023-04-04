@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eab8da27-7ab5-4896-a4cc-6cac7e9ed2dd" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/tests/GameSolutionTest.java" afterDir="false" />
+    <list default="true" id="eab8da27-7ab5-4896-a4cc-6cac7e9ed2dd" name="Changes" comment="created failing accusation tests">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/clueGame/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clueGame/Board.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/clueGame/Solution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clueGame/Solution.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/clueGame/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clueGame/Player.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/tests/GameSetupTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/GameSetupTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -80,7 +79,7 @@
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
     &quot;rearrange.code.on.save&quot;: &quot;true&quot;,
     &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.sourceCode&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
     &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
@@ -97,27 +96,7 @@
       <recent name="tests" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.GameSetupTests">
-    <configuration name="BoardAdjTargetTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ClueGame" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-        <pattern>
-          <option name="PATTERN" value="tests.GameSetupTests" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.BoardAdjTargetTest" />
-      <option name="METHOD_NAME" value="" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.GameSolutionTest">
     <configuration name="BoardAdjTargetTest.testTargetsRoomNoSecret" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ClueGame" />
       <extension name="coverage">
@@ -181,17 +160,32 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="GameSolutionTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ClueGame" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.GameSolutionTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
+      <item itemvalue="JUnit.GameSolutionTest" />
       <item itemvalue="JUnit.GameSetupTests" />
       <item itemvalue="JUnit.GameSetupTests.testDeal" />
       <item itemvalue="JUnit.BoardAdjTargetTest.testTargetsWalkwayBlocked" />
       <item itemvalue="JUnit.BoardAdjTargetTest.testTargetsRoomNoSecret" />
-      <item itemvalue="JUnit.BoardAdjTargetTest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.GameSolutionTest" />
         <item itemvalue="JUnit.GameSetupTests" />
-        <item itemvalue="JUnit.BoardAdjTargetTest" />
         <item itemvalue="JUnit.GameSetupTests.testDeal" />
         <item itemvalue="JUnit.BoardAdjTargetTest.testTargetsWalkwayBlocked" />
         <item itemvalue="JUnit.BoardAdjTargetTest.testTargetsRoomNoSecret" />
@@ -215,6 +209,8 @@
       <workItem from="1680458082544" duration="10482000" />
       <workItem from="1680477716600" duration="3885000" />
       <workItem from="1680494862060" duration="604000" />
+      <workItem from="1680561864203" duration="3643000" />
+      <workItem from="1680577055495" duration="987000" />
     </task>
     <task id="LOCAL-00001" summary="All tests pass now">
       <created>1680210066007</created>
@@ -363,7 +359,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680478202431</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="created failing accusation tests">
+      <created>1680563023617</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1680563023617</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -448,7 +451,8 @@
     <MESSAGE value="all tests passing" />
     <MESSAGE value="updated gitlog.txt" />
     <MESSAGE value="created empty functions based on UML" />
-    <option name="LAST_COMMIT_MESSAGE" value="created empty functions based on UML" />
+    <MESSAGE value="created failing accusation tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="created failing accusation tests" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">

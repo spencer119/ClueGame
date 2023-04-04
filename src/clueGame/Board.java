@@ -152,8 +152,6 @@ public class Board {
             }
             file.close();
             scan.close();
-//            deal();
-            createSolution();
         } catch (IOException e) {
             throw new BadConfigFormatException();
         }
@@ -184,7 +182,13 @@ public class Board {
                     break;
             }
         }
-        theAnswer = new Solution(deck.get(room), deck.get(person), deck.get(weapon));
+        Card r = deck.get(room);
+        Card p = deck.get(person);
+        Card w = deck.get(weapon);
+        theAnswer = new Solution(r, p, w);
+        deck.remove(r);
+        deck.remove(p);
+        deck.remove(w);
     }
 
 
@@ -249,11 +253,20 @@ public class Board {
         }
     }
 
-    public Boolean checkAccusation() {
-        return false;
+
+    public Boolean checkAccusation(Solution accusation) {
+        return accusation.equals(theAnswer);
     }
 
-    public Card handleSuggestion() {
+    public Card handleSuggestion(Player accuser, Card person, Card room, Card weapon) {
+        for (Player p : players) {
+            if (p != accuser) {
+                Card c = p.disproveSuggestion(person, room, weapon);
+                if (c != null) {
+                    return c;
+                }
+            }
+        }
         return null;
     }
 
@@ -294,6 +307,7 @@ public class Board {
     }
 
     public void deal() {
+        createSolution();
         Collections.shuffle(deck);
         int i = 0;
         for (Card c : deck) {
