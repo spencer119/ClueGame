@@ -12,4 +12,14 @@ public class CardSet extends HashSet<Card> {
         }
         return false;
     }
+
+    public Set<Card> getCardsByType(CardType type) {
+        Set<Card> cards = new HashSet<>();
+        for (Card c : this) {
+            if (c.getType() == type) {
+                cards.add(c);
+            }
+        }
+        return cards;
+    }
 }

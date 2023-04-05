@@ -191,7 +191,6 @@ public class Board {
         deck.remove(w);
     }
 
-
     /**
      * Load ClueLayout.csv
      */
@@ -253,7 +252,6 @@ public class Board {
         }
     }
 
-
     public Boolean checkAccusation(Solution accusation) {
         return accusation.equals(theAnswer);
     }
@@ -270,7 +268,6 @@ public class Board {
         }
         return null;
     }
-
 
     /**
      * Calculate a set of possible targets
@@ -353,6 +350,9 @@ public class Board {
         return numCols;
     }
 
+    public void addPlayer(Player player) {
+        players.add(player);
+    }
 
     public BoardCell getCell(int i, int j) {
 
@@ -384,6 +384,10 @@ public class Board {
 
     public Solution getTheAnswer() {
         return theAnswer;
+    }
+
+    public void setTheAnswer(Solution theAnswer) {
+        this.theAnswer = theAnswer;
     }
 }
 

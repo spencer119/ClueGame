@@ -10,7 +10,7 @@ public abstract class Player {
     private final ArrayList<Card> hand;
     private int row;
     private int col;
-    private Set<Card> seenCards;
+    private CardSet seenCards = new CardSet();
 
     public Player(String name, String color, int row, int col) {
         this.name = name;
@@ -57,4 +57,7 @@ public abstract class Player {
         return hand;
     }
 
+    public Set<Card> getSeenCards() {
+        return seenCards;
+    }
 }

@@ -1,5 +1,7 @@
 package clueGame;
 
+import java.util.Set;
+
 public class Card {
     private final String cardName;
     private final CardType type;
@@ -25,3 +27,5 @@ public class Card {
         return type;
     }
 }
+
+

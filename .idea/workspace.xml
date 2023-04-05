@@ -4,9 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eab8da27-7ab5-4896-a4cc-6cac7e9ed2dd" name="Changes" comment="">
+    <list default="true" id="eab8da27-7ab5-4896-a4cc-6cac7e9ed2dd" name="Changes" comment="added more comments">
+      <change afterPath="$PROJECT_DIR$/src/tests/ComputerAITest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/clueGame/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clueGame/Board.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/clueGame/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clueGame/Card.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/clueGame/CardSet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clueGame/CardSet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/clueGame/ComputerPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clueGame/ComputerPlayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/clueGame/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clueGame/Player.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,23 +99,7 @@
       <recent name="tests" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.GameSolutionTest">
-    <configuration name="BoardAdjTargetTest.testTargetsRoomNoSecret" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ClueGame" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.BoardAdjTargetTest" />
-      <option name="METHOD_NAME" value="testTargetsRoomNoSecret" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.ComputerAITest">
     <configuration name="BoardAdjTargetTest.testTargetsWalkwayBlocked" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ClueGame" />
       <extension name="coverage">
@@ -123,6 +112,21 @@
       <option name="MAIN_CLASS_NAME" value="tests.BoardAdjTargetTest" />
       <option name="METHOD_NAME" value="testTargetsWalkwayBlocked" />
       <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ComputerAITest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ClueGame" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.ComputerAITest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -174,19 +178,19 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="JUnit.ComputerAITest" />
       <item itemvalue="JUnit.GameSolutionTest" />
       <item itemvalue="JUnit.GameSetupTests" />
       <item itemvalue="JUnit.GameSetupTests.testDeal" />
       <item itemvalue="JUnit.BoardAdjTargetTest.testTargetsWalkwayBlocked" />
-      <item itemvalue="JUnit.BoardAdjTargetTest.testTargetsRoomNoSecret" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ComputerAITest" />
         <item itemvalue="JUnit.GameSolutionTest" />
         <item itemvalue="JUnit.GameSetupTests" />
         <item itemvalue="JUnit.GameSetupTests.testDeal" />
         <item itemvalue="JUnit.BoardAdjTargetTest.testTargetsWalkwayBlocked" />
-        <item itemvalue="JUnit.BoardAdjTargetTest.testTargetsRoomNoSecret" />
       </list>
     </recent_temporary>
   </component>
@@ -211,6 +215,7 @@
       <workItem from="1680577055495" duration="1618000" />
       <workItem from="1680670396806" duration="92000" />
       <workItem from="1680670518746" duration="762000" />
+      <workItem from="1680728120669" duration="3617000" />
     </task>
     <task id="LOCAL-00001" summary="All tests pass now">
       <created>1680210066007</created>
@@ -373,7 +378,28 @@
       <option name="project" value="LOCAL" />
       <updated>1680620987420</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="created custom CardSet class to have useful Set&lt;Card&gt; methods">
+      <created>1680715800167</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1680715800167</updated>
+    </task>
+    <task id="LOCAL-00025" summary="made failing suggestion tests">
+      <created>1680729983047</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1680729983047</updated>
+    </task>
+    <task id="LOCAL-00026" summary="added more comments">
+      <created>1680730049275</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1680730049275</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -437,7 +463,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="All tests pass now" />
     <MESSAGE value="Removed redundant calcVisited variable now it only uses visited" />
     <MESSAGE value="Cleaned up switch statements to be much more readable" />
     <MESSAGE value="added comments and removed old code meant for testing in Board class" />
@@ -460,7 +485,10 @@
     <MESSAGE value="created empty functions based on UML" />
     <MESSAGE value="created failing accusation tests" />
     <MESSAGE value="accusation tests passing" />
-    <option name="LAST_COMMIT_MESSAGE" value="accusation tests passing" />
+    <MESSAGE value="created custom CardSet class to have useful Set&lt;Card&gt; methods" />
+    <MESSAGE value="made failing suggestion tests" />
+    <MESSAGE value="added more comments" />
+    <option name="LAST_COMMIT_MESSAGE" value="added more comments" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
