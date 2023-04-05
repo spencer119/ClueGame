@@ -258,11 +258,12 @@ public class Board {
         return accusation.equals(theAnswer);
     }
 
-    public Card handleSuggestion(Player accuser, Card person, Card room, Card weapon) {
+    public Card handleSuggestion(Player player, Card person, Card room, Card weapon) {
         for (Player p : players) {
-            if (p != accuser) {
+            if (p != player) {
                 Card c = p.disproveSuggestion(person, room, weapon);
                 if (c != null) {
+                    player.updateSeen(c);
                     return c;
                 }
             }

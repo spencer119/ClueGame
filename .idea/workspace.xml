@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eab8da27-7ab5-4896-a4cc-6cac7e9ed2dd" name="Changes" comment="created failing accusation tests">
+    <list default="true" id="eab8da27-7ab5-4896-a4cc-6cac7e9ed2dd" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/clueGame/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clueGame/Board.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/clueGame/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clueGame/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tests/GameSetupTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/GameSetupTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,7 +77,7 @@
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
     &quot;rearrange.code.on.save&quot;: &quot;true&quot;,
     &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
@@ -210,7 +208,9 @@
       <workItem from="1680477716600" duration="3885000" />
       <workItem from="1680494862060" duration="604000" />
       <workItem from="1680561864203" duration="3643000" />
-      <workItem from="1680577055495" duration="987000" />
+      <workItem from="1680577055495" duration="1618000" />
+      <workItem from="1680670396806" duration="92000" />
+      <workItem from="1680670518746" duration="762000" />
     </task>
     <task id="LOCAL-00001" summary="All tests pass now">
       <created>1680210066007</created>
@@ -366,7 +366,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680563023617</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="accusation tests passing">
+      <created>1680620987420</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1680620987420</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -415,9 +422,9 @@
               </option>
               <option name="COLUMN_ID_WIDTH">
                 <map>
-                  <entry key="Table.Default.Author.ColumnIdWidth" value="28" />
-                  <entry key="Table.Default.Date.ColumnIdWidth" value="138" />
-                  <entry key="Table.Space.CommitStatus.ColumnIdWidth" value="20" />
+                  <entry key="Table.Default.Author.ColumnIdWidth" value="15" />
+                  <entry key="Table.Default.Date.ColumnIdWidth" value="15" />
+                  <entry key="Table.Space.CommitStatus.ColumnIdWidth" value="15" />
                 </map>
               </option>
             </State>
@@ -452,7 +459,8 @@
     <MESSAGE value="updated gitlog.txt" />
     <MESSAGE value="created empty functions based on UML" />
     <MESSAGE value="created failing accusation tests" />
-    <option name="LAST_COMMIT_MESSAGE" value="created failing accusation tests" />
+    <MESSAGE value="accusation tests passing" />
+    <option name="LAST_COMMIT_MESSAGE" value="accusation tests passing" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
