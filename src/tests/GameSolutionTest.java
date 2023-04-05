@@ -58,11 +58,14 @@ public class GameSolutionTest {
         disprovePlayer.updateHand(disproveRoom);
         board.addPlayer(testPlayer);
         board.addPlayer(disprovePlayer);
+        // disproveSuggestion tests
 
         // Test when player cannot disprove any cards
         assertNull(testPlayer.disproveSuggestion(wrongPerson, wrongRoom, wrongWeapon));
         // Player can disprove testPerson
         assertNotNull(testPlayer.disproveSuggestion(testPerson, wrongRoom, wrongWeapon));
+
+        // Handle suggestion tests
         // Test where suggesting player has the cards
         assertNull(board.handleSuggestion(testPlayer, wrongPerson, wrongRoom, wrongWeapon));
         // disprovePlayer can disprove room card
