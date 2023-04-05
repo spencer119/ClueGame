@@ -4,14 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eab8da27-7ab5-4896-a4cc-6cac7e9ed2dd" name="Changes" comment="added more comments">
-      <change afterPath="$PROJECT_DIR$/src/tests/ComputerAITest.java" afterDir="false" />
+    <list default="true" id="eab8da27-7ab5-4896-a4cc-6cac7e9ed2dd" name="Changes" comment="testAITarget tests passing">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/clueGame/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clueGame/Board.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/clueGame/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clueGame/Card.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/clueGame/CardSet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clueGame/CardSet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/clueGame/ComputerPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clueGame/ComputerPlayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/clueGame/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clueGame/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tests/ComputerAITest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/ComputerAITest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -215,7 +210,7 @@
       <workItem from="1680577055495" duration="1618000" />
       <workItem from="1680670396806" duration="92000" />
       <workItem from="1680670518746" duration="762000" />
-      <workItem from="1680728120669" duration="3617000" />
+      <workItem from="1680728120669" duration="3788000" />
     </task>
     <task id="LOCAL-00001" summary="All tests pass now">
       <created>1680210066007</created>
@@ -399,7 +394,21 @@
       <option name="project" value="LOCAL" />
       <updated>1680730049275</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="suggestion tests passing and testAITarget failing tests created">
+      <created>1680732460020</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1680732460020</updated>
+    </task>
+    <task id="LOCAL-00028" summary="testAITarget tests passing">
+      <created>1680732490384</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1680732490384</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -463,8 +472,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Removed redundant calcVisited variable now it only uses visited" />
-    <MESSAGE value="Cleaned up switch statements to be much more readable" />
     <MESSAGE value="added comments and removed old code meant for testing in Board class" />
     <MESSAGE value="Added final to variables where it was appropriate" />
     <MESSAGE value="Added comments to BadConfigFormatException and rearranged the custom constructor with log writing" />
@@ -488,7 +495,9 @@
     <MESSAGE value="created custom CardSet class to have useful Set&lt;Card&gt; methods" />
     <MESSAGE value="made failing suggestion tests" />
     <MESSAGE value="added more comments" />
-    <option name="LAST_COMMIT_MESSAGE" value="added more comments" />
+    <MESSAGE value="suggestion tests passing and testAITarget failing tests created" />
+    <MESSAGE value="testAITarget tests passing" />
+    <option name="LAST_COMMIT_MESSAGE" value="testAITarget tests passing" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">

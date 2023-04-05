@@ -9,6 +9,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class ComputerAITest {
     private static Board board;
+    private static ComputerPlayer ai1;
 
     @BeforeAll
     public static void setUp() {
@@ -18,6 +19,8 @@ public class ComputerAITest {
         board.setConfigFiles("ClueLayout.csv", "ClueSetup.txt");
         // Initialize will load config files
         board.initialize();
+        ai1 = new ComputerPlayer("testAI 1", "red", 13, 2);
+        board.addPlayer(ai1);
     }
 
     @Test
@@ -28,8 +31,6 @@ public class ComputerAITest {
 
     @Test
     public void testAITarget() {
-        ComputerPlayer ai1 = new ComputerPlayer("testAI 1", "red", 13, 2);
-        board.addPlayer(ai1);
         board.calcTargets(board.getCell(2, 0), 1); // Doorawy to attic
         BoardCell target = ai1.selectTarget(board.getTargets());
         assertEquals(board.getCell(3, 3), target); // Attic center
