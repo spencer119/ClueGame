@@ -1,5 +1,7 @@
 package clueGame;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -21,5 +23,13 @@ public class CardSet extends HashSet<Card> {
             }
         }
         return cards;
+    }
+
+    public Set<Card> getUnseenCards(ArrayList<Card> deck) {
+        Set<Card> unseen = new HashSet<>();
+        for (Card c : deck) {
+
+        }
+        return unseen;
     }
 }

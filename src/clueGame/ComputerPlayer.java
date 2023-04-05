@@ -13,10 +13,25 @@ public class ComputerPlayer extends Player {
     }
 
     public Solution createSuggestion(Room room) {
+        ArrayList<Card> boardDeck = board.getDeck();
         CardSet seen = (CardSet) super.getSeenCards();
         Set<Card> seenWeapons = seen.getCardsByType(CardType.WEAPON);
         Set<Card> seenPeople = seen.getCardsByType(CardType.PERSON);
-        return null;
+        ArrayList<Card> potentialWeapons = new ArrayList<Card>();
+        ArrayList<Card> potentialPeople = new ArrayList<Card>();
+        for (Card c : boardDeck) {
+            if (c.getType() == CardType.WEAPON && !seenWeapons.contains(c)) {
+                potentialWeapons.add(c);
+            }
+            if (c.getType() == CardType.PERSON && !seenPeople.contains(c)) {
+                potentialPeople.add(c);
+            }
+        }
+        if (potentialPeople.isEmpty() || potentialWeapons.isEmpty()) {
+            return null;
+        } else {
+            return new Solution(new Card(room.getName(), CardType.ROOM), potentialPeople.get(rand.nextInt(potentialPeople.size())), potentialWeapons.get(rand.nextInt(potentialWeapons.size())));
+        }
     }
 
     public BoardCell selectTarget(Set<BoardCell> targets) {
