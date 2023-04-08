@@ -6,7 +6,7 @@ import javax.swing.border.TitledBorder;
 import java.awt.*;
 
 public class GameControlPanel extends JPanel {
-    private static final Integer roll = 1;
+    private static Integer roll = 1;
     private static Player currentPlayer;
     private static Board board;
     private final JTextField playerField;
@@ -74,18 +74,33 @@ public class GameControlPanel extends JPanel {
     public static void main(String[] args) {
 
         GameControlPanel panel = new GameControlPanel();
-//
+
         JFrame frame = new JFrame();
         frame.setContentPane(panel);
         frame.setSize(750, 180);
-//
+
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-//
-//        panel.setTurn(new ComputerPlayer( "Col. Mustard", "orange", 0, 0), 5);
-//        panel.setGuess("I have no guess!");
-//        panel.setGuessResult( "So you have nothing?");
-//
+
+        panel.setTurn(new ComputerPlayer("Test Player", "orange", 0, 0), 5);
+        panel.setGuess("I have no guess!");
+        panel.setGuessResult("So you have nothing?");
+
         frame.setVisible(true);
 
+    }
+
+    public void setTurn(Player player, int roll) {
+        currentPlayer = player;
+        playerField.setText(currentPlayer.getName());
+        GameControlPanel.roll = roll;
+        rollField.setText(Integer.toString(roll));
+    }
+
+    public void setGuess(String guess) {
+        guessField.setText(guess);
+    }
+
+    public void setGuessResult(String result) {
+        guessResultField.setText(result);
     }
 }
