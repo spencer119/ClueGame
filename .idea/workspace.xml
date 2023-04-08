@@ -5,8 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="eab8da27-7ab5-4896-a4cc-6cac7e9ed2dd" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/clueGame/GameControlPanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gitlog.txt" beforeDir="false" afterPath="$PROJECT_DIR$/gitlog.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,7 +94,20 @@
       <recent name="tests" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.BoardAdjTargetTest">
+  <component name="RunManager" selected="Application.GameControlPanel">
+    <configuration name="GameControlPanel" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="clueGame.GameControlPanel" />
+      <module name="ClueGame" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="clueGame.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="BoardAdjTargetTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ClueGame" />
       <extension name="coverage">
@@ -120,21 +133,6 @@
       </extension>
       <option name="PACKAGE_NAME" value="tests" />
       <option name="MAIN_CLASS_NAME" value="tests.BoardTestsExp" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ComputerAITest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ClueGame" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.ComputerAITest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -171,19 +169,19 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Application.GameControlPanel" />
       <item itemvalue="JUnit.BoardAdjTargetTest" />
       <item itemvalue="JUnit.BoardTestsExp" />
-      <item itemvalue="JUnit.ComputerAITest" />
       <item itemvalue="JUnit.GameSolutionTest" />
       <item itemvalue="JUnit.GameSetupTests" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.GameControlPanel" />
         <item itemvalue="JUnit.BoardAdjTargetTest" />
         <item itemvalue="JUnit.BoardTestsExp" />
         <item itemvalue="JUnit.GameSetupTests" />
         <item itemvalue="JUnit.GameSolutionTest" />
-        <item itemvalue="JUnit.ComputerAITest" />
       </list>
     </recent_temporary>
   </component>
@@ -209,6 +207,8 @@
       <workItem from="1680670396806" duration="92000" />
       <workItem from="1680670518746" duration="762000" />
       <workItem from="1680728120669" duration="7429000" />
+      <workItem from="1680929818473" duration="936000" />
+      <workItem from="1680930959560" duration="1518000" />
     </task>
     <task id="LOCAL-00001" summary="All tests pass now">
       <created>1680210066007</created>
