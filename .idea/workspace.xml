@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-<<<<<<< HEAD
-    <list default="true" id="eab8da27-7ab5-4896-a4cc-6cac7e9ed2dd" name="Changes" comment="">
-=======
     <list default="true" id="eab8da27-7ab5-4896-a4cc-6cac7e9ed2dd" name="Changes" comment="created constructor for control panel">
-      <change afterPath="$PROJECT_DIR$/src/clueGame/CardPanel.java" afterDir="false" />
->>>>>>> 837edbce9cfbfda19deb13a31dfbe37b296492fd
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -212,7 +207,8 @@
       <workItem from="1680670518746" duration="762000" />
       <workItem from="1680728120669" duration="7429000" />
       <workItem from="1680929818473" duration="936000" />
-      <workItem from="1680930959560" duration="2091000" />
+      <workItem from="1680930959560" duration="1717000" />
+      <workItem from="1680993526257" duration="9000" />
     </task>
     <task id="LOCAL-00001" summary="All tests pass now">
       <created>1680210066007</created>
@@ -431,21 +427,7 @@
       <option name="project" value="LOCAL" />
       <updated>1680932506263</updated>
     </task>
-    <task id="LOCAL-00032" summary="created getters/setters and finished main">
-      <created>1680932844238</created>
-      <option name="number" value="00032" />
-      <option name="presentableId" value="LOCAL-00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1680932844238</updated>
-    </task>
-    <task id="LOCAL-00033" summary="updated gitlog">
-      <created>1680932939434</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1680932939434</updated>
-    </task>
-    <option name="localTasksCounter" value="34" />
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -509,6 +491,8 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+    <MESSAGE value="added more comments to multiple functions in the board class and formatted the file" />
+    <MESSAGE value="Added more comments to FileInitTests and simplified some assertions to be shorter" />
     <MESSAGE value="Commented BoardAdjTargetTest removed redundant test and renamed another. cleaned tests to be shorter" />
     <MESSAGE value="Created card types" />
     <MESSAGE value="Finished declaring empty skeleton from UML diagram" />
@@ -532,9 +516,7 @@
     <MESSAGE value="moved ai player to setUp()" />
     <MESSAGE value="All ComputerAITest tests passing" />
     <MESSAGE value="created constructor for control panel" />
-    <MESSAGE value="created getters/setters and finished main" />
-    <MESSAGE value="updated gitlog" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated gitlog" />
+    <option name="LAST_COMMIT_MESSAGE" value="created constructor for control panel" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
