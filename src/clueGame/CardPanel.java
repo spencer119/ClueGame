@@ -18,4 +18,12 @@ public class CardPanel extends JPanel {
 
 
     }
+
+    public static void main(String[] args) {
+        CardPanel cardPanel = new CardPanel();
+        JFrame frame = new JFrame();
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setSize(300, 300);
+        
+    }
 }
