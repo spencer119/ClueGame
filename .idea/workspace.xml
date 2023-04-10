@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="eab8da27-7ab5-4896-a4cc-6cac7e9ed2dd" name="Changes" comment="created constructor for control panel">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/clueGame/CardPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clueGame/CardPanel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,7 +94,20 @@
       <recent name="tests" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.GameControlPanel">
+  <component name="RunManager" selected="Application.CardPanel">
+    <configuration name="CardPanel" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="clueGame.CardPanel" />
+      <module name="ClueGame" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="clueGame.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="GameControlPanel" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="clueGame.GameControlPanel" />
       <module name="ClueGame" />
@@ -152,35 +166,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GameSolutionTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ClueGame" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.GameSolutionTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <list>
+      <item itemvalue="Application.CardPanel" />
       <item itemvalue="Application.GameControlPanel" />
       <item itemvalue="JUnit.BoardAdjTargetTest" />
       <item itemvalue="JUnit.BoardTestsExp" />
-      <item itemvalue="JUnit.GameSolutionTest" />
       <item itemvalue="JUnit.GameSetupTests" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.CardPanel" />
         <item itemvalue="Application.GameControlPanel" />
         <item itemvalue="JUnit.BoardAdjTargetTest" />
         <item itemvalue="JUnit.BoardTestsExp" />
         <item itemvalue="JUnit.GameSetupTests" />
-        <item itemvalue="JUnit.GameSolutionTest" />
       </list>
     </recent_temporary>
   </component>
@@ -209,6 +208,8 @@
       <workItem from="1680929818473" duration="936000" />
       <workItem from="1680930959560" duration="1717000" />
       <workItem from="1680993526257" duration="9000" />
+      <workItem from="1680993556387" duration="9000" />
+      <workItem from="1681083739928" duration="3811000" />
     </task>
     <task id="LOCAL-00001" summary="All tests pass now">
       <created>1680210066007</created>
