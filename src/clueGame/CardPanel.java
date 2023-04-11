@@ -6,44 +6,66 @@ import javax.swing.border.EtchedBorder;
 import javax.swing.border.TitledBorder;
 import java.awt.*;
 import java.util.ArrayList;
+import java.util.Objects;
+import java.util.Set;
 
 public class CardPanel extends JPanel {
     private static final Board board = Board.getInstance();
-    private final JPanel peoplePanel;
-    private final JPanel weaponsPanel;
-    private final JPanel roomsPanel;
+    private final JPanel seenPeople;
+    private final JPanel seenRooms;
+    private final JPanel seenWeapons;
+    private final JPanel handPeople;
+    private final JPanel handRooms;
+    private final JPanel handWeapons;
 
     public CardPanel() {
         JPanel cardPanel = new JPanel();
         setLayout(new GridLayout(3, 0));
-        peoplePanel = new JPanel();
-        roomsPanel = new JPanel();
-        weaponsPanel = new JPanel();
-        peoplePanel.setLayout(new GridLayout(0, 1));
-        roomsPanel.setLayout(new GridLayout(0, 1));
-        weaponsPanel.setLayout(new GridLayout(0, 1));
+        JPanel peoplePanel = new JPanel();
+        JPanel roomsPanel = new JPanel();
+        JPanel weaponsPanel = new JPanel();
+        seenPeople = new JPanel();
+        seenRooms = new JPanel();
+        seenWeapons = new JPanel();
+        handPeople = new JPanel();
+        handRooms = new JPanel();
+        handWeapons = new JPanel();
+        peoplePanel.setLayout(new GridLayout(2, 0));
+        roomsPanel.setLayout(new GridLayout(2, 0));
+        weaponsPanel.setLayout(new GridLayout(2, 0));
         peoplePanel.setBorder(new TitledBorder(new EtchedBorder(), "People"));
         roomsPanel.setBorder(new TitledBorder(new EtchedBorder(), "Rooms"));
         weaponsPanel.setBorder(new TitledBorder(new EtchedBorder(), "Weapons"));
-        JLabel handLabel = new JLabel("In hand");
-        JLabel seenLabel = new JLabel("Seen");
-        peoplePanel.add(handLabel);
-        JPanel handPanel = new JPanel();
-
-        JPanel seenPanel = new JPanel();
-        handPanel.setLayout(new GridLayout(0, 1));
-        seenPanel.setLayout(new GridLayout(0, 1));
-
-        peoplePanel.add(handPanel);
-        peoplePanel.add(seenLabel);
-        peoplePanel.add(seenPanel);
-        updateWeaponPanel();
-        handPanel.add(new JLabel("test"));
-        seenPanel.add(new JLabel("test"));
+        seenPeople.setBorder(new TitledBorder(new EtchedBorder(), "Seen"));
+        seenRooms.setBorder(new TitledBorder(new EtchedBorder(), "Seen"));
+        seenWeapons.setBorder(new TitledBorder(new EtchedBorder(), "Seen"));
+        handPeople.setBorder(new TitledBorder(new EtchedBorder(), "In Hand"));
+        handRooms.setBorder(new TitledBorder(new EtchedBorder(), "In Hand"));
+        handWeapons.setBorder(new TitledBorder(new EtchedBorder(), "In Hand"));
+        seenPeople.setLayout(new GridLayout(7, 0));
+        handPeople.setLayout(new GridLayout(7, 0));
+        seenRooms.setLayout(new GridLayout(7, 0));
+        handRooms.setLayout(new GridLayout(7, 0));
+        seenWeapons.setLayout(new GridLayout(7, 0));
+        handWeapons.setLayout(new GridLayout(7, 0));
+        peoplePanel.add(handPeople);
+        peoplePanel.add(seenPeople);
+        roomsPanel.add(handRooms);
+        roomsPanel.add(seenRooms);
+        weaponsPanel.add(handWeapons);
+        weaponsPanel.add(seenWeapons);
+        updateCardPanel(CardType.PERSON);
+        updateCardPanel(CardType.ROOM);
+        updateCardPanel(CardType.WEAPON);
+//        JLabel handLabel = new JLabel("In hand");
+//        JLabel seenLabel = new JLabel("Seen");
+//        peoplePanel.add(handLabel);
+//        updateWeaponPanel();
+//        handPanel.add(new JLabel("test"));
+//        seenPanel.add(new JLabel("test"));
         add(peoplePanel);
         add(roomsPanel);
         add(weaponsPanel);
-
 
     }
 
@@ -59,14 +81,50 @@ public class CardPanel extends JPanel {
         cardPanel.setVisible(true);
     }
 
-    public void updateWeaponPanel() {
+    public void updateCardPanel(CardType type) {
         ArrayList<Card> cards = board.getPlayers().get(0).getHand();
-        for (Card c : cards) {
-            System.out.println(c.getCardName());
-            weaponsPanel.removeAll();
-            if (c.getType() == CardType.WEAPON) {
-                weaponsPanel.add(new JLabel(c.getCardName()));
+        Set<Card> seenCards = board.getPlayers().get(0).getSeenCards();
+        if (Objects.requireNonNull(type) == CardType.PERSON) {
+            handPeople.removeAll();
+            seenPeople.removeAll();
+            for (Card c : cards) {
+                if (c.getType() == CardType.PERSON) {
+                    handPeople.add(new JLabel(c.getCardName()));
+                }
+            }
+            for (Card c : seenCards) {
+                if (c.getType() == CardType.PERSON) {
+                    seenPeople.add(new JLabel(c.getCardName()));
+                }
+            }
+        } else if (type == CardType.ROOM) {
+            handRooms.removeAll();
+            seenRooms.removeAll();
+            for (Card c : cards) {
+                if (c.getType() == CardType.ROOM) {
+                    handRooms.add(new JLabel(c.getCardName()));
+                }
+            }
+            for (Card c : seenCards) {
+                if (c.getType() == CardType.ROOM) {
+                    seenRooms.add(new JLabel(c.getCardName()));
+                }
+
+            }
+        } else if (type == CardType.WEAPON) {
+            handWeapons.removeAll();
+            seenWeapons.removeAll();
+            for (Card c : cards) {
+                if (c.getType() == CardType.WEAPON) {
+                    handWeapons.add(new JLabel(c.getCardName()));
+                }
+            }
+            for (Card c : seenCards) {
+                if (c.getType() == CardType.WEAPON) {
+                    seenWeapons.add(new JLabel(c.getCardName()));
+                }
             }
         }
+        repaint();
     }
 }
