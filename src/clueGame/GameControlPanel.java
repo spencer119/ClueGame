@@ -4,6 +4,8 @@ import javax.swing.*;
 import javax.swing.border.EtchedBorder;
 import javax.swing.border.TitledBorder;
 import java.awt.*;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 
 public class GameControlPanel extends JPanel {
     private static Integer roll = 1;
@@ -102,5 +104,17 @@ public class GameControlPanel extends JPanel {
 
     public void setGuessResult(String result) {
         guessResultField.setText(result);
+    }
+
+    private class NextListener implements MouseListener {
+        public void mousePressed(MouseEvent e) {}
+
+        public void mouseReleased(MouseEvent e) {}
+
+        public void mouseEntered(MouseEvent e) {}
+
+        public void mouseExited(MouseEvent e) {}
+
+        public void mouseClicked(MouseEvent e) {}
     }
 }
