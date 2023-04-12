@@ -4,9 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eab8da27-7ab5-4896-a4cc-6cac7e9ed2dd" name="Changes" comment="">
+    <list default="true" id="eab8da27-7ab5-4896-a4cc-6cac7e9ed2dd" name="Changes" comment="Created ClueGame main and initlize JFrame">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/clueGame/CardPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clueGame/CardPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/clueGame/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clueGame/Board.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/clueGame/BoardCell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clueGame/BoardCell.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/clueGame/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clueGame/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/clueGame/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clueGame/Room.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,9 +97,22 @@
       <recent name="tests" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.CardPanel">
+  <component name="RunManager" selected="Application.ClueGame">
     <configuration name="CardPanel" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="clueGame.CardPanel" />
+      <module name="ClueGame" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="clueGame.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ClueGame" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="clueGame.ClueGame" />
       <module name="ClueGame" />
       <extension name="coverage">
         <pattern>
@@ -151,35 +167,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GameSetupTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ClueGame" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.GameSetupTests" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <list>
+      <item itemvalue="Application.ClueGame" />
       <item itemvalue="Application.CardPanel" />
       <item itemvalue="Application.GameControlPanel" />
       <item itemvalue="JUnit.BoardAdjTargetTest" />
       <item itemvalue="JUnit.BoardTestsExp" />
-      <item itemvalue="JUnit.GameSetupTests" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.ClueGame" />
         <item itemvalue="Application.CardPanel" />
         <item itemvalue="Application.GameControlPanel" />
         <item itemvalue="JUnit.BoardAdjTargetTest" />
         <item itemvalue="JUnit.BoardTestsExp" />
-        <item itemvalue="JUnit.GameSetupTests" />
       </list>
     </recent_temporary>
   </component>
@@ -444,7 +445,28 @@
       <option name="project" value="LOCAL" />
       <updated>1681168043473</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="Moved labels to be more centered in GUI, also changed colors">
+      <created>1681266947080</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1681266947080</updated>
+    </task>
+    <task id="LOCAL-00035" summary="Added color differences for seen and in hand cards">
+      <created>1681266971139</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1681266971139</updated>
+    </task>
+    <task id="LOCAL-00036" summary="Created ClueGame main and initlize JFrame">
+      <created>1681266999592</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1681266999592</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -508,9 +530,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Commented BoardAdjTargetTest removed redundant test and renamed another. cleaned tests to be shorter" />
-    <MESSAGE value="Created card types" />
-    <MESSAGE value="Finished declaring empty skeleton from UML diagram" />
     <MESSAGE value="failing tests for player class created" />
     <MESSAGE value="player tests pass" />
     <MESSAGE value="created failing solution tests" />
@@ -533,10 +552,22 @@
     <MESSAGE value="created constructor for control panel" />
     <MESSAGE value="still completely broken for no reason" />
     <MESSAGE value="broken still" />
-    <option name="LAST_COMMIT_MESSAGE" value="broken still" />
+    <MESSAGE value="Moved labels to be more centered in GUI, also changed colors" />
+    <MESSAGE value="Added color differences for seen and in hand cards" />
+    <MESSAGE value="Created ClueGame main and initlize JFrame" />
+    <option name="LAST_COMMIT_MESSAGE" value="Created ClueGame main and initlize JFrame" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/clueGame/Board.java</url>
+          <line>243</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="clueGame.Board" memberName="roomMap" />
