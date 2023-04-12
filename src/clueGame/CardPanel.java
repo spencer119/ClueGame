@@ -42,12 +42,12 @@ public class CardPanel extends JPanel {
         handPeople.setBorder(new TitledBorder(new EtchedBorder(), "In Hand"));
         handRooms.setBorder(new TitledBorder(new EtchedBorder(), "In Hand"));
         handWeapons.setBorder(new TitledBorder(new EtchedBorder(), "In Hand"));
-        seenPeople.setLayout(new GridLayout(7, 0));
-        handPeople.setLayout(new GridLayout(7, 0));
-        seenRooms.setLayout(new GridLayout(7, 0));
-        handRooms.setLayout(new GridLayout(7, 0));
-        seenWeapons.setLayout(new GridLayout(7, 0));
-        handWeapons.setLayout(new GridLayout(7, 0));
+        seenPeople.setLayout(new GridLayout(5, 0, 0, 10));
+        handPeople.setLayout(new GridLayout(5, 0, 0, 10));
+        seenRooms.setLayout(new GridLayout(5, 0, 0, 10));
+        handRooms.setLayout(new GridLayout(5, 0, 0, 10));
+        seenWeapons.setLayout(new GridLayout(5, 0));
+        handWeapons.setLayout(new GridLayout(5, 0));
         peoplePanel.add(handPeople);
         peoplePanel.add(seenPeople);
         roomsPanel.add(handRooms);
@@ -89,12 +89,12 @@ public class CardPanel extends JPanel {
             seenPeople.removeAll();
             for (Card c : cards) {
                 if (c.getType() == CardType.PERSON) {
-                    handPeople.add(new JLabel(c.getCardName()));
+                    handPeople.add(createCardLabel(c.getCardName(), true));
                 }
             }
             for (Card c : seenCards) {
                 if (c.getType() == CardType.PERSON) {
-                    seenPeople.add(new JLabel(c.getCardName()));
+                    seenPeople.add(createCardLabel(c.getCardName(), false));
                 }
             }
         } else if (type == CardType.ROOM) {
@@ -102,12 +102,12 @@ public class CardPanel extends JPanel {
             seenRooms.removeAll();
             for (Card c : cards) {
                 if (c.getType() == CardType.ROOM) {
-                    handRooms.add(new JLabel(c.getCardName()));
+                    handRooms.add(createCardLabel(c.getCardName(), true));
                 }
             }
             for (Card c : seenCards) {
                 if (c.getType() == CardType.ROOM) {
-                    seenRooms.add(new JLabel(c.getCardName()));
+                    seenRooms.add(createCardLabel(c.getCardName(), true));
                 }
 
             }
@@ -116,15 +116,25 @@ public class CardPanel extends JPanel {
             seenWeapons.removeAll();
             for (Card c : cards) {
                 if (c.getType() == CardType.WEAPON) {
-                    handWeapons.add(new JLabel(c.getCardName()));
+                    handWeapons.add(createCardLabel(c.getCardName(), true));
                 }
             }
             for (Card c : seenCards) {
                 if (c.getType() == CardType.WEAPON) {
-                    seenWeapons.add(new JLabel(c.getCardName()));
+                    seenWeapons.add(createCardLabel(c.getCardName(), true));
                 }
             }
         }
         repaint();
     }
+
+    private JLabel createCardLabel(String name, Boolean inHand) {
+        JLabel label = new JLabel(name);
+        label.setBorder(BorderFactory.createCompoundBorder(label.getBorder(), BorderFactory.createEmptyBorder(0, 5, 0, 5)));
+        label.setFont(label.getFont().deriveFont(12.0f));
+        label.setForeground(inHand ? Color.GREEN : Color.RED);
+        return label;
+    }
+
+
 }
