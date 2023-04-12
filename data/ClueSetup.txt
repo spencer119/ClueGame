@@ -1,6 +1,6 @@
 // Rooms and room cards
 Room, Storage, S
-Room, Underground Passage, P
+Room, Hidden Room, H
 Room, Basement, B
 Room, Observatory, O
 Room, Attic, A
@@ -12,12 +12,12 @@ Room, Library, L
 Space, Unused, X
 Space, Walkway, W
 // Players
-Player, Human, Spencer, red, 0, 0
-Player, Computer, AI 1, blue, 1, 1
-Player, Computer, AI 2, orange, 2, 2
-Player, Computer, AI 3, green, 3, 3
-Player, Computer, AI 4, yellow, 4, 4
-Player, Computer, AI 5, purple, 5, 5
+Player, Human, Spencer, red, 1, 8
+Player, Computer, AI 1, blue, 8, 0
+Player, Computer, AI 2, orange, 12, 8
+Player, Computer, AI 3, green, 5, 22
+Player, Computer, AI 4, pink, 12, 21
+Player, Computer, AI 5, purple, 22, 12
 // Weapons
 Weapon, Knife
 Weapon, Revolver
