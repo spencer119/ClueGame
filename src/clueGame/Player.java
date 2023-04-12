@@ -1,25 +1,47 @@
 package clueGame;
 
+import javax.swing.*;
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.Set;
 
 @SuppressWarnings("FieldMayBeFinal")
-public abstract class Player {
+public abstract class Player extends JPanel {
     private final String name;
-    private final String color;
+    private final String colorStr;
     private final ArrayList<Card> hand;
+    private Color color;
     private int row;
     private int col;
     private CardSet seenCards = new CardSet();
 
-    public Player(String name, String color, int row, int col) {
+    public Player(String name, String colorStr, int row, int col) {
+        super();
         this.name = name;
-        this.color = color;
+        this.colorStr = colorStr;
         this.row = row;
         this.col = col;
         hand = new ArrayList<Card>();
+        setColor(colorStr);
     }
 
+    private void setColor(String color) {
+        switch (color.toLowerCase()) {
+            case "red" -> this.color = Color.RED;
+            case "blue" -> this.color = Color.BLUE;
+            case "green" -> this.color = Color.GREEN;
+            case "orange" -> this.color = Color.ORANGE;
+            case "purple" -> this.color = Color.MAGENTA;
+            case "pink" -> this.color = Color.PINK;
+        }
+    }
+
+    public void draw(Graphics g, int cellSize, int xOffset, int yOffset) {
+        int x = (col * cellSize) + xOffset;
+        int y = (row * cellSize) + yOffset;
+        g.setColor(this.color);
+        g.fillOval(x, y, cellSize, cellSize);
+    }
 
     public void updateHand(Card card) {
         hand.add(card);
@@ -49,8 +71,8 @@ public abstract class Player {
         return name;
     }
 
-    public String getColor() {
-        return color;
+    public String getColorStr() {
+        return colorStr;
     }
 
     public ArrayList<Card> getHand() {
