@@ -1,5 +1,7 @@
 package clueGame;
 
+import javax.swing.*;
+import java.awt.*;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
@@ -10,7 +12,7 @@ import java.util.*;
  *
  * @author Spencer Hamilton
  */
-public class Board {
+public class Board extends JPanel {
     private static final Board theInstance = new Board();
     private final Map<Character, Room> roomMap = new HashMap<>();
 
@@ -45,6 +47,37 @@ public class Board {
             deal(); // Deal cards
         } catch (BadConfigFormatException e) { // Catch any bad config file format exceptions
             System.out.println("Bad config file format.");
+        }
+    }
+
+    @Override
+    public void paintComponent(Graphics g) {
+        super.paintComponent(g);
+        int height = getHeight();
+        int width = getWidth();
+        int cellLength = Math.min(width / numCols, height / numRows);
+        int xOffset = (width - (cellLength * numCols)) / 2;
+        int yOffset = (height - (cellLength * numRows)) / 2;
+        g.setColor(Color.white);
+        g.fillRect(0, 0, width, height);
+
+        ArrayList<BoardCell> secondLayer = new ArrayList<BoardCell>();
+
+        for (int i = 0; i < grid.length; i++) {
+            for (int j = 0; j < grid[i].length; j++) {
+                if (grid[i][j].isLabel() || grid[i][j].isDoorway())
+                    secondLayer.add(grid[i][j]);
+//                else
+                grid[i][j].draw(g, cellLength, xOffset, yOffset);
+
+            }
+        }
+        for (BoardCell c : secondLayer) {
+            if (c.isLabel()) c.drawLabel(g, cellLength, xOffset, yOffset, roomMap.get(c.getChar()).getName());
+            else if (c.isDoorway()) c.drawDoor(g, cellLength, xOffset, yOffset);
+        }
+        for (Player p : players) {
+            p.draw(g, cellLength, xOffset, yOffset);
         }
     }
 
