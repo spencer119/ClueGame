@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eab8da27-7ab5-4896-a4cc-6cac7e9ed2dd" name="Changes" comment="Created ClueGame main and initlize JFrame">
+    <list default="true" id="eab8da27-7ab5-4896-a4cc-6cac7e9ed2dd" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/clueGame/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clueGame/Board.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/clueGame/BoardCell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clueGame/BoardCell.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/clueGame/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clueGame/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/clueGame/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clueGame/Room.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -213,6 +210,7 @@
       <workItem from="1681083739928" duration="4939000" />
       <workItem from="1681167210043" duration="835000" />
       <workItem from="1681169067183" duration="3535000" />
+      <workItem from="1681271423768" duration="237000" />
     </task>
     <task id="LOCAL-00001" summary="All tests pass now">
       <created>1680210066007</created>
@@ -466,7 +464,35 @@
       <option name="project" value="LOCAL" />
       <updated>1681266999592</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="created paintComponent for Board">
+      <created>1681267063221</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1681267063221</updated>
+    </task>
+    <task id="LOCAL-00038" summary="Created draw for player circles">
+      <created>1681267080995</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1681267080995</updated>
+    </task>
+    <task id="LOCAL-00039" summary="Finished board cell class drawing">
+      <created>1681267100773</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1681267100773</updated>
+    </task>
+    <task id="LOCAL-00040" summary="updated gitlog">
+      <created>1681267119222</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1681267119222</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -530,10 +556,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="failing tests for player class created" />
-    <MESSAGE value="player tests pass" />
-    <MESSAGE value="created failing solution tests" />
-    <MESSAGE value="created failing deck tests" />
     <MESSAGE value="testCards passes" />
     <MESSAGE value="testSolutions passing" />
     <MESSAGE value="created failing deal tests" />
@@ -555,7 +577,11 @@
     <MESSAGE value="Moved labels to be more centered in GUI, also changed colors" />
     <MESSAGE value="Added color differences for seen and in hand cards" />
     <MESSAGE value="Created ClueGame main and initlize JFrame" />
-    <option name="LAST_COMMIT_MESSAGE" value="Created ClueGame main and initlize JFrame" />
+    <MESSAGE value="created paintComponent for Board" />
+    <MESSAGE value="Created draw for player circles" />
+    <MESSAGE value="Finished board cell class drawing" />
+    <MESSAGE value="updated gitlog" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated gitlog" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -563,7 +589,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/clueGame/Board.java</url>
-          <line>243</line>
+          <line>244</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>
