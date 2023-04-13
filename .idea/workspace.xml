@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eab8da27-7ab5-4896-a4cc-6cac7e9ed2dd" name="Changes" comment="created welcome dialog box">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/clueGame/GameControlPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clueGame/GameControlPanel.java" afterDir="false" />
-    </list>
+    <list default="true" id="eab8da27-7ab5-4896-a4cc-6cac7e9ed2dd" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -210,7 +207,7 @@
       <workItem from="1681083739928" duration="4939000" />
       <workItem from="1681167210043" duration="835000" />
       <workItem from="1681169067183" duration="3535000" />
-      <workItem from="1681271423768" duration="624000" />
+      <workItem from="1681271423768" duration="1241000" />
     </task>
     <task id="LOCAL-00001" summary="All tests pass now">
       <created>1680210066007</created>
@@ -499,7 +496,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681271715707</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="Created next listener class">
+      <created>1681272081656</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1681272081656</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -563,7 +567,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="testSolutions passing" />
     <MESSAGE value="created failing deal tests" />
     <MESSAGE value="all tests passing" />
     <MESSAGE value="updated gitlog.txt" />
@@ -588,7 +591,8 @@
     <MESSAGE value="Finished board cell class drawing" />
     <MESSAGE value="updated gitlog" />
     <MESSAGE value="created welcome dialog box" />
-    <option name="LAST_COMMIT_MESSAGE" value="created welcome dialog box" />
+    <MESSAGE value="Created next listener class" />
+    <option name="LAST_COMMIT_MESSAGE" value="Created next listener class" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
