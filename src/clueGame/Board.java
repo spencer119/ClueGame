@@ -7,6 +7,7 @@ import java.awt.event.MouseListener;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.lang.reflect.Array;
 import java.util.*;
 
 /**
@@ -20,9 +21,11 @@ public class Board extends JPanel {
 
     private final ArrayList<Card> deck = new ArrayList<>();
     private final ArrayList<Player> players = new ArrayList<>();
+    private final ArrayList<BoardCell> targetRoomCells = new ArrayList<>();
     private BoardCell[][] grid;
     private int numRows;
     private int numCols;
+    private int curRoll = 0;
     private String layoutConfigFile;
     private String setupConfigFile;
     private Set<BoardCell> targets = new HashSet<>();
@@ -53,9 +56,12 @@ public class Board extends JPanel {
             System.out.println("Bad config file format.");
         }
         addMouseListener(new BoardClick());
+    }
+
+    public void startGame() {
         currentPlayer = players.get(0);
         currentPlayer.setEndTurn(false);
-
+        rollDie();
     }
 
     @Override
@@ -80,8 +86,20 @@ public class Board extends JPanel {
 
             }
         }
-        if (currentPlayer instanceof HumanPlayer) {
-
+        if (currentPlayer instanceof HumanPlayer && !currentPlayer.isEndTurn()) {
+            for (BoardCell c : targets) {
+                if (c.isRoomCenter()) {
+                    for (int i = 0; i < grid[i].length; i++) {
+                        for (int j = 0; j < grid[i].length; j++) {
+                            if (grid[i][j].isRoom() && grid[i][j].getChar() == c.getChar()) {
+                                grid[i][j].drawTarget(g, cellLength, xOffset, yOffset);
+                            }
+                        }
+                    }
+                } else {
+                    c.drawTarget(g, cellLength, xOffset, yOffset);
+                }
+            }
         }
         for (BoardCell c : secondLayer) {
             if (c.isLabel()) c.drawLabel(g, cellLength, xOffset, yOffset, roomMap.get(c.getChar()).getName());
@@ -264,10 +282,14 @@ public class Board extends JPanel {
 
     }
 
-    private Integer rollDie() {
+    private void rollDie() {
         Random rand = new Random();
-        return rand.nextInt(6) + 1;
+        int roll = rand.nextInt(6) + 1;
+        this.calcTargets(getCell(currentPlayer.getRow(), currentPlayer.getCol()), roll);
+        curRoll = roll;
     }
+
+    public int getCurRoll() {return curRoll;}
 
     /**
      * Helper function for constructor to create the board
@@ -449,21 +471,21 @@ public class Board extends JPanel {
             currentPlayer = players.get(0);
         else
             currentPlayer = players.get(index + 1);
+        rollDie();
 
     }
 
-    public void createDialog(String message) {
-        JOptionPane.showMessageDialog(null, message, "Test", JOptionPane.INFORMATION_MESSAGE);
-
+    public void createDialog(String title, String message) {
+        JOptionPane.showMessageDialog(null, message, title, JOptionPane.INFORMATION_MESSAGE);
     }
 
     private class BoardClick implements MouseListener {
         public void mousePressed(MouseEvent e) {}
 
         public void mouseClicked(MouseEvent e) {
-            if (currentPlayer.isEndTurn() || currentPlayer instanceof ComputerPlayer) {
-                return;
-            }
+            if (currentPlayer instanceof ComputerPlayer) return;
+            if (currentPlayer.isEndTurn())
+                createDialog("Error", "You have already moved for this turn.\nClick next to end your turn");
             int row = currentPlayer.getRow();
             int col = currentPlayer.getCol();
             int x = getWidth();
@@ -474,6 +496,24 @@ public class Board extends JPanel {
             int newRow = (e.getY() - yOffset) / cellSize;
             int newCol = (e.getX() - xOffset) / cellSize;
             System.out.println("Clicked on (" + newRow + ", " + newCol + ")");
+            BoardCell target = getCell(newRow, newCol);
+            // If they clicked on a room but not the center cell, change target to center
+            if (target.isRoom() && !target.isRoomCenter()) {
+                target = roomMap.get(target.getChar()).getCenterCell();
+                newRow = target.getRow();
+                newCol = target.getCol();
+            }
+            if (targets.contains(target)) {
+                currentPlayer.move(newRow, newCol); // Update player position
+                getCell(row, col).setOccupied(false); // Update occupied
+                getCell(newRow, newCol).setOccupied(true);
+                currentPlayer.setEndTurn(true);
+                repaint();
+//                nextTurn();
+//                createDialog("Move", "Target: (" + newRow + ", " + newCol + ")");
+            } else {
+                createDialog("Invalid move", "Not a valid target");
+            }
         }
 
         public void mouseReleased(MouseEvent e) {}
