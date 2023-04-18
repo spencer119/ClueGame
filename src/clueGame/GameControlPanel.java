@@ -11,8 +11,8 @@ public class GameControlPanel extends JPanel {
     private static Integer roll = 1;
     private static Player currentPlayer;
     private static Board board;
-    private final JTextField playerField;
-    private final JTextField rollField;
+    private final JTextField playerField = new JTextField("");
+    private final JTextField rollField = new JTextField("");
     private final JTextField guessField;
     private final JTextField guessResultField;
 
@@ -21,37 +21,17 @@ public class GameControlPanel extends JPanel {
         JPanel controlPanel = new JPanel();
         controlPanel.setLayout(new GridLayout(2, 0));
 
-        JPanel topRow = new JPanel();
-        topRow.setLayout(new GridLayout(1, 4));
+
         JPanel bottomRow = new JPanel();
         bottomRow.setLayout(new GridLayout(1, 2));
 
-        JPanel turnPanel = new JPanel();
-        turnPanel.setLayout(new GridLayout(2, 1));
-        JPanel rollPanel = new JPanel();
-        rollPanel.setLayout(new GridLayout(2, 1));
+
         JPanel guessPanel = new JPanel();
         JPanel guessResultPanel = new JPanel();
         // Whose turn panel
-        JLabel turnLabel = new JLabel("Whose turn?");
-        playerField = new JTextField("");
-        playerField.setEditable(false);
-        turnPanel.add(turnLabel);
-        turnPanel.add(playerField);
-        topRow.add(turnPanel);
+
         // Roll panel
-        JLabel rollLabel = new JLabel("Roll: ");
-        rollField = new JTextField("");
-        rollField.setEditable(false);
-        rollPanel.add(rollLabel);
-        rollPanel.add(rollField);
-        topRow.add(rollPanel);
-        // Buttons
-        JButton nextBtn = new JButton("Next");
-        JButton accusationBtn = new JButton("Make accusation");
-        nextBtn.addMouseListener(new NextListener());
-        topRow.add(nextBtn);
-        topRow.add(accusationBtn);
+
         // Guess panel
         guessField = new JTextField();
         guessField.setEditable(false);
@@ -64,7 +44,7 @@ public class GameControlPanel extends JPanel {
         bottomRow.add(guessPanel);
         bottomRow.add(guessResultPanel);
 
-        controlPanel.add(topRow);
+        controlPanel.add(createTopRow());
         controlPanel.add(bottomRow);
         add(controlPanel, BorderLayout.SOUTH);
         add(controlPanel, BorderLayout.SOUTH);
@@ -87,6 +67,32 @@ public class GameControlPanel extends JPanel {
 
         frame.setVisible(true);
 
+    }
+
+    public JPanel createTopRow() {
+        JPanel topRow = new JPanel();
+        topRow.setLayout(new GridLayout(1, 4));
+        JPanel turnPanel = new JPanel();
+        turnPanel.setLayout(new GridLayout(2, 1));
+        JPanel rollPanel = new JPanel();
+        rollPanel.setLayout(new GridLayout(2, 1));
+        JLabel turnLabel = new JLabel("Whose turn?");
+        playerField.setEditable(false);
+        turnPanel.add(turnLabel);
+        turnPanel.add(playerField);
+        topRow.add(turnPanel);
+        JLabel rollLabel = new JLabel("Roll: ");
+        rollField.setEditable(false);
+        rollPanel.add(rollLabel);
+        rollPanel.add(rollField);
+        topRow.add(rollPanel);
+        // Buttons
+        JButton nextBtn = new JButton("Next");
+        JButton accusationBtn = new JButton("Make accusation");
+        nextBtn.addMouseListener(new NextListener());
+        topRow.add(nextBtn);
+        topRow.add(accusationBtn);
+        return topRow;
     }
 
     /**
