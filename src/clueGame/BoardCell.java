@@ -77,7 +77,6 @@ public class BoardCell extends JPanel {
                     g.setColor(Color.GRAY);
                     g.fillRect(x, y, cellSize, cellSize);
                     g.setColor(Color.CYAN);
-//                    g.fillRect(x, y, cellSize, cellSize);
                     g.drawString("SP", x + (cellSize / 4), y + (cellSize / 2));
                 }
             }

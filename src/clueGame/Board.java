@@ -57,7 +57,7 @@ public class Board extends JPanel {
     }
 
     /**
-     * Sart the first player's turn and roll the dice
+     * Start the first player's turn and roll the dice
      */
     public void startGame() {
         currentPlayer = players.get(0);
@@ -365,8 +365,8 @@ public class Board extends JPanel {
      * @param pathLength number of steps left
      */
     public void calcTargetsHelper(BoardCell cell, int pathLength, Boolean startInRoom) {
-        if (startInRoom) startInRoom = false;
-        else {
+
+        if (!startInRoom) {
             if ((pathLength == 0 || cell.isRoom() || cell.isRoomCenter())) {
                 if (!cell.getOccupied()) {
                     targets.add(cell);
