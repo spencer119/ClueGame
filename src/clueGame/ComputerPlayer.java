@@ -12,6 +12,17 @@ public class ComputerPlayer extends Player {
         super(name, color, row, col);
     }
 
+    public void move() {
+        int row = super.getRow();
+        int col = super.getCol();
+        BoardCell target = selectTarget(board.getTargets());
+        super.move(target.getRow(), target.getCol());
+        board.getCell(row, col).setOccupied(false);
+        board.getCell(target.getRow(), target.getCol()).setOccupied(true);
+        super.setEndTurn(true);
+        board.repaint();
+    }
+
     public Solution createSuggestion(Room room) {
         ArrayList<Card> boardDeck = board.getDeck();
         CardSet seen = (CardSet) super.getSeenCards();
