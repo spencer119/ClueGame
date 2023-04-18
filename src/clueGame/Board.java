@@ -85,24 +85,26 @@ public class Board extends JPanel {
 
             }
         }
+
+        for (BoardCell c : secondLayer) {
+            if (c.isLabel()) c.drawLabel(g, cellLength, xOffset, yOffset, roomMap.get(c.getChar()).getName());
+            else if (c.isDoorway()) c.drawDoor(g, cellLength, xOffset, yOffset);
+        }
         if (currentPlayer instanceof HumanPlayer && !currentPlayer.isEndTurn()) {
             for (BoardCell c : targets) {
                 if (c.isRoomCenter()) {
-                    for (int i = 0; i < grid[i].length; i++) {
+                    for (int i = 0; i < grid.length; i++) {
                         for (int j = 0; j < grid[i].length; j++) {
-                            if (grid[i][j].isRoom() && grid[i][j].getChar() == c.getChar()) {
-                                grid[i][j].drawTarget(g, cellLength, xOffset, yOffset);
+                            if (grid[i][j].getChar() == c.getChar()) {
+                                grid[i][j].drawTargetRoom(g, cellLength, xOffset, yOffset);
                             }
                         }
                     }
+                    roomMap.get(c.getChar()).getLabelCell().drawLabel(g, cellLength, xOffset, yOffset, roomMap.get(c.getChar()).getName());
                 } else {
                     c.drawTarget(g, cellLength, xOffset, yOffset);
                 }
             }
-        }
-        for (BoardCell c : secondLayer) {
-            if (c.isLabel()) c.drawLabel(g, cellLength, xOffset, yOffset, roomMap.get(c.getChar()).getName());
-            else if (c.isDoorway()) c.drawDoor(g, cellLength, xOffset, yOffset);
         }
         for (Player p : players) {
             p.draw(g, cellLength, xOffset, yOffset);
@@ -348,7 +350,7 @@ public class Board extends JPanel {
     public void calcTargets(BoardCell startCell, int pathLength) {
         visited.clear(); // Clear previous visited or target lists
         targets.clear();
-        calcTargetsHelper(startCell, pathLength); // Call recursive function
+        calcTargetsHelper(startCell, pathLength, startCell.isRoom()); // Call recursive function
     }
 
     /**
@@ -357,18 +359,21 @@ public class Board extends JPanel {
      * @param cell       current cell of the recursion
      * @param pathLength number of steps left
      */
-    public void calcTargetsHelper(BoardCell cell, int pathLength) {
-        if ((pathLength == 0 || cell.isRoom())) {
-            if (!cell.getOccupied()) {
-                targets.add(cell);
-                visited.remove(cell); // Remove cell from visited so it can be visited again
+    public void calcTargetsHelper(BoardCell cell, int pathLength, Boolean startInRoom) {
+        if (startInRoom) startInRoom = false;
+        else {
+            if ((pathLength == 0 || cell.isRoom() || cell.isRoomCenter())) {
+                if (!cell.getOccupied()) {
+                    targets.add(cell);
+                    visited.remove(cell); // Remove cell from visited so it can be visited again
+                }
+                return;
             }
-            return;
         }
         visited.add(cell); // Add to visited so you cannot backtrack in this move
         for (BoardCell adj : cell.getAdjList()) {
             if (!visited.contains(adj) && !adj.getOccupied()) {
-                calcTargetsHelper(adj, pathLength - 1);
+                calcTargetsHelper(adj, pathLength - 1, false);
                 visited.remove(adj); // Remove after recursion is finished
             }
         }

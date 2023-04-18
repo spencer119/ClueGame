@@ -2,6 +2,8 @@ package clueGame;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.ArrayList;
+import java.util.Set;
 
 public class ClueGame extends JFrame {
     private static Board board;

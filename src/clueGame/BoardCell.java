@@ -104,44 +104,19 @@ public class BoardCell extends JPanel {
         int y = (row * cellSize) + yOffset;
         g.setColor(Color.GREEN);
         g.fillRect(x, y, cellSize, cellSize);
+        g.setColor(Color.BLACK);
+        g.drawRect(x, y, cellSize, cellSize);
         repaint();
     }
 
-//    public void drawDoor(Graphics g, int cellSize, int xOffset, int yOffset) {
-//        int x = (col * cellSize) + xOffset;
-//        int y = (row * cellSize) + yOffset;
-//        int margin = cellSize / 4;
-//        int[] xPoints;
-//        int[] yPoints;
-//        switch (this.doorDirection) {
-//            case UP -> {
-//                xPoints = new int[]{x + margin, x + cellSize / 2, x + cellSize - margin};
-//                yPoints = new int[]{y + cellSize - margin, y + margin, y + cellSize - margin};
-//            }
-//            case DOWN -> {
-//                xPoints = new int[]{x + margin, x + cellSize / 2, x + cellSize - margin};
-//                yPoints = new int[]{y + margin, y + cellSize - margin, y + margin};
-//            }
-//            case LEFT -> {
-//                xPoints = new int[]{x + cellSize - margin, x + margin, x + cellSize - margin};
-//                yPoints = new int[]{y + margin, y + cellSize / 2, y + cellSize - margin};
-//            }
-//            case RIGHT -> {
-//                xPoints = new int[]{x + margin, x + cellSize - margin, x + margin};
-//                yPoints = new int[]{y + margin, y + cellSize / 2, y + cellSize - margin};
-//            }
-//
-//            default -> throw new IllegalStateException("Invalid door direction");
-//        }
-////        int[] xPoints = {x + margin, x + cellSize - margin, x + margin};
-////        int[] yPoints = {y + margin, y + cellSize / 2, y + cellSize - margin};
-//        g.setColor(Color.YELLOW);
-//        g.fillRect(x, y, cellSize, cellSize);
-//        g.setColor(Color.BLACK);
-//        g.drawRect(x, y, cellSize, cellSize);
-//        g.setColor(Color.GRAY);
-//        g.fillPolygon(xPoints, yPoints, 3);
-//    }
+    public void drawTargetRoom(Graphics g, int cellSize, int xOffset, int yOffset) {
+        int x = (col * cellSize) + xOffset;
+        int y = (row * cellSize) + yOffset;
+        g.setColor(Color.GREEN);
+        g.fillRect(x, y, cellSize, cellSize);
+        repaint();
+    }
+
 
     public void drawLabel(Graphics g, int cellSize, int xOffset, int yOffset, String name) {
         int x = (cellSize * col) + xOffset;
@@ -192,7 +167,7 @@ public class BoardCell extends JPanel {
 
     // Check if a cell is a room or is occupied
     public boolean isRoom() {
-        return isRoom;
+        return (initial != 'W' && initial != 'X');
     }
 
     public void setRoom(boolean isRoom) {
