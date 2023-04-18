@@ -13,39 +13,15 @@ public class GameControlPanel extends JPanel {
     private static Board board;
     private final JTextField playerField = new JTextField("");
     private final JTextField rollField = new JTextField("");
-    private final JTextField guessField;
-    private final JTextField guessResultField;
+    private final JTextField guessField = new JTextField("");
+    private final JTextField guessResultField = new JTextField("");
 
     public GameControlPanel() {
         board = Board.getInstance();
         JPanel controlPanel = new JPanel();
         controlPanel.setLayout(new GridLayout(2, 0));
-
-
-        JPanel bottomRow = new JPanel();
-        bottomRow.setLayout(new GridLayout(1, 2));
-
-
-        JPanel guessPanel = new JPanel();
-        JPanel guessResultPanel = new JPanel();
-        // Whose turn panel
-
-        // Roll panel
-
-        // Guess panel
-        guessField = new JTextField();
-        guessField.setEditable(false);
-        guessPanel.add(guessField);
-        guessPanel.setBorder(new TitledBorder(new EtchedBorder(), "Guess"));
-        guessResultField = new JTextField();
-        guessResultField.setEditable(false);
-        guessResultPanel.add(guessResultField);
-        guessResultPanel.setBorder(new TitledBorder(new EtchedBorder(), "Guess Result"));
-        bottomRow.add(guessPanel);
-        bottomRow.add(guessResultPanel);
-
         controlPanel.add(createTopRow());
-        controlPanel.add(bottomRow);
+        controlPanel.add(createBottomRow());
         add(controlPanel, BorderLayout.SOUTH);
         add(controlPanel, BorderLayout.SOUTH);
 
@@ -67,6 +43,22 @@ public class GameControlPanel extends JPanel {
 
         frame.setVisible(true);
 
+    }
+
+    public JPanel createBottomRow() {
+        JPanel bottomRow = new JPanel();
+        bottomRow.setLayout(new GridLayout(1, 2));
+        JPanel guessPanel = new JPanel();
+        JPanel guessResultPanel = new JPanel();
+        guessField.setEditable(false);
+        guessPanel.add(guessField);
+        guessPanel.setBorder(new TitledBorder(new EtchedBorder(), "Guess"));
+        guessResultField.setEditable(false);
+        guessResultPanel.add(guessResultField);
+        guessResultPanel.setBorder(new TitledBorder(new EtchedBorder(), "Guess Result"));
+        bottomRow.add(guessPanel);
+        bottomRow.add(guessResultPanel);
+        return bottomRow;
     }
 
     public JPanel createTopRow() {

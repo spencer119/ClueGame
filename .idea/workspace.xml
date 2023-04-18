@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eab8da27-7ab5-4896-a4cc-6cac7e9ed2dd" name="Changes" comment="Added comments to all the files">
+    <list default="true" id="eab8da27-7ab5-4896-a4cc-6cac7e9ed2dd" name="Changes" comment="Moved top row of control panel creation from constructor to a seperate function">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/clueGame/GameControlPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clueGame/GameControlPanel.java" afterDir="false" />
     </list>
@@ -216,14 +216,7 @@
       <workItem from="1681775968632" duration="157000" />
       <workItem from="1681776137334" duration="12399000" />
       <workItem from="1681793325413" duration="335000" />
-      <workItem from="1681794280568" duration="1309000" />
-    </task>
-    <task id="LOCAL-00002" summary="Removed redundant calcVisited variable now it only uses visited">
-      <created>1680216343074</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1680216343074</updated>
+      <workItem from="1681794280568" duration="1411000" />
     </task>
     <task id="LOCAL-00003" summary="Cleaned up switch statements to be much more readable">
       <created>1680216501576</created>
@@ -561,7 +554,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681795289211</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="Moved top row of control panel creation from constructor to a seperate function">
+      <created>1681795647596</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1681795647596</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -625,7 +625,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="added more comments" />
     <MESSAGE value="suggestion tests passing and testAITarget failing tests created" />
     <MESSAGE value="testAITarget tests passing" />
     <MESSAGE value="moved ai player to setUp()" />
@@ -650,7 +649,8 @@
     <MESSAGE value="allowed click anywhere in room and secret passages fixed" />
     <MESSAGE value="moved all panel creation from constructor to seperate functions for readability" />
     <MESSAGE value="Added comments to all the files" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added comments to all the files" />
+    <MESSAGE value="Moved top row of control panel creation from constructor to a seperate function" />
+    <option name="LAST_COMMIT_MESSAGE" value="Moved top row of control panel creation from constructor to a seperate function" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
