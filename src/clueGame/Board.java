@@ -80,10 +80,10 @@ public class Board extends JPanel {
         ArrayList<BoardCell> secondLayer = new ArrayList<BoardCell>();
 
         for (BoardCell[] boardCells : grid) { // Draw non door or label cells
-            for (int j = 0; j < boardCells.length; j++) {
-                if (boardCells[j].isLabel() || boardCells[j].isDoorway())
-                    secondLayer.add(boardCells[j]); // Add to be drawn later
-                boardCells[j].draw(g, cellLength, xOffset, yOffset);
+            for (BoardCell boardCell : boardCells) {
+                if (boardCell.isLabel() || boardCell.isDoorway())
+                    secondLayer.add(boardCell); // Add to be drawn later
+                boardCell.draw(g, cellLength, xOffset, yOffset);
 
             }
         }
@@ -97,10 +97,10 @@ public class Board extends JPanel {
         if (currentPlayer instanceof HumanPlayer && !currentPlayer.isEndTurn()) {
             for (BoardCell c : targets) {
                 if (c.isRoomCenter()) { // If the target is a room center, color every room cell green
-                    for (int i = 0; i < grid.length; i++) {
-                        for (int j = 0; j < grid[i].length; j++) {
-                            if (grid[i][j].getChar() == c.getChar()) {
-                                grid[i][j].drawTargetRoom(g, cellLength, xOffset, yOffset);
+                    for (BoardCell[] boardCells : grid) {
+                        for (BoardCell boardCell : boardCells) {
+                            if (boardCell.getChar() == c.getChar()) {
+                                boardCell.drawTargetRoom(g, cellLength, xOffset, yOffset);
                             }
                         }
                     }
@@ -187,14 +187,12 @@ public class Board extends JPanel {
                     String[] split = line.split(", ");
                     // Check for bad config format
                     switch (split[0]) {
-                        case "Room":
-                        case "Space":
+                        case "Room", "Space" -> {
                             roomMap.put(split[2].charAt(0), new Room(split[1])); // Add to roomMap
                             if (!split[0].equals("Space")) // Add to deck
                                 deck.add(new Card(split[1], CardType.ROOM));
-
-                            break;
-                        case "Player":
+                        }
+                        case "Player" -> {
                             try {
                                 int row = Integer.parseInt(split[4]);
                                 int col = Integer.parseInt(split[5]);
@@ -207,13 +205,10 @@ public class Board extends JPanel {
                                 throw new BadConfigFormatException();
                             }
                             deck.add(new Card(split[2], CardType.PERSON));
-                            break;
-                        case "Weapon":
-                            deck.add(new Card(split[1], CardType.WEAPON));
-                            break;
-                        default:
-                            break;
-
+                        }
+                        case "Weapon" -> deck.add(new Card(split[1], CardType.WEAPON));
+                        default -> {
+                        }
                     }
 
                 }
@@ -233,21 +228,21 @@ public class Board extends JPanel {
             int index = rand.nextInt(deck.size());
             Card c = deck.get(index);
             switch (c.getType()) {
-                case PERSON:
+                case PERSON -> {
                     if (person == -1) {
                         person = index;
                     }
-                    break;
-                case WEAPON:
+                }
+                case WEAPON -> {
                     if (weapon == -1) {
                         weapon = index;
                     }
-                    break;
-                case ROOM:
+                }
+                case ROOM -> {
                     if (room == -1) {
                         room = index;
                     }
-                    break;
+                }
             }
         }
         Card r = deck.get(room);
@@ -289,7 +284,7 @@ public class Board extends JPanel {
     }
 
     /**
-     * Roll a random number and calculate targets for that rull with the current player
+     * Roll a random number and calculate targets for that roll with the current player
      */
     private void rollDie() {
         Random rand = new Random();
