@@ -19,10 +19,11 @@ public class ClueGame extends JFrame {
         frame.setSize(1000, 1000);
 
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        board.startGame();
         // Testing code
-        controlPanel.setTurn(new ComputerPlayer("Test Player", "red", 9, 9), 1);
-        controlPanel.setGuess("Guess placeholder");
-        controlPanel.setGuessResult("Result placeholder");
+        controlPanel.setTurn(board.getCurrentPlayer(), board.getRoll());
+        controlPanel.setGuess("No guess");
+        controlPanel.setGuessResult("No result");
         frame.setVisible(true);
     }
 }

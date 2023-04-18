@@ -13,6 +13,7 @@ public abstract class Player extends JPanel {
     private Color color;
     private int row;
     private int col;
+    private Boolean endTurn = true;
     private CardSet seenCards = new CardSet();
 
     public Player(String name, String colorStr, int row, int col) {
@@ -81,5 +82,20 @@ public abstract class Player extends JPanel {
 
     public Set<Card> getSeenCards() {
         return seenCards;
+    }
+
+    public void move(int row, int col) {
+        this.row = row;
+        this.col = col;
+    }
+
+    public int getRow() {return row;}
+
+    public int getCol() {return col;}
+
+    public Boolean isEndTurn() {return endTurn;}
+
+    public void setEndTurn(Boolean endTurn) {
+        this.endTurn = endTurn;
     }
 }

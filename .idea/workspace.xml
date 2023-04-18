@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eab8da27-7ab5-4896-a4cc-6cac7e9ed2dd" name="Changes" comment="">
+    <list default="true" id="eab8da27-7ab5-4896-a4cc-6cac7e9ed2dd" name="Changes" comment="Added human player move functionality">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/clueGame/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clueGame/Board.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/clueGame/ClueGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clueGame/ClueGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/clueGame/ComputerPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clueGame/ComputerPlayer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/clueGame/GameControlPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clueGame/GameControlPanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/clueGame/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clueGame/Player.java" afterDir="false" />
     </list>
@@ -216,7 +218,7 @@
       <workItem from="1681509750214" duration="671000" />
       <workItem from="1681588336684" duration="555000" />
       <workItem from="1681775968632" duration="157000" />
-      <workItem from="1681776137334" duration="4320000" />
+      <workItem from="1681776137334" duration="9966000" />
     </task>
     <task id="LOCAL-00001" summary="All tests pass now">
       <created>1680210066007</created>
@@ -512,7 +514,28 @@
       <option name="project" value="LOCAL" />
       <updated>1681272081656</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="added board mouse listener that calculates x,y of click">
+      <created>1681782433279</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1681782433279</updated>
+    </task>
+    <task id="LOCAL-00044" summary="Added target highlighting to potential targets for players to move">
+      <created>1681786673969</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1681786673969</updated>
+    </task>
+    <task id="LOCAL-00045" summary="Added human player move functionality">
+      <created>1681786688542</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1681786688542</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -576,9 +599,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="created failing deal tests" />
-    <MESSAGE value="all tests passing" />
-    <MESSAGE value="updated gitlog.txt" />
     <MESSAGE value="created empty functions based on UML" />
     <MESSAGE value="created failing accusation tests" />
     <MESSAGE value="accusation tests passing" />
@@ -601,10 +621,26 @@
     <MESSAGE value="updated gitlog" />
     <MESSAGE value="created welcome dialog box" />
     <MESSAGE value="Created next listener class" />
-    <option name="LAST_COMMIT_MESSAGE" value="Created next listener class" />
+    <MESSAGE value="added board mouse listener that calculates x,y of click" />
+    <MESSAGE value="Added target highlighting to potential targets for players to move" />
+    <MESSAGE value="Added human player move functionality" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added human player move functionality" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/clueGame/Board.java</url>
+          <line>483</line>
+          <properties class="clueGame.Board.BoardClick" method="mouseClicked">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="clueGame.Board" memberName="roomMap" />

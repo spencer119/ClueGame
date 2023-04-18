@@ -17,8 +17,7 @@ public class GameControlPanel extends JPanel {
     private final JTextField guessResultField;
 
     public GameControlPanel() {
-        // Test player
-        currentPlayer = new HumanPlayer("test", "red", 0, 0);
+        board = Board.getInstance();
         JPanel controlPanel = new JPanel();
         controlPanel.setLayout(new GridLayout(2, 0));
 
@@ -33,18 +32,16 @@ public class GameControlPanel extends JPanel {
         rollPanel.setLayout(new GridLayout(2, 1));
         JPanel guessPanel = new JPanel();
         JPanel guessResultPanel = new JPanel();
-//        JPanel nextBtn = new JPanel();
-//        JPanel accusationBtn = new JPanel();
         // Whose turn panel
         JLabel turnLabel = new JLabel("Whose turn?");
-        playerField = new JTextField(currentPlayer.getName());
+        playerField = new JTextField("");
         playerField.setEditable(false);
         turnPanel.add(turnLabel);
         turnPanel.add(playerField);
         topRow.add(turnPanel);
         // Roll panel
         JLabel rollLabel = new JLabel("Roll: ");
-        rollField = new JTextField(roll.toString());
+        rollField = new JTextField("");
         rollField.setEditable(false);
         rollPanel.add(rollLabel);
         rollPanel.add(rollField);
@@ -52,6 +49,7 @@ public class GameControlPanel extends JPanel {
         // Buttons
         JButton nextBtn = new JButton("Next");
         JButton accusationBtn = new JButton("Make accusation");
+        nextBtn.addMouseListener(new NextListener());
         topRow.add(nextBtn);
         topRow.add(accusationBtn);
         // Guess panel
@@ -107,7 +105,21 @@ public class GameControlPanel extends JPanel {
     }
 
     private class NextListener implements MouseListener {
-        public void mousePressed(MouseEvent e) {}
+        public void mousePressed(MouseEvent e) {
+            if (currentPlayer instanceof HumanPlayer) {
+                if (currentPlayer.isEndTurn()) {
+                    board.nextTurn();
+                    setTurn(board.getCurrentPlayer(), board.getRoll());
+                } else
+                    board.createDialog("Error", "You must finish your turn before moving on to the next player.");
+            } else if (currentPlayer instanceof ComputerPlayer ai) {
+                ai.move();
+                board.nextTurn();
+                setTurn(board.getCurrentPlayer(), board.getRoll());
+            }
+
+
+        }
 
         public void mouseReleased(MouseEvent e) {}
 
@@ -115,6 +127,7 @@ public class GameControlPanel extends JPanel {
 
         public void mouseExited(MouseEvent e) {}
 
-        public void mouseClicked(MouseEvent e) {}
+        public void mouseClicked(MouseEvent e) {
+        }
     }
 }

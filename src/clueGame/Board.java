@@ -7,7 +7,6 @@ import java.awt.event.MouseListener;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.lang.reflect.Array;
 import java.util.*;
 
 /**
@@ -289,7 +288,7 @@ public class Board extends JPanel {
         curRoll = roll;
     }
 
-    public int getCurRoll() {return curRoll;}
+    public int getRoll() {return curRoll;}
 
     /**
      * Helper function for constructor to create the board
