@@ -4,12 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eab8da27-7ab5-4896-a4cc-6cac7e9ed2dd" name="Changes" comment="Implemented next functionality on AI turn">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/ClueSetup.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/ClueSetup.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/clueGame/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clueGame/Board.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/clueGame/BoardCell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clueGame/BoardCell.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/clueGame/ClueGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clueGame/ClueGame.java" afterDir="false" />
+    <list default="true" id="eab8da27-7ab5-4896-a4cc-6cac7e9ed2dd" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/gitlog.txt" beforeDir="false" afterPath="$PROJECT_DIR$/gitlog.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -217,7 +213,7 @@
       <workItem from="1681509750214" duration="671000" />
       <workItem from="1681588336684" duration="555000" />
       <workItem from="1681775968632" duration="157000" />
-      <workItem from="1681776137334" duration="12320000" />
+      <workItem from="1681776137334" duration="12399000" />
     </task>
     <task id="LOCAL-00001" summary="All tests pass now">
       <created>1680210066007</created>
@@ -548,7 +544,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681788119167</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="allowed click anywhere in room and secret passages fixed">
+      <created>1681790492598</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1681790492598</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -612,7 +615,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="accusation tests passing" />
     <MESSAGE value="created custom CardSet class to have useful Set&lt;Card&gt; methods" />
     <MESSAGE value="made failing suggestion tests" />
     <MESSAGE value="added more comments" />
@@ -637,7 +639,8 @@
     <MESSAGE value="Added human player move functionality" />
     <MESSAGE value="created ComputerPlayer move function" />
     <MESSAGE value="Implemented next functionality on AI turn" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implemented next functionality on AI turn" />
+    <MESSAGE value="allowed click anywhere in room and secret passages fixed" />
+    <option name="LAST_COMMIT_MESSAGE" value="allowed click anywhere in room and secret passages fixed" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
