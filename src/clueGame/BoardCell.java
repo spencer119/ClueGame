@@ -99,6 +99,14 @@ public class BoardCell extends JPanel {
         }
     }
 
+    public void drawTarget(Graphics g, int cellSize, int xOffset, int yOffset) {
+        int x = (col * cellSize) + xOffset;
+        int y = (row * cellSize) + yOffset;
+        g.setColor(Color.GREEN);
+        g.fillRect(x, y, cellSize, cellSize);
+        repaint();
+    }
+
 //    public void drawDoor(Graphics g, int cellSize, int xOffset, int yOffset) {
 //        int x = (col * cellSize) + xOffset;
 //        int y = (row * cellSize) + yOffset;
