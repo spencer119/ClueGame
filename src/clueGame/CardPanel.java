@@ -1,7 +1,6 @@
 package clueGame;
 
 import javax.swing.*;
-import javax.swing.border.Border;
 import javax.swing.border.EtchedBorder;
 import javax.swing.border.TitledBorder;
 import java.awt.*;
@@ -19,7 +18,6 @@ public class CardPanel extends JPanel {
     private final JPanel handWeapons;
 
     public CardPanel() {
-        JPanel cardPanel = new JPanel();
         setLayout(new GridLayout(3, 0));
         JPanel peoplePanel = new JPanel();
         JPanel roomsPanel = new JPanel();
@@ -57,12 +55,6 @@ public class CardPanel extends JPanel {
         updateCardPanel(CardType.PERSON);
         updateCardPanel(CardType.ROOM);
         updateCardPanel(CardType.WEAPON);
-//        JLabel handLabel = new JLabel("In hand");
-//        JLabel seenLabel = new JLabel("Seen");
-//        peoplePanel.add(handLabel);
-//        updateWeaponPanel();
-//        handPanel.add(new JLabel("test"));
-//        seenPanel.add(new JLabel("test"));
         add(peoplePanel);
         add(roomsPanel);
         add(weaponsPanel);

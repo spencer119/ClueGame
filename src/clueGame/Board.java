@@ -20,7 +20,6 @@ public class Board extends JPanel {
 
     private final ArrayList<Card> deck = new ArrayList<>();
     private final ArrayList<Player> players = new ArrayList<>();
-    private final ArrayList<BoardCell> targetRoomCells = new ArrayList<>();
     private BoardCell[][] grid;
     private int numRows;
     private int numCols;
@@ -80,7 +79,6 @@ public class Board extends JPanel {
             for (int j = 0; j < grid[i].length; j++) {
                 if (grid[i][j].isLabel() || grid[i][j].isDoorway())
                     secondLayer.add(grid[i][j]);
-//                else
                 grid[i][j].draw(g, cellLength, xOffset, yOffset);
 
             }
@@ -290,7 +288,9 @@ public class Board extends JPanel {
         curRoll = roll;
     }
 
-    public int getRoll() {return curRoll;}
+    public int getRoll() {
+        return curRoll;
+    }
 
     /**
      * Helper function for constructor to create the board
@@ -440,7 +440,9 @@ public class Board extends JPanel {
         return roomMap.get(cell.getChar());
     }
 
-    public Player getCurrentPlayer() {return currentPlayer;}
+    public Player getCurrentPlayer() {
+        return currentPlayer;
+    }
 
     /**
      * @param i row position
@@ -484,7 +486,8 @@ public class Board extends JPanel {
     }
 
     private class BoardClick implements MouseListener {
-        public void mousePressed(MouseEvent e) {}
+        public void mousePressed(MouseEvent e) {
+        }
 
         public void mouseClicked(MouseEvent e) {
             if (currentPlayer instanceof ComputerPlayer) return;
@@ -513,18 +516,19 @@ public class Board extends JPanel {
                 getCell(newRow, newCol).setOccupied(true);
                 currentPlayer.setEndTurn(true);
                 repaint();
-//                nextTurn();
-//                createDialog("Move", "Target: (" + newRow + ", " + newCol + ")");
             } else {
                 createDialog("Invalid move", "Not a valid target");
             }
         }
 
-        public void mouseReleased(MouseEvent e) {}
+        public void mouseReleased(MouseEvent e) {
+        }
 
-        public void mouseEntered(MouseEvent e) {}
+        public void mouseEntered(MouseEvent e) {
+        }
 
-        public void mouseExited(MouseEvent e) {}
+        public void mouseExited(MouseEvent e) {
+        }
     }
 }
 

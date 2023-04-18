@@ -18,7 +18,6 @@ public class BoardCell extends JPanel {
     private boolean isOccupied;
     private boolean isRoom;
     private DoorDirection doorDirection;
-    private char doorRoom;
     private Boolean roomLabel;
     private Boolean roomCenter;
     private char secretPassage;

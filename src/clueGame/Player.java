@@ -72,9 +72,6 @@ public abstract class Player extends JPanel {
         return name;
     }
 
-    public String getColorStr() {
-        return colorStr;
-    }
 
     public ArrayList<Card> getHand() {
         return hand;
@@ -89,11 +86,17 @@ public abstract class Player extends JPanel {
         this.col = col;
     }
 
-    public int getRow() {return row;}
+    public int getRow() {
+        return row;
+    }
 
-    public int getCol() {return col;}
+    public int getCol() {
+        return col;
+    }
 
-    public Boolean isEndTurn() {return endTurn;}
+    public Boolean isEndTurn() {
+        return endTurn;
+    }
 
     public void setEndTurn(Boolean endTurn) {
         this.endTurn = endTurn;
