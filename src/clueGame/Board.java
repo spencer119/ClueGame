@@ -2,6 +2,8 @@ package clueGame;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
@@ -26,6 +28,7 @@ public class Board extends JPanel {
     private Set<BoardCell> targets = new HashSet<>();
     private Set<BoardCell> visited = new HashSet<>();
     private Solution theAnswer;
+    private Player currentPlayer;
 
     // Default constructor
     private Board() {
@@ -49,6 +52,10 @@ public class Board extends JPanel {
         } catch (BadConfigFormatException e) { // Catch any bad config file format exceptions
             System.out.println("Bad config file format.");
         }
+        addMouseListener(new BoardClick());
+        currentPlayer = players.get(0);
+        currentPlayer.setEndTurn(false);
+
     }
 
     @Override
@@ -72,6 +79,9 @@ public class Board extends JPanel {
                 grid[i][j].draw(g, cellLength, xOffset, yOffset);
 
             }
+        }
+        if (currentPlayer instanceof HumanPlayer) {
+
         }
         for (BoardCell c : secondLayer) {
             if (c.isLabel()) c.drawLabel(g, cellLength, xOffset, yOffset, roomMap.get(c.getChar()).getName());
@@ -254,6 +264,11 @@ public class Board extends JPanel {
 
     }
 
+    private Integer rollDie() {
+        Random rand = new Random();
+        return rand.nextInt(6) + 1;
+    }
+
     /**
      * Helper function for constructor to create the board
      *
@@ -350,6 +365,7 @@ public class Board extends JPanel {
                 i++;
             }
         }
+
     }
 
     /**
@@ -398,6 +414,8 @@ public class Board extends JPanel {
         return roomMap.get(cell.getChar());
     }
 
+    public Player getCurrentPlayer() {return currentPlayer;}
+
     /**
      * @param i row position
      * @param j column position
@@ -422,6 +440,47 @@ public class Board extends JPanel {
 
     public void setTheAnswer(Solution theAnswer) {
         this.theAnswer = theAnswer;
+    }
+
+    public void nextTurn() {
+        currentPlayer.setEndTurn(false);
+        int index = players.indexOf(currentPlayer);
+        if (index == players.size() - 1)
+            currentPlayer = players.get(0);
+        else
+            currentPlayer = players.get(index + 1);
+
+    }
+
+    public void createDialog(String message) {
+        JOptionPane.showMessageDialog(null, message, "Test", JOptionPane.INFORMATION_MESSAGE);
+
+    }
+
+    private class BoardClick implements MouseListener {
+        public void mousePressed(MouseEvent e) {}
+
+        public void mouseClicked(MouseEvent e) {
+            if (currentPlayer.isEndTurn() || currentPlayer instanceof ComputerPlayer) {
+                return;
+            }
+            int row = currentPlayer.getRow();
+            int col = currentPlayer.getCol();
+            int x = getWidth();
+            int y = getHeight();
+            int cellSize = Math.min((x / numCols), (y / numRows));
+            int xOffset = (x - (numCols * cellSize)) / 2;
+            int yOffset = (y - (numRows * cellSize)) / 2;
+            int newRow = (e.getY() - yOffset) / cellSize;
+            int newCol = (e.getX() - xOffset) / cellSize;
+            System.out.println("Clicked on (" + newRow + ", " + newCol + ")");
+        }
+
+        public void mouseReleased(MouseEvent e) {}
+
+        public void mouseEntered(MouseEvent e) {}
+
+        public void mouseExited(MouseEvent e) {}
     }
 }
 
