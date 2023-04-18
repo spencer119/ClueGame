@@ -10,54 +10,22 @@ import java.util.Set;
 
 public class CardPanel extends JPanel {
     private static final Board board = Board.getInstance();
-    private final JPanel seenPeople;
-    private final JPanel seenRooms;
-    private final JPanel seenWeapons;
-    private final JPanel handPeople;
-    private final JPanel handRooms;
-    private final JPanel handWeapons;
+    private final JPanel seenPeople = new JPanel();
+    private final JPanel seenRooms = new JPanel();
+    private final JPanel seenWeapons = new JPanel();
+    private final JPanel handPeople = new JPanel();
+    private final JPanel handRooms = new JPanel();
+    private final JPanel handWeapons = new JPanel();
 
     public CardPanel() {
         setLayout(new GridLayout(3, 0));
-        JPanel peoplePanel = new JPanel();
-        JPanel roomsPanel = new JPanel();
-        JPanel weaponsPanel = new JPanel();
-        seenPeople = new JPanel();
-        seenRooms = new JPanel();
-        seenWeapons = new JPanel();
-        handPeople = new JPanel();
-        handRooms = new JPanel();
-        handWeapons = new JPanel();
-        peoplePanel.setLayout(new GridLayout(2, 0));
-        roomsPanel.setLayout(new GridLayout(2, 0));
-        weaponsPanel.setLayout(new GridLayout(2, 0));
-        peoplePanel.setBorder(new TitledBorder(new EtchedBorder(), "People"));
-        roomsPanel.setBorder(new TitledBorder(new EtchedBorder(), "Rooms"));
-        weaponsPanel.setBorder(new TitledBorder(new EtchedBorder(), "Weapons"));
-        seenPeople.setBorder(new TitledBorder(new EtchedBorder(), "Seen"));
-        seenRooms.setBorder(new TitledBorder(new EtchedBorder(), "Seen"));
-        seenWeapons.setBorder(new TitledBorder(new EtchedBorder(), "Seen"));
-        handPeople.setBorder(new TitledBorder(new EtchedBorder(), "In Hand"));
-        handRooms.setBorder(new TitledBorder(new EtchedBorder(), "In Hand"));
-        handWeapons.setBorder(new TitledBorder(new EtchedBorder(), "In Hand"));
-        seenPeople.setLayout(new GridLayout(5, 0, 0, 10));
-        handPeople.setLayout(new GridLayout(5, 0, 0, 10));
-        seenRooms.setLayout(new GridLayout(5, 0, 0, 10));
-        handRooms.setLayout(new GridLayout(5, 0, 0, 10));
-        seenWeapons.setLayout(new GridLayout(5, 0));
-        handWeapons.setLayout(new GridLayout(5, 0));
-        peoplePanel.add(handPeople);
-        peoplePanel.add(seenPeople);
-        roomsPanel.add(handRooms);
-        roomsPanel.add(seenRooms);
-        weaponsPanel.add(handWeapons);
-        weaponsPanel.add(seenWeapons);
+
         updateCardPanel(CardType.PERSON);
         updateCardPanel(CardType.ROOM);
         updateCardPanel(CardType.WEAPON);
-        add(peoplePanel);
-        add(roomsPanel);
-        add(weaponsPanel);
+        add(createPeoplePanel());
+        add(createRoomPanel());
+        add(createWeaponPanel());
 
     }
 
@@ -71,6 +39,44 @@ public class CardPanel extends JPanel {
         frame.setContentPane(cardPanel);
         frame.setVisible(true);
         cardPanel.setVisible(true);
+    }
+
+    public JPanel createWeaponPanel() {
+        JPanel weaponsPanel = new JPanel();
+        weaponsPanel.setLayout(new GridLayout(2, 0));
+        weaponsPanel.setBorder(new TitledBorder(new EtchedBorder(), "Weapons"));
+        seenWeapons.setBorder(new TitledBorder(new EtchedBorder(), "Seen"));
+        handWeapons.setBorder(new TitledBorder(new EtchedBorder(), "In Hand"));
+        seenWeapons.setLayout(new GridLayout(5, 0));
+        handWeapons.setLayout(new GridLayout(5, 0));
+        weaponsPanel.add(handWeapons);
+        weaponsPanel.add(seenWeapons);
+        return weaponsPanel;
+    }
+
+    public JPanel createRoomPanel() {
+        JPanel roomsPanel = new JPanel();
+        roomsPanel.setLayout(new GridLayout(2, 0));
+        roomsPanel.setBorder(new TitledBorder(new EtchedBorder(), "Rooms"));
+        seenRooms.setBorder(new TitledBorder(new EtchedBorder(), "Seen"));
+        handRooms.setBorder(new TitledBorder(new EtchedBorder(), "In Hand"));
+        seenRooms.setLayout(new GridLayout(5, 0, 0, 10));
+        handRooms.setLayout(new GridLayout(5, 0, 0, 10));
+        roomsPanel.add(handRooms);
+        roomsPanel.add(seenRooms);
+        return roomsPanel;
+    }
+
+    public JPanel createPeoplePanel() {
+        JPanel peoplePanel = new JPanel();
+        peoplePanel.setLayout(new GridLayout(2, 0));
+        peoplePanel.setBorder(new TitledBorder(new EtchedBorder(), "People"));
+        seenPeople.setBorder(new TitledBorder(new EtchedBorder(), "Seen"));
+        handPeople.setBorder(new TitledBorder(new EtchedBorder(), "In Hand"));
+        seenPeople.setLayout(new GridLayout(5, 0, 0, 10));
+        peoplePanel.add(handPeople);
+        peoplePanel.add(seenPeople);
+        return peoplePanel;
     }
 
     public void updateCardPanel(CardType type) {
