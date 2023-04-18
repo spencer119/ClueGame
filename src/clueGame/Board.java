@@ -56,6 +56,9 @@ public class Board extends JPanel {
         addMouseListener(new BoardClick());
     }
 
+    /**
+     * Sart the first player's turn and roll the dice
+     */
     public void startGame() {
         currentPlayer = players.get(0);
         currentPlayer.setEndTurn(false);
@@ -73,24 +76,27 @@ public class Board extends JPanel {
         g.setColor(Color.white);
         g.fillRect(0, 0, width, height);
 
+        // List of doorways or room cells to be painted second
         ArrayList<BoardCell> secondLayer = new ArrayList<BoardCell>();
 
-        for (int i = 0; i < grid.length; i++) {
-            for (int j = 0; j < grid[i].length; j++) {
-                if (grid[i][j].isLabel() || grid[i][j].isDoorway())
-                    secondLayer.add(grid[i][j]);
-                grid[i][j].draw(g, cellLength, xOffset, yOffset);
+        for (BoardCell[] boardCells : grid) { // Draw non door or label cells
+            for (int j = 0; j < boardCells.length; j++) {
+                if (boardCells[j].isLabel() || boardCells[j].isDoorway())
+                    secondLayer.add(boardCells[j]); // Add to be drawn later
+                boardCells[j].draw(g, cellLength, xOffset, yOffset);
 
             }
         }
 
         for (BoardCell c : secondLayer) {
-            if (c.isLabel()) c.drawLabel(g, cellLength, xOffset, yOffset, roomMap.get(c.getChar()).getName());
-            else if (c.isDoorway()) c.drawDoor(g, cellLength, xOffset, yOffset);
+            if (c.isLabel())
+                c.drawLabel(g, cellLength, xOffset, yOffset, roomMap.get(c.getChar()).getName()); // Draw labels
+            else if (c.isDoorway()) c.drawDoor(g, cellLength, xOffset, yOffset); // Draw doorways
         }
+        // Color possible targets green if its the human player's turn
         if (currentPlayer instanceof HumanPlayer && !currentPlayer.isEndTurn()) {
             for (BoardCell c : targets) {
-                if (c.isRoomCenter()) {
+                if (c.isRoomCenter()) { // If the target is a room center, color every room cell green
                     for (int i = 0; i < grid.length; i++) {
                         for (int j = 0; j < grid[i].length; j++) {
                             if (grid[i][j].getChar() == c.getChar()) {
@@ -98,13 +104,14 @@ public class Board extends JPanel {
                             }
                         }
                     }
+                    // Redraw the room label over the green cell
                     roomMap.get(c.getChar()).getLabelCell().drawLabel(g, cellLength, xOffset, yOffset, roomMap.get(c.getChar()).getName());
                 } else {
-                    c.drawTarget(g, cellLength, xOffset, yOffset);
+                    c.drawTarget(g, cellLength, xOffset, yOffset); // Other non-room targets
                 }
             }
         }
-        for (Player p : players) {
+        for (Player p : players) { // Draw players on board
             p.draw(g, cellLength, xOffset, yOffset);
         }
     }
@@ -281,6 +288,9 @@ public class Board extends JPanel {
 
     }
 
+    /**
+     * Roll a random number and calculate targets for that rull with the current player
+     */
     private void rollDie() {
         Random rand = new Random();
         int roll = rand.nextInt(6) + 1;

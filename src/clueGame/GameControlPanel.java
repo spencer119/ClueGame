@@ -89,6 +89,12 @@ public class GameControlPanel extends JPanel {
 
     }
 
+    /**
+     * Update the control panel with the current player and roll
+     *
+     * @param player The player whose turn it is
+     * @param roll   The roll of the dice
+     */
     public void setTurn(Player player, int roll) {
         currentPlayer = player;
         playerField.setText(currentPlayer.getName());
@@ -104,15 +110,18 @@ public class GameControlPanel extends JPanel {
         guessResultField.setText(result);
     }
 
+    /**
+     * Listener for the next button in the control panel
+     */
     private class NextListener implements MouseListener {
         public void mousePressed(MouseEvent e) {
-            if (currentPlayer instanceof HumanPlayer) {
+            if (currentPlayer instanceof HumanPlayer) { // Human turn
                 if (currentPlayer.isEndTurn()) {
                     board.nextTurn();
                     setTurn(board.getCurrentPlayer(), board.getRoll());
                 } else
                     board.createDialog("Error", "You must finish your turn before moving on to the next player.");
-            } else if (currentPlayer instanceof ComputerPlayer ai) {
+            } else if (currentPlayer instanceof ComputerPlayer ai) { // Perform AI turn
                 ai.move();
                 board.nextTurn();
                 setTurn(board.getCurrentPlayer(), board.getRoll());

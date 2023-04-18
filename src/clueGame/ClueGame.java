@@ -21,7 +21,7 @@ public class ClueGame extends JFrame {
         frame.setSize(1000, 1000);
 
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        board.startGame();
+        board.startGame(); // Start first turn
         controlPanel.setTurn(board.getCurrentPlayer(), board.getRoll());
         controlPanel.setGuess("No guess");
         controlPanel.setGuessResult("No result");

@@ -12,6 +12,9 @@ public class ComputerPlayer extends Player {
         super(name, color, row, col);
     }
 
+    /**
+     * Perform the ComputerPlayer's turn
+     */
     public void move() {
         int row = super.getRow();
         int col = super.getCol();
@@ -23,6 +26,12 @@ public class ComputerPlayer extends Player {
         board.repaint();
     }
 
+    /**
+     * Have the AI create a suggestion
+     *
+     * @param room The room the player is in
+     * @return suggested solution
+     */
     public Solution createSuggestion(Room room) {
         ArrayList<Card> boardDeck = board.getDeck();
         CardSet seen = (CardSet) super.getSeenCards();
@@ -45,6 +54,10 @@ public class ComputerPlayer extends Player {
         }
     }
 
+    /**
+     * @param targets The set of targets to choose from
+     * @return The target the AI has chosen
+     */
     public BoardCell selectTarget(Set<BoardCell> targets) {
         CardSet seen = (CardSet) super.getSeenCards();
         ArrayList<BoardCell> potential = new ArrayList<BoardCell>();

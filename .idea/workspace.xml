@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eab8da27-7ab5-4896-a4cc-6cac7e9ed2dd" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/clueGame/CardPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clueGame/CardPanel.java" afterDir="false" />
+    <list default="true" id="eab8da27-7ab5-4896-a4cc-6cac7e9ed2dd" name="Changes" comment="moved all panel creation from constructor to seperate functions for readability">
+      <change beforePath="$PROJECT_DIR$/src/clueGame/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clueGame/Board.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -216,7 +215,7 @@
       <workItem from="1681775968632" duration="157000" />
       <workItem from="1681776137334" duration="12399000" />
       <workItem from="1681793325413" duration="335000" />
-      <workItem from="1681794280568" duration="503000" />
+      <workItem from="1681794280568" duration="841000" />
     </task>
     <task id="LOCAL-00001" summary="All tests pass now">
       <created>1680210066007</created>
@@ -554,7 +553,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681790492598</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="moved all panel creation from constructor to seperate functions for readability">
+      <created>1681794845501</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1681794845501</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -618,7 +624,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="created custom CardSet class to have useful Set&lt;Card&gt; methods" />
     <MESSAGE value="made failing suggestion tests" />
     <MESSAGE value="added more comments" />
     <MESSAGE value="suggestion tests passing and testAITarget failing tests created" />
@@ -643,17 +648,13 @@
     <MESSAGE value="created ComputerPlayer move function" />
     <MESSAGE value="Implemented next functionality on AI turn" />
     <MESSAGE value="allowed click anywhere in room and secret passages fixed" />
-    <option name="LAST_COMMIT_MESSAGE" value="allowed click anywhere in room and secret passages fixed" />
+    <MESSAGE value="moved all panel creation from constructor to seperate functions for readability" />
+    <option name="LAST_COMMIT_MESSAGE" value="moved all panel creation from constructor to seperate functions for readability" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/clueGame/Board.java</url>
-          <line>120</line>
-          <option name="timeStamp" value="17" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/clueGame/ClueGame.java</url>
           <line>29</line>
