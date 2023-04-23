@@ -15,8 +15,15 @@ public class Card {
     public boolean equals(Object target) {
         if (target instanceof Card card) {
             return cardName.equals(card.cardName) && type == card.type;
+        } else if (target instanceof String s) {
+            return cardName.equals(s);
         }
         return false;
+    }
+
+    @Override
+    public String toString() {
+        return cardName;
     }
 
     public String getCardName() {
