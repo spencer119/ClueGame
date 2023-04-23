@@ -68,6 +68,7 @@ public abstract class Player extends JPanel {
 
     }
 
+
     public String getName() {
         return name;
     }

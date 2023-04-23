@@ -49,7 +49,7 @@ public class Board extends JPanel {
             loadLayoutConfig(); // Load ClueLayout.csv
             setupAdj(); // Setup adjacency lists
             deal(); // Deal cards
-            JOptionPane.showMessageDialog(null, "You are " + players.get(0).getName() + ".\nCan you find the solution before the AI?", "Welcome to Clue", JOptionPane.INFORMATION_MESSAGE);
+//            JOptionPane.showMessageDialog(null, "You are " + players.get(0).getName() + ".\nCan you find the solution before the AI?", "Welcome to Clue", JOptionPane.INFORMATION_MESSAGE);
         } catch (BadConfigFormatException e) { // Catch any bad config file format exceptions
             System.out.println("Bad config file format.");
         }
@@ -283,6 +283,7 @@ public class Board extends JPanel {
 
     }
 
+
     /**
      * Roll a random number and calculate targets for that roll with the current player
      */
@@ -417,9 +418,18 @@ public class Board extends JPanel {
         return roomMap.get(c);
     }
 
+//    public ArrayList<Card> getDeck() {
+//        return deck;
+//    }
+
     public ArrayList<Card> getDeck() {
-        return deck;
+        ArrayList<Card> allCards = deck;
+        allCards.add(theAnswer.getRoom());
+        allCards.add(theAnswer.getPerson());
+        allCards.add(theAnswer.getWeapon());
+        return allCards;
     }
+
 
     public int getNumRows() {
 
@@ -434,6 +444,7 @@ public class Board extends JPanel {
     public void addPlayer(Player player) {
         players.add(player);
     }
+
 
     public BoardCell getCell(int i, int j) {
 
