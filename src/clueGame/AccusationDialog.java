@@ -86,11 +86,10 @@ public class AccusationDialog extends JDialog {
     private class AccusationListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             // Enable submit button if both boxes are selected
-            accuseBtn.setEnabled(personBox.getSelectedIndex() != -1 && weaponBox.getSelectedIndex() != -1);
+            accuseBtn.setEnabled(roomBox.getSelectedIndex() != -1 && personBox.getSelectedIndex() != -1 && weaponBox.getSelectedIndex() != -1);
             if (e.getSource() instanceof JComboBox) {
                 if (e.getSource().equals(personBox)) {
                     personCard = (Card) personBox.getSelectedItem();
-
                 } else if (e.getSource().equals(weaponBox)) {
                     weaponCard = (Card) weaponBox.getSelectedItem();
                 } else if (e.getSource().equals(roomBox)) {

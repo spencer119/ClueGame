@@ -39,8 +39,6 @@ public class SuggestionDialog extends JDialog {
         JLabel roomLabel = new JLabel("Room");
         JLabel personLabel = new JLabel("Person");
         JLabel weaponLabel = new JLabel("Weapon");
-//        personBox = new JComboBox<>(people.toArray(new String[0]));
-//        weaponBox = new JComboBox<>(weapons.toArray(new String[0]));
         personBox.setSelectedIndex(-1);
         weaponBox.setSelectedIndex(-1);
         roomBox.setEditable(false);

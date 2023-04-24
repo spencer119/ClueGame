@@ -15,6 +15,8 @@ public class GameControlPanel extends JPanel {
     private final JTextField rollField = new JTextField("");
     private final JTextField guessField = new JTextField("");
     private final JTextField guessResultField = new JTextField("");
+    private JButton nextBtn;
+    private JButton accusationBtn;
 
     public GameControlPanel() {
         board = Board.getInstance();
@@ -79,9 +81,10 @@ public class GameControlPanel extends JPanel {
         rollPanel.add(rollField);
         topRow.add(rollPanel);
         // Buttons
-        JButton nextBtn = new JButton("Next");
-        JButton accusationBtn = new JButton("Make accusation");
-        nextBtn.addMouseListener(new NextListener());
+        nextBtn = new JButton("Next");
+        accusationBtn = new JButton("Make accusation");
+        nextBtn.addMouseListener(new BtnListener());
+        accusationBtn.addMouseListener(new BtnListener());
         topRow.add(nextBtn);
         topRow.add(accusationBtn);
         return topRow;
@@ -111,18 +114,22 @@ public class GameControlPanel extends JPanel {
     /**
      * Listener for the next button in the control panel
      */
-    private class NextListener implements MouseListener {
+    private class BtnListener implements MouseListener {
         public void mousePressed(MouseEvent e) {
-            if (currentPlayer instanceof HumanPlayer) { // Human turn
-                if (currentPlayer.isEndTurn()) {
+            if (e.getSource() == nextBtn) {
+                if (currentPlayer instanceof HumanPlayer) { // Human turn
+                    if (currentPlayer.isEndTurn()) {
+                        board.nextTurn();
+                        setTurn(board.getCurrentPlayer(), board.getRoll());
+                    } else
+                        board.createDialog("Error", "You must finish your turn before moving on to the next player.");
+                } else if (currentPlayer instanceof ComputerPlayer ai) { // Perform AI turn
+                    ai.move();
                     board.nextTurn();
                     setTurn(board.getCurrentPlayer(), board.getRoll());
-                } else
-                    board.createDialog("Error", "You must finish your turn before moving on to the next player.");
-            } else if (currentPlayer instanceof ComputerPlayer ai) { // Perform AI turn
-                ai.move();
-                board.nextTurn();
-                setTurn(board.getCurrentPlayer(), board.getRoll());
+                }
+            } else if (e.getSource() == accusationBtn) {
+                AccusationDialog accusationDialog = new AccusationDialog(null);
             }
 
 
