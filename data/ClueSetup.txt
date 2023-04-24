@@ -12,7 +12,7 @@ Room, Library, L
 Space, Unused, X
 Space, Walkway, W
 // Players
-Player, Human, Spencer, red, 0, 0
+Player, Human, Spencer, red, 3, 3
 Player, Computer, AI 1, blue, 8, 0
 Player, Computer, AI 2, orange, 12, 8
 Player, Computer, AI 3, green, 5, 22
