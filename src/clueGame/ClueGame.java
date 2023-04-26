@@ -2,16 +2,23 @@ package clueGame;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionListener;
 
 public class ClueGame extends JFrame {
     private static Board board;
 
     public static void main(String[] args) {
+        startGame();
+    }
+
+    private static void startGame() {
         board = Board.getInstance();
         board.setConfigFiles("ClueLayout.csv", "ClueSetup.txt");
         board.initialize();
         GameControlPanel controlPanel = new GameControlPanel();
         CardPanel cardPanel = new CardPanel();
+        board.setCardPanel(cardPanel);
+        board.setControlPanel(controlPanel);
         JFrame frame = new JFrame("Clue Game");
         frame.add(controlPanel, BorderLayout.SOUTH);
         frame.add(cardPanel, BorderLayout.EAST);
@@ -24,5 +31,13 @@ public class ClueGame extends JFrame {
         controlPanel.setGuess("No guess");
         controlPanel.setGuessResult("No result");
         frame.setVisible(true);
+        ActionListener gameEndListener = e -> {
+            if (board.isGameOver()) {
+                frame.dispose();
+                ((Timer) e.getSource()).stop();
+
+            }
+        };
+        new Timer(100, gameEndListener).start();
     }
 }
