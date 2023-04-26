@@ -23,8 +23,9 @@ public class Solution {
         return weapon;
     }
 
-    public Card[] getSolution() {
-        return new Card[]{room, person, weapon};
+    @Override
+    public String toString() {
+        return room.toString() + ", " + person.toString() + ", " + weapon.toString();
     }
 
     @Override
