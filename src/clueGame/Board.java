@@ -53,7 +53,7 @@ public class Board extends JPanel {
             loadLayoutConfig(); // Load ClueLayout.csv
             setupAdj(); // Setup adjacency lists
             deal(); // Deal cards
-//            JOptionPane.showMessageDialog(null, "You are " + players.get(0).getName() + ".\nCan you find the solution before the AI?", "Welcome to Clue", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(null, "You are " + players.get(0).getName() + ".\nCan you find the solution before the AI?", "Welcome to Clue", JOptionPane.INFORMATION_MESSAGE);
         } catch (BadConfigFormatException e) { // Catch any bad config file format exceptions
             System.out.println("Bad config file format.");
         }

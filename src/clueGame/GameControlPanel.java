@@ -7,6 +7,7 @@ import javax.swing.border.TitledBorder;
 import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.util.Objects;
 
 public class GameControlPanel extends JPanel {
     private static Integer roll = 1;
@@ -16,18 +17,24 @@ public class GameControlPanel extends JPanel {
     private final JTextField rollField = new JTextField("");
     private final JTextField guessField = new JTextField("");
     private final JTextField guessResultField = new JTextField("");
+    private final JButton musicBtn;
+    private final Music musicPlayer;
     private JButton nextBtn;
     private JButton accusationBtn;
     private JPanel guessPanel;
 
     public GameControlPanel() {
         board = Board.getInstance();
+        musicPlayer = new Music("data/music.wav");
         JPanel controlPanel = new JPanel();
         controlPanel.setLayout(new GridLayout(2, 0));
         controlPanel.add(createTopRow());
         controlPanel.add(createBottomRow());
         add(controlPanel, BorderLayout.SOUTH);
         add(controlPanel, BorderLayout.SOUTH);
+        musicBtn = new JButton("Play music");
+        musicBtn.addMouseListener(new MusicBtnListener());
+        add(musicBtn, BorderLayout.EAST);
 
     }
 
@@ -48,6 +55,7 @@ public class GameControlPanel extends JPanel {
         frame.setVisible(true);
 
     }
+
 
     public JPanel createBottomRow() {
         JPanel bottomRow = new JPanel();
@@ -87,6 +95,7 @@ public class GameControlPanel extends JPanel {
         // Buttons
         nextBtn = new JButton("Next");
         accusationBtn = new JButton("Make accusation");
+
         nextBtn.addMouseListener(new BtnListener());
         accusationBtn.addMouseListener(new BtnListener());
         topRow.add(nextBtn);
@@ -124,6 +133,29 @@ public class GameControlPanel extends JPanel {
         nextBtn.setText(status ? "Next" : "Waiting for turn");
     }
 
+    private class MusicBtnListener implements MouseListener {
+        public void mousePressed(MouseEvent e) {
+            if (Objects.equals(musicBtn.getText(), "Play music")) {
+                musicBtn.setText("Pause music");
+                musicPlayer.play();
+            } else if (musicPlayer.isPlaying()) {
+                musicBtn.setText("Resume music");
+                musicPlayer.pause();
+            } else {
+                musicBtn.setText("Pause music");
+                musicPlayer.resume();
+            }
+        }
+
+        public void mouseReleased(MouseEvent e) {}
+
+        public void mouseEntered(MouseEvent e) {}
+
+        public void mouseExited(MouseEvent e) {}
+
+        public void mouseClicked(MouseEvent e) {}
+    }
+
     /**
      * Listener for the next button in the control panel
      */
@@ -147,6 +179,8 @@ public class GameControlPanel extends JPanel {
                 } else if (currentPlayer instanceof HumanPlayer && currentPlayer.isEndTurn())
                     board.createDialog("Error", "You can only make an accusation at the beginning of your turn.");
                 else if (currentPlayer instanceof ComputerPlayer) board.createDialog("Error", "It is not your turn!");
+
+            } else if (e.getSource() == musicBtn) {
 
             }
 

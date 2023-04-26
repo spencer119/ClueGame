@@ -1,13 +1,19 @@
 package clueGame;
 
+import javax.sound.sampled.*;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
+import java.io.File;
+import java.io.IOException;
+import java.net.URL;
 
 public class ClueGame extends JFrame {
     private static Board board;
 
     public static void main(String[] args) {
+//        Music musicPlayer = new Music("data/music.wav");
+//        musicPlayer.play();
         startGame();
     }
 
