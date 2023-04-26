@@ -5,6 +5,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
+import java.util.Set;
 
 public class AccusationDialog extends JDialog {
     private static Board board;
@@ -30,7 +31,10 @@ public class AccusationDialog extends JDialog {
 
         board = Board.getInstance();
         ArrayList<Card> deck = board.getDeck();
+        Set<Card> seen = board.getHumanPlayer().getSeenCards();
+        ArrayList<Card> hand = board.getHumanPlayer().getHand();
         for (Card c : deck) {
+            if (seen.contains(c) || hand.contains(c)) continue;
             switch (c.getType()) {
                 case PERSON -> personBox.addItem(c);
                 case WEAPON -> weaponBox.addItem(c);
@@ -85,7 +89,7 @@ public class AccusationDialog extends JDialog {
 
     private class AccusationListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
-            // Enable submit button if both boxes are selected
+            // Enable submit button if all boxes are selected
             accuseBtn.setEnabled(roomBox.getSelectedIndex() != -1 && personBox.getSelectedIndex() != -1 && weaponBox.getSelectedIndex() != -1);
             if (e.getSource() instanceof JComboBox) {
                 if (e.getSource().equals(personBox)) {
@@ -98,7 +102,9 @@ public class AccusationDialog extends JDialog {
             } else if (e.getSource() instanceof JButton) {
                 if (e.getSource().equals(cancelBtn)) dispose(); // Cancel button
                 else if (e.getSource().equals(accuseBtn)) { // Submit button
-                    JOptionPane.showMessageDialog(null, "Submit: " + personCard + " " + weaponCard + " " + roomCard);
+                    board.checkAccusation(board.getCurrentPlayer(), new Solution(roomCard, personCard, weaponCard));
+                    dispose();
+                    //JOptionPane.showMessageDialog(null, "Submit: " + personCard + " " + weaponCard + " " + roomCard);
                 }
             }
 
