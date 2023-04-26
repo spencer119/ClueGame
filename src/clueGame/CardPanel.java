@@ -124,6 +124,17 @@ public class CardPanel extends JPanel {
             }
         }
         repaint();
+        revalidate();
+    }
+
+    public void updateSeen(Card card) {
+        switch (card.getType()) {
+            case ROOM -> seenRooms.add(createCardLabel(card.getCardName(), false));
+            case WEAPON -> seenWeapons.add(createCardLabel(card.getCardName(), false));
+            case PERSON -> seenPeople.add(createCardLabel(card.getCardName(), false));
+        }
+        repaint();
+        revalidate();
     }
 
     private JLabel createCardLabel(String name, Boolean inHand) {
