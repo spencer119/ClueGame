@@ -30,13 +30,13 @@ public class GameSolutionTest {
     public void testAccusation() {
         Solution boardSolution = board.getTheAnswer();
         ArrayList<Card> deck = board.getDeck();
-        assertTrue(board.checkAccusation(boardSolution));
+        assertTrue(board.checkAccusation(new ComputerPlayer("testPlayer", "red", 1, 1), boardSolution));
         Solution wrongWeapon = new Solution(boardSolution.getRoom(), boardSolution.getPerson(), new Card("Lego", CardType.WEAPON));
-        assertFalse(board.checkAccusation(wrongWeapon));
+        assertFalse(board.checkAccusation(new ComputerPlayer("testPlayer", "red", 1, 1), wrongWeapon));
         Solution wrongPerson = new Solution(boardSolution.getRoom(), new Card("Ted Bundy", CardType.PERSON), boardSolution.getWeapon());
-        assertFalse(board.checkAccusation(wrongPerson));
+        assertFalse(board.checkAccusation(new ComputerPlayer("testPlayer", "red", 1, 1), wrongPerson));
         Solution wrongRoom = new Solution(new Card("MZ 026", CardType.ROOM), boardSolution.getPerson(), boardSolution.getWeapon());
-        assertFalse(board.checkAccusation(wrongRoom));
+        assertFalse(board.checkAccusation(new ComputerPlayer("testPlayer", "red", 1, 1), wrongRoom));
     }
 
     @Test

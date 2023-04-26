@@ -1,16 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="ClueGame:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eab8da27-7ab5-4896-a4cc-6cac7e9ed2dd" name="Changes" comment="created AccusationDialog">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+    <list default="true" id="eab8da27-7ab5-4896-a4cc-6cac7e9ed2dd" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/ClueGame_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/ClueSetup.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/ClueSetup.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/clueGame/AccusationDialog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clueGame/AccusationDialog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/clueGame/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clueGame/Board.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/clueGame/CardPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clueGame/CardPanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/clueGame/ClueGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clueGame/ClueGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/clueGame/ComputerPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clueGame/ComputerPlayer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/clueGame/GameControlPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clueGame/GameControlPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/clueGame/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clueGame/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/clueGame/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clueGame/Room.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/clueGame/Solution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clueGame/Solution.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/clueGame/SuggestionDialog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clueGame/SuggestionDialog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tests/GameSolutionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/GameSolutionTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,17 +88,18 @@
     "code.cleanup.on.save": "true",
     "dart.analysis.tool.window.visible": "false",
     "deletionFromPopupRequiresConfirmation": "false",
+    "last_opened_file_path": "C:/Users/spencer/fuckeclipse/ClueGame/data",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
+    "project.structure.last.edited": "Artifacts",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
     "rearrange.code.on.save": "true",
     "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "preferences.sourceCode.Java",
+    "settings.editor.selected.configurable": "preferences.keymap",
     "show.migrate.to.gradle.popup": "false",
     "vue.rearranger.settings.migration": "true"
   },
@@ -100,7 +116,7 @@
       <recent name="tests" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.ClueGame">
     <configuration name="CardPanel" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="clueGame.CardPanel" />
       <module name="ClueGame" />
@@ -225,14 +241,10 @@
       <workItem from="1681794280568" duration="2181000" />
       <workItem from="1682203276931" duration="1076000" />
       <workItem from="1682277750247" duration="1806000" />
-      <workItem from="1682284040529" duration="11141000" />
-    </task>
-    <task id="LOCAL-00010" summary="Created card types">
-      <created>1680458808067</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1680458808067</updated>
+      <workItem from="1682284040529" duration="11473000" />
+      <workItem from="1682379289656" duration="723000" />
+      <workItem from="1682445802672" duration="19020000" />
+      <workItem from="1682544850866" duration="3355000" />
     </task>
     <task id="LOCAL-00011" summary="Finished declaring empty skeleton from UML diagram">
       <created>1680459907236</created>
@@ -570,7 +582,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682297726658</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary="accuse btn listener for dialog and control panel">
+      <created>1682299652555</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1682299652555</updated>
+    </task>
+    <option name="localTasksCounter" value="60" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -634,7 +653,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Moved labels to be more centered in GUI, also changed colors" />
     <MESSAGE value="Added color differences for seen and in hand cards" />
     <MESSAGE value="Created ClueGame main and initlize JFrame" />
     <MESSAGE value="created paintComponent for Board" />
@@ -659,19 +677,11 @@
     <MESSAGE value="added toString and a 2nd equals() method to Card class" />
     <MESSAGE value="created suggestion dialog, submit action unfinished" />
     <MESSAGE value="created AccusationDialog" />
-    <option name="LAST_COMMIT_MESSAGE" value="created AccusationDialog" />
+    <MESSAGE value="accuse btn listener for dialog and control panel" />
+    <option name="LAST_COMMIT_MESSAGE" value="accuse btn listener for dialog and control panel" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/clueGame/ClueGame.java</url>
-          <line>27</line>
-          <option name="timeStamp" value="24" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="clueGame.Board" memberName="roomMap" />
