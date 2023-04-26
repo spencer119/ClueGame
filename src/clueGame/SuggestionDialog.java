@@ -5,6 +5,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
+import java.util.Set;
 
 public class SuggestionDialog extends JDialog {
     private static Board board;
@@ -18,11 +19,14 @@ public class SuggestionDialog extends JDialog {
         super(parent, "Make a suggestion", true);
         board = Board.getInstance();
         ArrayList<Card> deck = board.getDeck();
+        ArrayList<Card> playerHand = board.getHumanPlayer().getHand();
+        Set<Card> playerSeen = board.getHumanPlayer().getSeenCards();
         Room room = board.getRoom(board.getCell(board.getCurrentPlayer().getRow(), board.getCurrentPlayer().getCol()));
         personBox = new JComboBox<Card>();
         weaponBox = new JComboBox<Card>();
         JComboBox<Card> roomBox = new JComboBox<Card>();
         for (Card c : deck) {
+            if ((playerHand.contains(c) || playerSeen.contains(c)) && c.getType() != CardType.ROOM) continue;
             switch (c.getType()) {
                 case PERSON -> personBox.addItem(c);
                 case WEAPON -> weaponBox.addItem(c);
@@ -102,7 +106,15 @@ public class SuggestionDialog extends JDialog {
             } else if (e.getSource() instanceof JButton) {
                 if (e.getSource().equals(cancelBtn)) dispose(); // Cancel button
                 else if (e.getSource().equals(submitBtn)) { // Submit button
-                    JOptionPane.showMessageDialog(null, "Submit: " + personCard + " " + weaponCard + " " + roomCard);
+                    Card result = board.handleSuggestion(board.getCurrentPlayer(), personCard, roomCard, weaponCard);
+                    if (result != null) {
+//                        board.updateControlPanel(personCard.toString() + ", " + roomCard.toString() + ", " + weaponCard.toString(), result.toString());
+                        board.addSeen(result);
+                    } else {
+//                        board.updateControlPanel(personCard.toString() + ", " + roomCard.toString() + ", " + weaponCard.toString(), "Unable to disprove");
+                    }
+                    board.getCurrentPlayer().setEndTurn(true);
+                    dispose();
                 }
             }
 
