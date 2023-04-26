@@ -1,6 +1,7 @@
 package clueGame;
 
 import javax.swing.*;
+import javax.swing.border.Border;
 import javax.swing.border.EtchedBorder;
 import javax.swing.border.TitledBorder;
 import java.awt.*;
@@ -17,6 +18,7 @@ public class GameControlPanel extends JPanel {
     private final JTextField guessResultField = new JTextField("");
     private JButton nextBtn;
     private JButton accusationBtn;
+    private JPanel guessPanel;
 
     public GameControlPanel() {
         board = Board.getInstance();
@@ -50,13 +52,15 @@ public class GameControlPanel extends JPanel {
     public JPanel createBottomRow() {
         JPanel bottomRow = new JPanel();
         bottomRow.setLayout(new GridLayout(1, 2));
-        JPanel guessPanel = new JPanel();
+        guessPanel = new JPanel();
         JPanel guessResultPanel = new JPanel();
+        guessPanel.setLayout(new BorderLayout());
+        guessResultPanel.setLayout(new BorderLayout());
         guessField.setEditable(false);
-        guessPanel.add(guessField);
+        guessPanel.add(guessField, BorderLayout.CENTER);
         guessPanel.setBorder(new TitledBorder(new EtchedBorder(), "Guess"));
         guessResultField.setEditable(false);
-        guessResultPanel.add(guessResultField);
+        guessResultPanel.add(guessResultField, BorderLayout.CENTER);
         guessResultPanel.setBorder(new TitledBorder(new EtchedBorder(), "Guess Result"));
         bottomRow.add(guessPanel);
         bottomRow.add(guessResultPanel);
@@ -111,6 +115,15 @@ public class GameControlPanel extends JPanel {
         guessResultField.setText(result);
     }
 
+    public void setGuessPlayer(Player player) {
+        guessPanel.setBorder(new TitledBorder(new EtchedBorder(), "Guess by " + player.getName()));
+    }
+
+    public void setNextBtn(Boolean status) {
+        nextBtn.setEnabled(status);
+        nextBtn.setText(status ? "Next" : "Waiting for turn");
+    }
+
     /**
      * Listener for the next button in the control panel
      */
@@ -129,7 +142,12 @@ public class GameControlPanel extends JPanel {
                     setTurn(board.getCurrentPlayer(), board.getRoll());
                 }
             } else if (e.getSource() == accusationBtn) {
-                AccusationDialog accusationDialog = new AccusationDialog(null);
+                if (currentPlayer instanceof HumanPlayer && !currentPlayer.isEndTurn()) {
+                    AccusationDialog accusationDialog = new AccusationDialog(null);
+                } else if (currentPlayer instanceof HumanPlayer && currentPlayer.isEndTurn())
+                    board.createDialog("Error", "You can only make an accusation at the beginning of your turn.");
+                else if (currentPlayer instanceof ComputerPlayer) board.createDialog("Error", "It is not your turn!");
+
             }
 
 
