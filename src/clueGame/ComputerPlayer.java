@@ -1,12 +1,14 @@
 package clueGame;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Random;
 import java.util.Set;
 
 public class ComputerPlayer extends Player {
     private static final Board board = Board.getInstance();
     private final Random rand = new Random();
+    private Boolean unableToDisprove = false;
 
     public ComputerPlayer(String name, String color, int row, int col) {
         super(name, color, row, col);
@@ -16,14 +18,43 @@ public class ComputerPlayer extends Player {
      * Perform the ComputerPlayer's turn
      */
     public void move() {
+        if (unableToDisprove) {
+            createAccusation();
+        }
         int row = super.getRow();
         int col = super.getCol();
         BoardCell target = selectTarget(board.getTargets());
-        super.move(target.getRow(), target.getCol());
-        board.getCell(row, col).setOccupied(false);
-        board.getCell(target.getRow(), target.getCol()).setOccupied(true);
+        if (target != null) {
+            super.move(target);
+            board.getCell(row, col).setOccupied(false);
+            board.getCell(target.getRow(), target.getCol()).setOccupied(true);
+            if (board.getCell(target.getRow(), target.getCol()).isRoom()) {
+                Solution suggestion = this.createSuggestion(board.getRoom(target.getChar()));
+                Card res = board.handleSuggestion(this, suggestion.getPerson(), suggestion.getRoom(), suggestion.getWeapon());
+                if (res == null)
+                    unableToDisprove = true;
+            }
+        }
         super.setEndTurn(true);
         board.repaint();
+    }
+
+    private void createAccusation() {
+        ArrayList<Card> boardDeck = board.getDeck();
+        Set<Card> seen = super.getSeenCards();
+        ArrayList<Card> hand = super.getHand();
+        Card w = null, p = null, r = null;
+        for (Card c : boardDeck) {
+            if (!seen.contains(c) && !hand.contains(c)) {
+                switch (c.getType()) {
+                    case PERSON -> p = c;
+                    case WEAPON -> w = c;
+                    case ROOM -> r = c;
+                }
+            }
+        }
+        if (p != null && w != null && r != null)
+            board.checkAccusation(this, new Solution(r, p, w));
     }
 
     /**
@@ -69,9 +100,13 @@ public class ComputerPlayer extends Player {
         if (potential.isEmpty()) {
             for (BoardCell c : targets)
                 if (!c.isRoomCenter()) potential.add(c);
-
         }
-        return potential.get(rand.nextInt(potential.size()));
+        if (potential.isEmpty() && !targets.isEmpty())
+            return targets.toArray(new BoardCell[0])[rand.nextInt(targets.size())];
+        else if (potential.isEmpty())
+            return null;
+        else
+            return potential.get(rand.nextInt(potential.size()));
 
     }
 }
