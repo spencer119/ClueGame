@@ -10,6 +10,7 @@ import java.util.Set;
  */
 public class Room {
     private final String name;
+    private final Set<Player> playersInRoom = new HashSet<Player>();
     private BoardCell centerCell;
     private BoardCell labelCell;
     private char secretPassage = ' '; // Char of the room that the secret passage leads to
@@ -27,14 +28,6 @@ public class Room {
         this.secretPassage = secretPassage;
     }
 
-    public void setCenterCell(BoardCell centerCell) {
-        this.centerCell = centerCell;
-    }
-
-    public void setLabelCell(BoardCell labelCell) {
-        this.labelCell = labelCell;
-    }
-
     // Getters
     public String getName() {
         return name;
@@ -44,7 +37,25 @@ public class Room {
         return centerCell;
     }
 
+    public void setCenterCell(BoardCell centerCell) {
+        this.centerCell = centerCell;
+    }
+
     public BoardCell getLabelCell() {
         return labelCell;
     }
+
+    public void setLabelCell(BoardCell labelCell) {
+        this.labelCell = labelCell;
+    }
+
+    public void addPlayer(Player player) {
+        playersInRoom.add(player);
+    }
+
+    public void removePlayer(Player player) {
+        playersInRoom.remove(player);
+    }
+
+    public Set<Player> getPlayersInRoom() {return playersInRoom;}
 }
